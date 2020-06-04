@@ -6,6 +6,7 @@
 
 // Necessary for the remove.bg API, see setProductThumbnail()
 require_once( ABSPATH . 'vendor/autoload.php' );
+use Guzzle\Http\Exception\ClientErrorResponseException;
 
 
 /*
@@ -964,7 +965,7 @@ function addProduct($wp_data, $acf_data) {
 			}
 			mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $template, $headers);
 		}
-		header('Location: '.get_permalink(get_field('dressing', 'user_'.get_current_user_id())));
+		header('Location: '.get_permalink(get_field('dressing', 'user_'.get_current_user_id())).'?from_product_add=1');
 		exit();
 	} else {
 		return $product_register;
@@ -1100,6 +1101,82 @@ function saveNewProductImages($post_id, $images){
 	return $image_ids;
 }
 
+/* 
+* Validate a product
+* Parameters : int $post_id
+* Return : none
+*/
+function validate($post_id){
+	$user_id = get_field('proprietaire', $post_id)['ID'];
+	$dressing_id = get_field('dressing', 'user_'.$user_id);
+
+	$removebg_response = setProductThumbnail($post_id);
+	$status_code = $removebg_response->getStatusCode();
+	
+	$image = get_field('images', $post_id)[0];
+
+
+	if($status_code == 200) {
+		// If the background removal went correctly, we register the new image and set it as thumbnail of the product 
+		$upload_dir  = wp_upload_dir();
+		$upload_path = str_replace( '/', DIRECTORY_SEPARATOR, $upload_dir['basedir'] ) . DIRECTORY_SEPARATOR . 'no-bg' . DIRECTORY_SEPARATOR;
+
+		$file = substr($image, strrpos($image, '/') + 1, strlen($image));
+		$file_name = substr($file, 0, strlen($file) - 4)."-no-bg.png";
+		$hashed_file_name = md5( $file_name . microtime() ) . '_' . $file_name;
+
+		$fp = fopen($upload_path.$hashed_file_name, "wb");
+		fwrite($fp, $removebg_response->getBody());
+		fclose($fp);
+
+		$attachment = array(
+			'post_mime_type' => 'image/png',
+			'post_title'     => preg_replace( '/\.[^.]+$/', '', basename($hashed_file_name) ),
+			'post_content'   => '',
+			'post_status'    => 'inherit',
+			'guid'           => $upload_dir['baseurl'] . '/' . 'no-bg' . '/' . basename( $hashed_file_name )
+		);
+
+		$attach_id = wp_insert_attachment( $attachment, $upload_dir['basedir'] . '/' . 'no-bg' . '/' . $hashed_file_name );
+
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $upload_path . $hashed_file_name );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+		set_post_thumbnail($post_id, $attach_id);
+
+		wp_update_post(
+				array(
+				'ID'    =>  $post_id,
+				'post_status'   =>  'publish'
+			)
+		);
+		
+		$product = get_the_title($post_id);
+
+		// Send mail to user 
+		if(substr($_SERVER['SERVER_NAME'], 0, 3) != 'dev'){
+			$to = get_userdata($user_id)->data->user_email;
+			$subject = "Bravo, ton article ".$product." figure maintenant dans notre catalogue !";
+			$from = "noreply@swap-chic.com";
+			$headers = "Reply-To: Swap-Chic <noreply@swap-chic.com>\r\n";
+			$headers .= "Return-Path: Swap-Chic <noreply@swap-chic.com>\r\n";
+			$headers .= "From: Swap-Chic <noreply@swap-chic.com>\r\n";
+			$headers .= "MIME-Version: 1.0\r\n";
+			$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+			$variables = array();
+			$variables['name'] = ucfirst(get_userdata($user_id)->data->user_login);
+			$variables['product'] = $product;
+			$variables['link'] = 'https://'.$_SERVER['HTTP_HOST'].'/?post_type=produits&p='.$post_id;
+			$template = file_get_contents( ABSPATH . "wp-content/themes/Swap-Chic/assets/mails/accept.html");
+			foreach($variables as $key => $value) {
+				$template = str_replace('{{ '.$key.' }}', $value, $template);
+			}
+			mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $template, $headers);
+		}
+	}
+	return $status_code;
+}
+
 /*
 * Create a PNG image from the first image of the product gallery, register it in the media library and set it as the product thumbnail, see https://www.remove.bg/api
 * Parameters : int post_id
@@ -1109,47 +1186,28 @@ function setProductThumbnail($post_id) {
 	$image = get_field('images', $post_id)[0];
 
 	$client = new GuzzleHttp\Client();
-	$res = $client->post('https://api.remove.bg/v1.0/removebg', [
-		'multipart' => [
-			[
-				'name'     => 'image_url',
-				'contents' => $image
+	
+	try {
+		$response = $client->post('https://api.remove.bg/v1.0/removebg', [
+			'multipart' => [
+				[
+					'name'     => 'image_url',
+					'contents' => $image
+				],
+				[
+					'name'     => 'size',
+					'contents' => 'auto'
+				]
 			],
-			[
-				'name'     => 'size',
-				'contents' => 'auto'
+			'headers' => [
+				'X-Api-Key' => 'mvutm18ge5PS7wZHF7A4FcuV'
 			]
-		],
-		'headers' => [
-			'X-Api-Key' => 'mvutm18ge5PS7wZHF7A4FcuV '
-		]
-	]);
-
-	$upload_dir  = wp_upload_dir();
-	$upload_path = str_replace( '/', DIRECTORY_SEPARATOR, $upload_dir['basedir'] ) . DIRECTORY_SEPARATOR . 'no-bg' . DIRECTORY_SEPARATOR;
-
-	$file = substr($image, strrpos($image, '/') + 1, strlen($image));
-	$file_name = substr($file_name, 0, strlen($file_name) - 4)."-no-bg.png";
-	$hashed_file_name = md5( $file_name . microtime() ) . '_' . $file_name;
-
-	$fp = fopen($upload_path.$hashed_file_name, "wb");
-	fwrite($fp, $res->getBody());
-	fclose($fp);
-
-	$attachment = array(
-		'post_mime_type' => 'image/png',
-		'post_title'     => preg_replace( '/\.[^.]+$/', '', basename($hashed_file_name) ),
-		'post_content'   => '',
-		'post_status'    => 'inherit',
-		'guid'           => $upload_dir['baseurl'] . '/' . 'no-bg' . '/' . basename( $hashed_file_name )
-	);
-
-	$attach_id = wp_insert_attachment( $attachment, $upload_dir['basedir'] . '/' . 'no-bg' . '/' . $hashed_file_name );
-
-	require_once( ABSPATH . 'wp-admin/includes/image.php' );
-	$attach_data = wp_generate_attachment_metadata( $attach_id, $upload_path . $hashed_file_name );
-	wp_update_attachment_metadata( $attach_id, $attach_data );
-	set_post_thumbnail($post_id, $attach_id);
+		]);
+	} catch (GuzzleHttp\Exception\ClientException $e) {
+		$response = $e->getResponse();
+		return $response;
+	}
+	return $response;
 }
 
 /*
@@ -1213,7 +1271,8 @@ function setProductThumbnailFromBO($new_status, $old_status, $post) {
 		set_post_thumbnail($post->ID, $attach_id);
 	}
 }
-add_action('transition_post_status', 'setProductThumbnailFromBO', 10, 3);
+// It is not needed right now so we do not register the action
+//add_action('transition_post_status', 'setProductThumbnailFromBO', 10, 3);
 
 
 /*
@@ -1222,7 +1281,7 @@ add_action('transition_post_status', 'setProductThumbnailFromBO', 10, 3);
 * Return : array
 */
 function getPath() {
-	return explode('/', $_SERVER[REQUEST_URI]);
+	return explode('/', $_SERVER['REQUEST_URI']);
 }
 
 /*
@@ -1371,7 +1430,7 @@ function getScope($get) {
 		$user = wp_get_current_user();
 		$user_id = $user->data->ID;
 		$scope_array['scope'] = get_field('code_postal', 'user_'.$user_id );
-		return $scope;
+		return $scope_array;
 	}
 	return false;
 }
@@ -2882,7 +2941,6 @@ function ajaxNotify(){
 				$template = str_replace('{{ '.$key.' }}', $value, $template);
 			}
 			// Only send it if the notified user is offline
-			print_r(get_user_meta($reciever_id, 'asdb-loggedin'));
 			if(get_user_meta($reciever_id, 'asdb-loggedin')[0] != 1) {
 				echo 'not connected';
 				mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $template, $headers);
@@ -2914,39 +2972,76 @@ function ajaxValidate(){
 	$user_id = get_field('proprietaire', $post_id)['ID'];
 	$dressing_id = get_field('dressing', 'user_'.$user_id);
 
-	wp_update_post(
-			array(
-			'ID'    =>  $post_id,
-			'post_status'   =>  'publish'
-		)
-	);
-
-	// setProductThumbnail($post_id);
-
-	$product = get_the_title($post_id);
-
-	// Send mail to user 
-	if(substr($_SERVER['SERVER_NAME'], 0, 3) != 'dev'){
-		$to = get_userdata($user_id)->data->user_email;
-		$subject = "Bravo, ton article ".$product." figure maintenant dans notre catalogue !";
-		$from = "noreply@swap-chic.com";
-		$headers = "Reply-To: Swap-Chic <noreply@swap-chic.com>\r\n";
-		$headers .= "Return-Path: Swap-Chic <noreply@swap-chic.com>\r\n";
-		$headers .= "From: Swap-Chic <noreply@swap-chic.com>\r\n";
-		$headers .= "MIME-Version: 1.0\r\n";
-		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-		$variables = array();
-		$variables['name'] = ucfirst(get_userdata($user_id)->data->user_login);
-		$variables['product'] = $product;
-		$variables['link'] = 'https://'.$_SERVER['HTTP_HOST'].'/?post_type=produits&p='.$post_id;
-		$template = file_get_contents( ABSPATH . "wp-content/themes/Swap-Chic/assets/mails/accept.html");
-		foreach($variables as $key => $value) {
-			$template = str_replace('{{ '.$key.' }}', $value, $template);
-		}
-		mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $template, $headers);
-	}
-
+	$removebg_response = setProductThumbnail($post_id);
+	echo $removebg_response;
 	die();
+	$image = get_field('images', $post_id)[0];
+
+	$status_code = $removebg_response->getStatusCode();
+
+	if($status_code == 200) {
+		// If the background removal went correctly, we register the new image and set it as thumbnail of the product 
+		$upload_dir  = wp_upload_dir();
+		$upload_path = str_replace( '/', DIRECTORY_SEPARATOR, $upload_dir['basedir'] ) . DIRECTORY_SEPARATOR . 'no-bg' . DIRECTORY_SEPARATOR;
+
+		$file = substr($image, strrpos($image, '/') + 1, strlen($image));
+		$file_name = substr($file_name, 0, strlen($file_name) - 4)."-no-bg.png";
+		$hashed_file_name = md5( $file_name . microtime() ) . '_' . $file_name;
+
+		$fp = fopen($upload_path.$hashed_file_name, "wb");
+		fwrite($fp, $res->getBody());
+		fclose($fp);
+
+		$attachment = array(
+			'post_mime_type' => 'image/png',
+			'post_title'     => preg_replace( '/\.[^.]+$/', '', basename($hashed_file_name) ),
+			'post_content'   => '',
+			'post_status'    => 'inherit',
+			'guid'           => $upload_dir['baseurl'] . '/' . 'no-bg' . '/' . basename( $hashed_file_name )
+		);
+
+		$attach_id = wp_insert_attachment( $attachment, $upload_dir['basedir'] . '/' . 'no-bg' . '/' . $hashed_file_name );
+
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $upload_path . $hashed_file_name );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+		set_post_thumbnail($post_id, $attach_id);
+
+		wp_update_post(
+				array(
+				'ID'    =>  $post_id,
+				'post_status'   =>  'publish'
+			)
+		);
+		
+		$product = get_the_title($post_id);
+
+		// Send mail to user 
+		if(substr($_SERVER['SERVER_NAME'], 0, 3) != 'dev'){
+			$to = get_userdata($user_id)->data->user_email;
+			$subject = "Bravo, ton article ".$product." figure maintenant dans notre catalogue !";
+			$from = "noreply@swap-chic.com";
+			$headers = "Reply-To: Swap-Chic <noreply@swap-chic.com>\r\n";
+			$headers .= "Return-Path: Swap-Chic <noreply@swap-chic.com>\r\n";
+			$headers .= "From: Swap-Chic <noreply@swap-chic.com>\r\n";
+			$headers .= "MIME-Version: 1.0\r\n";
+			$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+			$variables = array();
+			$variables['name'] = ucfirst(get_userdata($user_id)->data->user_login);
+			$variables['product'] = $product;
+			$variables['link'] = 'https://'.$_SERVER['HTTP_HOST'].'/?post_type=produits&p='.$post_id;
+			$template = file_get_contents( ABSPATH . "wp-content/themes/Swap-Chic/assets/mails/accept.html");
+			foreach($variables as $key => $value) {
+				$template = str_replace('{{ '.$key.' }}', $value, $template);
+			}
+			mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $template, $headers);
+		}
+		echo $status_code;
+		die();
+	} else {
+		echo $status_code;
+		die();
+	}
 }
 add_action( 'wp_ajax_ajaxValidate', 'ajaxValidate' );
 

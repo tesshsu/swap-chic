@@ -29,7 +29,7 @@ if(is_user_logged_in()) {
 }
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg <? if($_SERVER[REQUEST_URI] != '/' && !isset($_GET['s'])) { echo explode('/', $_SERVER[REQUEST_URI])[1]; } elseif(isset($_GET['s'])) { echo 'search'; } else { echo 'intro'; } ?>">
+<html <?php language_attributes(); ?> class="no-js no-svg <? if($_SERVER['REQUEST_URI'] != '/' && !isset($_GET['s'])) { echo explode('/', $_SERVER['REQUEST_URI'])[1]; } elseif(isset($_GET['s'])) { echo 'search'; } else { echo 'intro'; } ?>">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,7 @@ if(is_user_logged_in()) {
 	<?php wp_head(); ?>
 </head>
 
-<body <?php if(!is_user_logged_in()){ echo "class='user-guest'"; } ?> >
+<body <?php if(!is_user_logged_in()){ echo "class='user-guest'"; } else { echo 'data-basescope="'.get_field('code_postal', 'user_'.$user_id).'" '; } ?> >
 <?php if(displayLoader($path)) { 
 	get_template_part( 'partials/content/content', 'loader' );
 } ?>
@@ -142,7 +142,7 @@ if(is_user_logged_in()) {
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);
 						preg_match('/href=".*">/', $logout_element, $logout_tag);
-						$logout_url = substr($logout_tag[0], 6, strlen($logout_tag) - 8);
+						$logout_url = substr($logout_tag[0], 6, strlen($logout_tag[0]) - 8);
 					?>
 					<a href="<?php echo $logout_url ?>">
 						<img src="<?php echo get_template_directory_uri().'/assets/images/logout.svg'; ?>" alt="">Déconnexion
@@ -208,11 +208,8 @@ if(is_user_logged_in()) {
 
 	<main 
 		<?php
-			if($_SERVER[REQUEST_URI] != '/' && !isset($_GET['s'])) {
-				echo 'class="'.explode('/', $_SERVER[REQUEST_URI])[1].'" ';
-			}
-			if(is_user_logged_in()) {
-				echo 'data-basescope="'.get_field('code_postal', 'user_'.$user_id).'" ';
+			if($_SERVER['REQUEST_URI'] != '/' && !isset($_GET['s'])) {
+				echo 'class="'.explode('/', $_SERVER['REQUEST_URI'])[1].'" ';
 			}
 		?>>
 	<?php 

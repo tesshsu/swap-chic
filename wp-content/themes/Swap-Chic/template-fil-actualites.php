@@ -39,7 +39,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 
 
 <div class="top">
-    <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><?php echo $scope?></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
+    <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
     <?php get_template_part( 'partials/form/scope', 'change'); ?>
     <div class="alert-notice">
         <a href="/recherche-avancee">Tu recherches un produit en particulier ?</br>Utilise la recherche avancée et créé ton alerte !</a>
@@ -179,10 +179,6 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         array_unshift($postlist["even_more"], array('map', $swapplaces['even_more']));
     }
 
-    if($product_nbr == 0) {
-        array_unshift($postlist[$scope], "nodata");
-    }
- 
     // Then we sort and finally display the postlist
     displayPosts(sortPosts($postlist, 'distance'));
 ?>
