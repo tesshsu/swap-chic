@@ -542,7 +542,6 @@ header nav {
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center;
-  /* max-width: 420px; */
   margin: 0 auto;
   padding: 0 10px; }
 
@@ -1368,13 +1367,13 @@ footer a {
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center;
-  font-family: 'Montserrat Regular';
-  opacity: .5;
+  font-family: 'Montserrat Bold';
+  opacity: 1;
   text-decoration: none; }
 
 footer a.active {
-  font-family: 'Montserrat Bold';
-  opacity: 1; }
+  font-family: 'Montserrat Regular';
+  opacity: .5; }
 
 footer a img {
   margin-right: 5px; }
@@ -4823,8 +4822,26 @@ main.blog {
 
 @media screen and (max-width: 480px) {
   .faq p, .post p:not(.h1) {
-    font-size: 13px;
-    margin-bottom: 10px; } }
+		font-size: 13px;
+		margin-bottom: 10px;
+	}
+   .dressing-single .content{
+	   padding: 0 40px;
+   }
+   .produit-min{
+	   padding: 0 0 0 16%;
+   }
+   .produit-min > img{
+	  max-height: 90%; 
+   }
+   .produit-min p{
+       margin-top: 15%;
+   }
+   .produit-min .likes{
+	   margin-left: 10%;
+       margin-top: 2%;
+   }
+}
 
 .hidden {
   display: none!important; }
