@@ -542,6 +542,7 @@ header nav {
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center;
+  /* max-width: 420px; */
   margin: 0 auto;
   padding: 0 10px; }
 
@@ -1367,13 +1368,13 @@ footer a {
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center;
-  font-family: 'Montserrat Bold';
-  opacity: 1;
+  font-family: 'Montserrat Regular';
+  opacity: .5;
   text-decoration: none; }
 
 footer a.active {
-  font-family: 'Montserrat Regular';
-  opacity: .5; }
+  font-family: 'Montserrat Bold';
+  opacity: 1; }
 
 footer a img {
   margin-right: 5px; }
@@ -1820,7 +1821,9 @@ main > .top > .h2,
 #searchresults > .h2 {
   width: auto;
   text-align: center;
-  font-size: 20px; }
+  font-size: 20px;
+  padding-bottom: 20px;
+}
 
 .filters > .h2 {
   margin-top: 0; }
@@ -3642,9 +3645,7 @@ img.wider {
                   0px 4px 8px rgba(178, 137, 93, 0.5); */
   padding: 5px 10px; }
 
-.dressing,
 .inthread.comment {
-  /* max-width: 420px; */
   min-width: 320px;
   padding: 20px;
   margin: 0 auto;
@@ -3653,8 +3654,6 @@ img.wider {
                   0px 1px 15px 0px rgba(178, 137, 93,.12), 
   
                   0px 4px 8px rgba(178, 137, 93, 0.5); */ }
-
-.dressing .user,
 .inthread.comment .user {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3669,7 +3668,15 @@ img.wider {
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center; }
-
+.dressing .user{
+	margin: auto;
+}
+.dressing .user span{ 
+	display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding-bottom: 30px;
+}
 .dressing .user img,
 .inthread.comment .user img {
   height: 40px;
@@ -4822,25 +4829,22 @@ main.blog {
 
 @media screen and (max-width: 480px) {
   .faq p, .post p:not(.h1) {
-		font-size: 13px;
-		margin-bottom: 10px;
-	}
-   .dressing-single .content{
-	   padding: 0 40px;
-   }
-   .produit-min{
-	   padding: 0 0 0 16%;
-   }
-   .produit-min > img{
-	  max-height: 90%; 
-   }
-   .produit-min p{
-       margin-top: 15%;
-   }
-   .produit-min .likes{
-	   margin-left: 10%;
-       margin-top: 2%;
-   }
+    font-size: 13px;
+    margin-bottom: 10px; } 
+  .dressing{
+	text-align: center;
+	width: auto;
+  }
+  .dressing .social{
+	  margin: auto;
+  }
+  .dressing .dressing-products{
+	  margin: auto;
+  }
+  .dressing-products a{
+	  display: inline-block;
+	  width: auto;
+  }
 }
 
 .hidden {
