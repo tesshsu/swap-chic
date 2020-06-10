@@ -139,6 +139,9 @@ if(is_user_logged_in()) {
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/inviter-amies' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Invite tes amies
 						</a>
+						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous' ?>" id="parlon_de_nous">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">On parle de nous
+						</a>
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);
 						preg_match('/href=".*">/', $logout_element, $logout_tag);

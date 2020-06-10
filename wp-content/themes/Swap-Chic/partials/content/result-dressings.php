@@ -23,7 +23,7 @@
                     $i++;
                 }
             } ?>
-            <a href="<?php echo get_permalink($dressing); ?>">Voir son dressing complet</a><?php
+            <?php
         } else {
             foreach($products as $product) { ?>
                 <a href="<?php echo get_permalink($product['produit']); ?>">
