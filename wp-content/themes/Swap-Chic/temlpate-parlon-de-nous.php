@@ -13,6 +13,7 @@ Template Post Type: page
         'post_type' => 'post',
         'post_status' => 'publish',
 		'cat'         => 20,
+		'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC',
         'nopaging' => true

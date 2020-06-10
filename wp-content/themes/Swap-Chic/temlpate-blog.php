@@ -12,6 +12,8 @@ Template Post Type: page
     $args = array (
         'post_type' => 'post',
         'post_status' => 'publish',
+		'cat'         => 18,
+		'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC',
         'nopaging' => true
