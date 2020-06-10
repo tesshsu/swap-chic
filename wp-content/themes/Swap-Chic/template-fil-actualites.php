@@ -69,14 +69,16 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         "more" => array(),
         "even_more" => array()
     );
-
+    $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
     $args = array (
         'post_type' => array('produits', 'swapplaces'),
         'post_status' => 'publish',
+		'posts_per_page' => 5,
         'orderby' => 'date',
         'order' => 'DESC',
         'author__not_in' => array($current_user_id),
-        'nopaging' => true
+        'nopaging' => true,
+		'paged' => $paged,
     );
     $the_query = new WP_Query( $args );
 
@@ -123,9 +125,11 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         'post_status'    => 'publish',
         'post_type'      => array('produits', 'swapplaces', 'dressings'),
         'order'          => 'DESC',
+		'posts_per_page' => 5,
         'orderby'        => 'comment_date',
         'author__not_in' => array($current_user_id),
-        'nopaging'       => true
+        'nopaging'       => true,
+		'paged' => $paged,
     );
 
     $comments_query = new WP_Comment_Query;

@@ -3870,7 +3870,6 @@ function my_custom_dashboard_access_handler() {
 add_action( 'init', 'my_custom_dashboard_access_handler');
 
 //Minify css, js and html by script
-/Minify css, js and html by script
 class FLHM_HTML_Compression
 {
     protected $flhm_compress_css = true;
