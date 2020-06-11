@@ -140,7 +140,7 @@ if(is_user_logged_in()) {
 							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Invite tes amies
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous' ?>" id="parlon_de_nous">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">On parle de nous
+							<img src="<?php echo get_template_directory_uri().'/assets/images/calendar.svg'; ?>" alt="">On parle de nous
 						</a>
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);

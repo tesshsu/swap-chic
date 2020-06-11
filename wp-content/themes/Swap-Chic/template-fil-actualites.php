@@ -77,8 +77,8 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         'orderby' => 'date',
         'order' => 'DESC',
         'author__not_in' => array($current_user_id),
-        'nopaging' => true,
 		'paged' => $paged,
+		'nopaging' => false
     );
     $the_query = new WP_Query( $args );
 
@@ -128,8 +128,8 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 		'posts_per_page' => 5,
         'orderby'        => 'comment_date',
         'author__not_in' => array($current_user_id),
-        'nopaging'       => true,
 		'paged' => $paged,
+		'nopaging' => false
     );
 
     $comments_query = new WP_Comment_Query;

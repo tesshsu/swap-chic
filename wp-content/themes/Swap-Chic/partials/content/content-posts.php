@@ -41,7 +41,7 @@
             <?php  
                 set_query_var('post_type', 'posts');
                 set_query_var('post_id', $post_id);
-                get_template_part( 'partials/content/content', 'commentthread' ); 
+                get_template_part( 'partials/content/content', 'commentthread' );		
             ?>
     </div>
 </div>
