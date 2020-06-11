@@ -17,6 +17,7 @@ if($_POST) {
     $variables = array();
     $variables['name'] = $_POST['establishement'];
     $variables['city'] = $_POST['ville'];
+	$variables['email'] = $_POST['email'];
     $template = file_get_contents( ABSPATH . "wp-content/themes/Swap-Chic/assets/mails/suggestion_sp.html");
     foreach($variables as $key => $value) {
         $template = str_replace('{{ '.$key.' }}', $value, $template);
@@ -40,6 +41,8 @@ if($_POST) {
     <input type="text" name="establishement" id="establishement" required>
     <label for="adresse">Ville de l'établissement : </label>
     <input type="text" name="ville" id="ville" required>
+	<label for="adresse">Votre Email : </label>
+    <input type="mail" name="email" id="mail" required>
     <div id="send-suggestion-submit" class="btn">Envoyer</div>
 </form>
 

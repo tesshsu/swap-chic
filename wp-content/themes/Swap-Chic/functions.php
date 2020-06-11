@@ -1496,7 +1496,7 @@ function getScopeLatLng($scope) {
 		sleep(1);
 		getScopeLatLng($scope);
 	} else {
-		echo "FAIL\n";
+		echo "VOTRE LOCALISATION NE PEUT PAS DÉTECTER";
 	}
 }
 
@@ -3773,7 +3773,7 @@ function swapplaceGet($post_id, $adresse) {
 		sleep(1);
 		swapplaceGet($post_id, $adresse);
 	} else {
-		echo $post_id." FAIL : ".get_the_title($post_id)."\n";
+		echo $post_id." FAIL TO HAVE THIS SWAPPLACE LOCATION: ".get_the_title($post_id)."\n";
 	}
 }
 
