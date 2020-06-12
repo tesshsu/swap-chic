@@ -896,7 +896,7 @@ function setUserLatLng($user_id, $user_zip) {
 		sleep(1);
 		setUserLatLng($user_id, $user_zip);
 	} else {
-		echo $user_id." FAIL\n";
+		echo $user_id." désolée, nous n’avons pas pu détecter votre localisation. Vérifiez que votre géolocalisation est bien activée. Merci. \n";
 	}
 }
 
@@ -3773,7 +3773,7 @@ function swapplaceGet($post_id, $adresse) {
 		sleep(1);
 		swapplaceGet($post_id, $adresse);
 	} else {
-		echo $post_id." FAIL TO HAVE THIS SWAPPLACE LOCATION: ".get_the_title($post_id)."\n";
+		echo $post_id." Ne pas réussir à définit la latitude et la longitude du swap place: ".get_the_title($post_id)."\n";
 	}
 }
 
