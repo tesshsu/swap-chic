@@ -20,7 +20,7 @@
         <p><a href="<?php echo get_permalink($dressing) ?>"><?php echo ucfirst($user->data->display_name) ?></a>, <?php echo get_field('ville', 'user_'.$user_id) ?>, <span class='activity'><?php echo get_field('occupation', 'user_'.$user_id) ?></em></p>
     </div>
     <div class="vip-bottom">
-        <div class="dressing-products">
+        <div id="produits-bloger" class="dressing-products">
         <?php 
             if(count($products) > 6) {
                 $i = 0;

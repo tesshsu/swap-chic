@@ -285,7 +285,11 @@ jQuery(document).ready(function () {
             jQuery("html, body").scrollTop(0);
         }
     }
-
+	
+	jQuery('#help-addproduct img').on("click", function() {
+		    jQuery('#help-addproduct').hide();
+            jQuery('html, body').css('overflow', 'visible');
+        });
     // Check device size
     if(jQuery(window).width() <= 768) {
         var isMobile = true; 
@@ -1924,7 +1928,7 @@ jQuery(document).ready(function () {
         jQuery("html, body").css('overflow', 'visible');
     }
    // Product add help bubble
-    if ( Cookies.get("hide-help-addproduct") != 1 && urlArray[1] == 'ajouter-produit') {
+    /*if ( Cookies.get("hide-help-addproduct") != 1 && urlArray[1] == 'ajouter-produit') {
         jQuery("html, body").scrollTop(0);
         jQuery("html, body").css('overflow', 'hidden');
         jQuery('.addproduct-title > *, #addproduct-form > *:not(.help)').addClass('blurred');
@@ -1940,7 +1944,7 @@ jQuery(document).ready(function () {
         });
     } else {
         jQuery("html, body").css('overflow', 'visible');
-    }
+    }*/
     jQuery('[name=hide-help]').change( function (){
         Cookies.set("hide-helps", 1, { expires: 36500 });
         jQuery(this).parents('.help').hide();
@@ -2005,4 +2009,61 @@ jQuery(document).ready(function () {
             jQuery('#edit-product-pictures')[0].submit();
         }
     });
+	
+	jQuery('.misha_loadmore').click(function(){
+ 
+		var button = $(this),
+		    data = {
+			'action': 'loadmore',
+			'query': misha_loadmore_params.posts, // that's how we get params from wp_localize_script() function
+			'page' : misha_loadmore_params.current_page
+		};
+ 
+		jQuery.ajax({ // you can also use $.post here
+			url : misha_loadmore_params.ajaxurl, // AJAX handler
+			data : data,
+			type : 'POST',
+			beforeSend : function ( xhr ) {
+				button.text('Loading...'); // change the button text, you can also add a preloader image
+			},
+			success : function( data ){
+				if( data ) { 
+					button.text( 'More posts' ).prev().before(data); // insert new posts
+					misha_loadmore_params.current_page++;
+ 
+					if ( misha_loadmore_params.current_page == misha_loadmore_params.max_page ) 
+						button.remove(); // if last page, remove the button
+ 
+					// you can also fire the "post-load" event here if you use a plugin that requires it
+					// $( document.body ).trigger( 'post-load' );
+				} else {
+					button.remove(); // if no data, remove the button as well
+				}
+			}
+		});
+	});
+	
+	//add vip slider
+	if (jQuery('.actualites #produits-bloger').hasClass('slick-initialized')) {
+            jQuery('.actualites #produits-bloger.slick-initialized.slick-slider').slick('setPostion');
+        } else {
+            if(isMobile) {
+                jQuery('.actualites #produits-bloger').slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: '0px',
+                    arrows: false,
+                    adaptiveHeight: false
+                });
+            } else {
+                jQuery('.actualites #produits-bloger').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    centerMode: false,
+                    arrows: true,
+                    adaptiveHeight: false
+                });
+            }
+        }
 });

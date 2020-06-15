@@ -1778,6 +1778,7 @@ main > .top input[type=text] {
 .articles-a-valider > .h2,
 .coups-de-coeur > .h2,
 .blog > .h2,
+.on-parle-de-nous > .h2,
 main > .top > .h2,
 .filters > .h2,
 #thread > .h2,
@@ -5420,7 +5421,6 @@ main .on-parle-de-nous {
   margin: 0 auto;
   width: 280px;
 }
-
 .blurred {
   opacity: .3!important;
 }
@@ -5713,7 +5713,7 @@ main .on-parle-de-nous {
     width: 100%;
     max-width: 800px!important;
   }
-
+  
   main.editer-produit {
     padding-top: 136px;
   }
@@ -5959,4 +5959,23 @@ main .on-parle-de-nous {
   .mobile-hidden {
     display: none!important;
   }
+}
+
+.misha_loadmore{
+	background-color: #ddd;
+	border-radius: 2px;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	letter-spacing:1px;
+	cursor:pointer;
+	text-transform: uppercase;
+	padding: 10px 0;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;  
+}
+.misha_loadmore:hover{
+	background-color: #767676;
+	color: #fff;
 }

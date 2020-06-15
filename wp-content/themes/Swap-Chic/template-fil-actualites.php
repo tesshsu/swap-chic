@@ -81,6 +81,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 		'nopaging' => false
     );
     $the_query = new WP_Query( $args );
+	$totalpost = $the_query->found_posts; 
 
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
@@ -111,7 +112,8 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
                         $product_nbr ++;
                     }
                     if($post_type == 'swapplaces') {
-                        array_push($swapplaces[$post_scope], $post_id);
+						array_push($swapplaces[$post_scope], $post_id);
+                        
                     }
                 }
             }
