@@ -811,6 +811,10 @@ header nav > *:last-child {
     width: 100%;
     margin-bottom: 10px;
   }
+  #searchform .search-options .search-toggle{
+	position: absolute;
+    right: 10px;  
+  }
   
   #searchform  .search-options {
     display: none;
@@ -4851,6 +4855,17 @@ main .on-parle-de-nous {
 	  display: inline-block;
 	  width: auto;
   }
+  .top .catalogue-toggle-wrapper{
+	  padding: 10px 30px;
+  }
+  #searchform .search-options .search-toggle{
+	position: absolute;
+    right: 15px;
+    bottom: 20px;
+  }
+   #searchform .h2{
+	   padding: 55px 10px 0;
+   }
 }
 
 .hidden {

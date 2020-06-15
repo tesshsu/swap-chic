@@ -41,7 +41,7 @@ if($_POST) {
     <input type="text" name="establishement" id="establishement" required>
     <label for="adresse">Ville de l'établissement : </label>
     <input type="text" name="ville" id="ville" required>
-	<label for="email">Votre Email : </label>
+	<label for="adresse">Votre Email : </label>
     <input type="email" name="email" id="mail" required>
     <div id="send-suggestion-submit" class="btn">Envoyer</div>
 </form>
