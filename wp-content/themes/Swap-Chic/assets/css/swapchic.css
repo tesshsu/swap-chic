@@ -4856,7 +4856,7 @@ main .on-parle-de-nous {
 	  display: inline-block;
 	  width: auto;
   }
-  .top .catalogue-toggle-wrapper{
+  .top .catalogue-toggle-wrapper{slick-slider
 	  padding: 10px 30px;
   }
   #searchform .search-options .search-toggle{
@@ -4867,6 +4867,19 @@ main .on-parle-de-nous {
    #searchform .h2{
 	   padding: 55px 10px 0;
    }
+   .actualites .vip-bottom .reseaux-sociaux-vip{
+	  margin-top: 20px;
+   }
+   .actualites .vip-bottom .social{
+	  margin: 10px auto;
+   }
+   .actualites .vip-bottom .dressing-products img{
+	   height: 300px;
+    }
+   .actualites .vip-bottom .slick-dots{
+	   bottom: 0;
+	   text-align: center;
+    }
 }
 
 .hidden {

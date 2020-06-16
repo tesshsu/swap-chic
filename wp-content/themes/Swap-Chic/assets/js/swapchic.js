@@ -2049,20 +2049,14 @@ jQuery(document).ready(function () {
         } else {
             if(isMobile) {
                 jQuery('.actualites #produits-bloger').slick({
-                    slidesToShow: 1,
+                    dots: true,
+					infinite: false,
+					mobileFirst: true,
+					speed: 500,
+					slidesToShow: 1,
                     slidesToScroll: 1,
-                    centerMode: true,
-                    centerPadding: '0px',
-                    arrows: false,
-                    adaptiveHeight: false
-                });
-            } else {
-                jQuery('.actualites #produits-bloger').slick({
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    centerMode: false,
-                    arrows: true,
-                    adaptiveHeight: false
+                    centerPadding: '30px',
+                    arrows: false
                 });
             }
         }
