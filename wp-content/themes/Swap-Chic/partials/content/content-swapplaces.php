@@ -1,12 +1,18 @@
 <?php 
     $post_id = get_query_var('post'); 
     $images = get_field('images', $post_id);
+	$instagram = get_field('instagram', $post_id);
+	if( $instagram ) {
+		$instagram_url = $instagram['url'];
+		$instagram_title = $instagram['title'];
+		$instagram_target = $instagram['target'] ? $link['target'] : '_self';
+    }
     $is_liked = isPostLiked($post_id);
 ?>
 
 <div data-id="<?php echo $post_id ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $post_id ); ?>" data-type="swapplace" class="swapplace<?php if($is_liked) echo ' liked' ?>">
     <div class="swapplace-carousel">
-        <img src="<?php echo $images[0] ?>" alt="">
+        <img src="<?php echo $images[0] ?>" alt="">		
     </div>
     <div class="swapplace-map"></div>
     <div class="infos-wrapper">
@@ -18,8 +24,7 @@
             </div>
         </div>
         <p class="adresse"><?php echo get_field('adresse', $post_id); ?></p>
-        <div class="social">
-        <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+		<div class="social">
             <div class="likes" onclick="<?php if(is_user_logged_in()) echo 'like('.'\'swapplaces\', \''.$post_id.'\''.', this)'?>">
                 <?php if(!$is_liked) { ?>
                     <img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'?>" alt="">
@@ -32,6 +37,13 @@
                 <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
                 <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
+			<?php if($instagram) { ?>
+			<div class="instagram_block">
+			    <a href="<?php echo esc_url( $instagram ); ?>" target="<?php echo esc_attr( $instagram ); ?>">
+                  <img src="<?php echo get_template_directory_uri().'/assets/images/instagram.svg'?>" alt="">
+				</a>
+            </div>
+			<?php } ?>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
                 <span></span>

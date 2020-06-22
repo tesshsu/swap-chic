@@ -69,19 +69,16 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         "more" => array(),
         "even_more" => array()
     );
-    $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
     $args = array (
         'post_type' => array('produits', 'swapplaces'),
         'post_status' => 'publish',
-		'posts_per_page' => 5,
         'orderby' => 'date',
         'order' => 'DESC',
         'author__not_in' => array($current_user_id),
-		'paged' => $paged,
-		'nopaging' => false
+        'nopaging' => true
     );
     $the_query = new WP_Query( $args );
-	$totalpost = $the_query->found_posts; 
 
     if ( $the_query->have_posts() ) {
         while ( $the_query->have_posts() ) {
@@ -112,8 +109,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
                         $product_nbr ++;
                     }
                     if($post_type == 'swapplaces') {
-						array_push($swapplaces[$post_scope], $post_id);
-                        
+                        array_push($swapplaces[$post_scope], $post_id);
                     }
                 }
             }
@@ -127,11 +123,9 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         'post_status'    => 'publish',
         'post_type'      => array('produits', 'swapplaces', 'dressings'),
         'order'          => 'DESC',
-		'posts_per_page' => 5,
         'orderby'        => 'comment_date',
         'author__not_in' => array($current_user_id),
-		'paged' => $paged,
-		'nopaging' => false
+        'nopaging'       => true
     );
 
     $comments_query = new WP_Comment_Query;

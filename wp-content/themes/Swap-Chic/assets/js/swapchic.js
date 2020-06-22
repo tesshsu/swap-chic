@@ -2049,7 +2049,7 @@ jQuery(document).ready(function () {
         } else {
             if(isMobile) {
                 jQuery('.actualites #produits-bloger').slick({
-                    dots: true,
+                    dots: false,
 					infinite: false,
 					mobileFirst: true,
 					speed: 500,
@@ -2060,4 +2060,5 @@ jQuery(document).ready(function () {
                 });
             }
         }
+	
 });
