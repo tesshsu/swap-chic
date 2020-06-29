@@ -19,24 +19,16 @@
     </div>
     <div class="dressing-products">
     <?php 
-        if(count($products) > 6) {
-            $i = 0;
-            foreach($products as $product) {
-                if($i < 5) { ?>
-                    <a href="<?php echo get_permalink($product); ?>">
-                    <?php echo get_the_post_thumbnail($product) ?>
-                    </a> <?php 
-                    $i++;
-                }
-            } ?>
-            <a href="<?php echo get_permalink($dressing); ?>">Voir son dressing complet</a><?php
-        } else {
+        if(count($products) > 1) {
             foreach($products as $product) { ?>
                 <a href="<?php echo get_permalink($product); ?>">
                 <?php echo get_the_post_thumbnail($product) ?>
                 </a> <?php 
             }
-        } ?>
+        } else {
+			echo "<h4>Pas d'article pour instant!!</h4>";
+		}			
+		?>
     </div>
     <div class="social">
         <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>

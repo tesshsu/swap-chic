@@ -747,8 +747,8 @@ jQuery(document).ready(function () {
                     adaptiveHeight: false
                   });
             }
-            jQuery('.catalogue #produits .see-more').css('max-width', jQuery('.catalogue #produits .slick-slide:not(.see-more)').css('width'));
-			jQuery('.catalogue #membres .see-more').css('max-width', jQuery('.catalogue #membres .slick-slide:not(.see-more)').css('width'));
+            //jQuery('.catalogue #produits .see-more').css('max-width', jQuery('.catalogue #produits .slick-slide:not(.see-more)').css('width'));
+			//jQuery('.catalogue #membres .see-more').css('max-width', jQuery('.catalogue #membres .slick-slide:not(.see-more)').css('width'));
         }
         jQuery('.produit:not(.slick-cloned)').each(function() {
             catalogue_posts.push(jQuery(this).attr('data-id')) ;
