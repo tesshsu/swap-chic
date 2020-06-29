@@ -492,7 +492,6 @@ h1.logo img {
 header {
   width: 100%;
   position: fixed;
-  top: 0;
   left: 0;
   z-index: 5;
   display: -webkit-box;
@@ -671,7 +670,6 @@ header nav > *:last-child {
           align-items: flex-start;
   position: fixed;
   z-index: 4;
-  top: 0;
   width: 100%;
   background-color: #F0F0F0;
   padding: 78px 20px 0px; }
@@ -768,6 +766,9 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+  .header{
+	  top: 20px;
+  }
   #searchform {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4907,6 +4908,12 @@ main .on-parle-de-nous {
 	.catalogue .top h2{
 		padding: 0;
 	}
+	aside.profil .links{
+	  padding: 120px 20px 0;
+    }
+	aside.profil .user{
+	  top: 30px;
+    }
 }
 
 .hidden {
@@ -5707,7 +5714,7 @@ main .on-parle-de-nous {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    top: 68px;
+    top: 85px;
     left: 0;
     height: calc(100% - 68px); }
 

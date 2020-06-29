@@ -14,6 +14,7 @@ $current_user_id = get_current_user_id();
 <div class="top">
     <div class="catalogue-toggle-wrapper">
         <div id="catalogue-produits" class="bold"><a href="#produits">Produits</a></div>
+		<div id="catalogue-membres"><a href="#membres">Membres</a></div>
         <div id="catalogue-swap-places"><a href="#swapplaces">Swap-places</a></div>
     </div>
     <h2 class="h2">Les <span id="data-type">produits</span> à <span class="scope-toggle"><span class="scope"><?php echo $scope_location?></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>

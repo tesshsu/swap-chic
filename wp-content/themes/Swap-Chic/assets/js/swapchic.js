@@ -285,11 +285,12 @@ jQuery(document).ready(function () {
             jQuery("html, body").scrollTop(0);
         }
     }
-	
+    //add produit tip block hide as click cross
 	jQuery('#help-addproduct img').on("click", function() {
 		    jQuery('#help-addproduct').hide();
             jQuery('html, body').css('overflow', 'visible');
         });
+		
     // Check device size
     if(jQuery(window).width() <= 768) {
         var isMobile = true; 
@@ -410,7 +411,7 @@ jQuery(document).ready(function () {
             // Replaced by the openChatSwapplace and openChatProduct functions
             //window.location.assign('https://' + window.location.host + '/messagerie/discussion?to=' + jQuery(e.toElement.parentNode).attr('data-userid'));
         } else if(jQuery(e.toElement).parents('#pending').length) {
-            window.open('https://' + window.location.host + '/?post_type=produits&p=' + jQuery(this).attr('data-id'));
+            window.location.assign('https://' + window.location.host + '/?post_type=produits&p=' + jQuery(this).attr('data-id'));
         } else {
             if(jQuery(this).hasClass('produit')) {
                 window.location.assign('https://' + window.location.host + '/produits/' + jQuery(this).attr('data-slug'));
@@ -722,11 +723,12 @@ jQuery(document).ready(function () {
         jQuery('.filters-membres').hide();
         jQuery('#data-type').html('produits');
         // Init or reset carousel
-        if (jQuery('.catalogue #produits').hasClass('slick-initialized')) {
+        if (jQuery('.catalogue #produits, .catalogue #membres').hasClass('slick-initialized')) {
             jQuery('.catalogue #produits.slick-initialized.slick-slider').slick('setPostion');
+			jQuery('.catalogue #membres.slick-initialized.slick-slider').slick('setPostion');
         } else {
             if(isMobile) {
-                jQuery('.catalogue #produits').slick({
+                jQuery('.catalogue #produits, .catalogue #membres').slick({
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: false,
@@ -736,7 +738,7 @@ jQuery(document).ready(function () {
                     adaptiveHeight: false
                   });
             } else {
-                jQuery('.catalogue #produits').slick({
+                jQuery('.catalogue #produits, .catalogue #membres').slick({
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: false,
@@ -746,6 +748,7 @@ jQuery(document).ready(function () {
                   });
             }
             jQuery('.catalogue #produits .see-more').css('max-width', jQuery('.catalogue #produits .slick-slide:not(.see-more)').css('width'));
+			jQuery('.catalogue #membres .see-more').css('max-width', jQuery('.catalogue #membres .slick-slide:not(.see-more)').css('width'));
         }
         jQuery('.produit:not(.slick-cloned)').each(function() {
             catalogue_posts.push(jQuery(this).attr('data-id')) ;
@@ -2009,39 +2012,12 @@ jQuery(document).ready(function () {
             jQuery('#edit-product-pictures')[0].submit();
         }
     });
-	
-	jQuery('.misha_loadmore').click(function(){
- 
-		var button = $(this),
-		    data = {
-			'action': 'loadmore',
-			'query': misha_loadmore_params.posts, // that's how we get params from wp_localize_script() function
-			'page' : misha_loadmore_params.current_page
-		};
- 
-		jQuery.ajax({ // you can also use $.post here
-			url : misha_loadmore_params.ajaxurl, // AJAX handler
-			data : data,
-			type : 'POST',
-			beforeSend : function ( xhr ) {
-				button.text('Loading...'); // change the button text, you can also add a preloader image
-			},
-			success : function( data ){
-				if( data ) { 
-					button.text( 'More posts' ).prev().before(data); // insert new posts
-					misha_loadmore_params.current_page++;
- 
-					if ( misha_loadmore_params.current_page == misha_loadmore_params.max_page ) 
-						button.remove(); // if last page, remove the button
- 
-					// you can also fire the "post-load" event here if you use a plugin that requires it
-					// $( document.body ).trigger( 'post-load' );
-				} else {
-					button.remove(); // if no data, remove the button as well
-				}
-			}
-		});
-	});
+
+    // Product validation process
+    jQuery('.produit .admin-actions .validate, .produit-single .admin-actions .validate').click(function() {
+        var form = jQuery(this).parents('form')[0];
+        form.submit();
+    });
 	
 	//add vip slider
 	if (jQuery('.actualites #produits-bloger').hasClass('slick-initialized')) {
@@ -2049,7 +2025,7 @@ jQuery(document).ready(function () {
         } else {
             if(isMobile) {
                 jQuery('.actualites #produits-bloger').slick({
-                    dots: false,
+                    dots: true,
 					infinite: false,
 					mobileFirst: true,
 					speed: 500,
@@ -2060,5 +2036,4 @@ jQuery(document).ready(function () {
                 });
             }
         }
-	
 });

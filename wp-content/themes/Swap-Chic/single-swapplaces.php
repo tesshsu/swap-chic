@@ -10,6 +10,12 @@ get_header(); ?>
     $post_slug = $post->post_name;
     $post_id = get_the_id(); 
     $images = get_field('images', $post_id);
+	$instagram = get_field('instagram', $post_id);
+	if( $instagram ) {
+		$instagram_url = $instagram['url'];
+		$instagram_title = $instagram['title'];
+		$instagram_target = $instagram['target'] ? $link['target'] : '_self';
+    }
 ?>
 
 <div class="swapplace-single" data-id="<?php echo $post_id ?>" data-type="swapplace">
@@ -53,6 +59,13 @@ get_header(); ?>
                 <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
                 <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
+			<?php if($instagram) { ?>
+			<div class="instagram_block">
+			    <a href="<?php echo esc_url( $instagram ); ?>" target="<?php echo esc_attr( $instagram ); ?>">
+                  <img src="<?php echo get_template_directory_uri().'/assets/images/instagram.svg'?>" alt="">
+				</a>
+            </div>
+			<?php } ?>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">
                 <span></span>

@@ -39,8 +39,8 @@
     }
     $partner = get_userdata($partner_id);
 
-
 ?>
+
 <div class="discussion-title <?php if($is_online) echo 'online' ?>">
     <a href="javascript:history.back()" class="discussion-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
     <p class="h1">
@@ -51,8 +51,13 @@
 
 <div id="page-wrap">
     <div id="chat-wrap">
-       <?php //if (function_exists('wise_chat')) { wise_chat(); } ?>
+        <span id="chat-area"></span>
     </div>
+    <form id="send-message-area">
+        <div id="send-more-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/plus.svg'; ?>" alt=""></div>
+        <textarea id="sendie" placeholder="Votre message..." ></textarea>
+        <div id="send"><img src="<?php echo get_template_directory_uri().'/assets/images/send.svg'; ?>" alt=""></div>
+    </form>
     <div id="send-more" style="display:none">
         <div class="produits">
             <p class="h1">Produits</p>
@@ -181,3 +186,34 @@
 <?php
 get_footer();
 ?>
+
+<script>
+    var ids = [<?php echo $current_user_id;?>, <?php echo $partner_id;?>];
+    var post_id = <?php echo $post_id;?>;
+    var post_url = "<?php echo get_the_permalink($post_id); ?>";
+
+    var chat =  new Chat();
+     jQuery(document).ready(function() {
+        window.scrollTo(0,document.body.scrollHeight);
+        chat.getState(ids, post_id);
+        chat.update(ids, post_id);
+        setInterval('chat.update(ids, post_id)', 1000);
+        jQuery('#send').click(function() {
+            var text = jQuery('#sendie').val();
+            if(text.length > 0) {
+                jQuery('#sendie').css('height', 'calc(1.25em + 20px)');
+                
+                chat.send(text, ids, post_id, post_url);  
+            }
+            jQuery('#sendie').val("");
+        });
+        jQuery('.send-product').click(function() {
+            var text = 'POST_PRODUCT '+jQuery(this).find('input').val();
+            chat.send(text, ids, post_id, post_url);
+        });
+        jQuery('.send-swapplace').click(function() {
+            var text = 'POST_SWAPPLACE '+jQuery(this).find('input').val();
+            chat.send(text, ids, post_id, post_url);
+        });
+    });
+</script>
