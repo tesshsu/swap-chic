@@ -19,7 +19,18 @@
     </div>
     <div class="dressing-products">
     <?php 
-        if(count($products) > 1) {
+	   if(count($products) > 2) {
+            $i = 0;
+            foreach($products as $product) {
+                ?>
+                    <a href="<?php echo get_permalink($product); ?>">
+                    <?php echo get_the_post_thumbnail($product) ?>
+                    </a> <?php 
+                    $i++;
+					if($i > 2) break;
+            } ?>
+            <a id="moreDressingText" href="<?php echo get_permalink($dressing); ?>">Voir son dressing complet</a><?php
+        } else if(count($products) > 1) {
             foreach($products as $product) { ?>
                 <a href="<?php echo get_permalink($product); ?>">
                 <?php echo get_the_post_thumbnail($product) ?>
