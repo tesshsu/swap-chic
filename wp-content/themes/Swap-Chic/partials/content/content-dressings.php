@@ -37,7 +37,7 @@
                 </a> <?php 
             }
         } else {
-			echo "<h4>Pas d'article pour instant!!</h4>";
+			echo "<h4>pas d’article pour l’instant mais continuez à suivre les membres de votre ville</h4>";
 		}			
 		?>
     </div>
