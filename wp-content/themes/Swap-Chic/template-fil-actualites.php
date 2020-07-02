@@ -38,11 +38,9 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 ?>
 
 
-<div class="top">
-    <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
-    <?php get_template_part( 'partials/form/scope', 'change'); ?>
+<div class="top">    
     <div class="alert-notice">
-        <a href="/recherche-avancee">Tu recherches un produit en particulier ?</br>Utilise la recherche avancée et créé ton alerte !</a>
+        <a href="/recherche-avancee">Ajoute ton dressing ?</br>Et rencontre les membres de ta ville !</a>
     </div>
 </div>
 
@@ -139,31 +137,6 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
                 // Only show comments in the scope
                 if($lowest_scope_level == 'postal_code' && $post_scope == 'scope') {
                     array_push($postlist[$post_scope], array('comments', $comment_id));
-                }
-            }
-        }
-    }
-
-    $args = array(
-        'role' => 'contributor',
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'nopaging' => true,
-        'exclude' => array( '-'.$current_user_id )
-    );
-    $user_query = new WP_User_Query( $args );
-    if (!empty($user_query->results)) {
-        foreach ( $user_query->results as $user ) {
-            $user_id = $user->ID;
-            if(get_field('is_influenceuse', 'user_'.$user_id) == 1){
-                if(checkUserRegion($user_id, $scope)){
-                    $postlist["featured"]["vip"] = $user_id;
-                }
-            }
-            if(userHasProducts($user_id)) {
-                $user_scope = getUserScope($user_id, $scope);
-                if($user_scope != false) {
-                    array_push($postlist[$user_scope], $user_id);
                 }
             }
         }

@@ -58,7 +58,11 @@ if(is_user_logged_in()) {
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; if(!empty($_GET)){ echo $scope; } ?>" <?php if($path[1] == 'acutalites'){ echo "class='active'"; } ?>><img src="<?php echo get_template_directory_uri().'/assets/images/fil.svg' ?>" alt="">Mon fil</a>
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/catalogue/'; if(!empty($_GET)){ echo $scope; }'#produits' ?>" <?php if($path[1] == 'catalogue'){ echo "class='active'"; } ?> ><img src="<?php echo get_template_directory_uri().'/assets/images/catalogue.svg' ?>" alt="">Mon catalogue</a>
 				</div>
-				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/profile.svg' ?>" alt=""></div>
+				<div class="profil-memuIcon">
+				    <a href="<?php echo $logout_url ?>">
+						<img src="<?php echo get_template_directory_uri().'/assets/images/profile.svg' ?>" alt="">
+					</a>
+				</div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
 				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/mag.svg' ?>" alt="Recherche"></div>
@@ -80,6 +84,10 @@ if(is_user_logged_in()) {
 				</a>
 			</nav>
 		</header>
+		<nav class="sp-menu-content">
+			<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
+			<div class="alert-notice"> <a href="/recherche-avancee">Créé ton Event !</a> </div>
+		</nav>
 		<?php 
 			if(!empty($notifs_confirmation)) {
 				set_query_var('notifs', $notifs_confirmation);

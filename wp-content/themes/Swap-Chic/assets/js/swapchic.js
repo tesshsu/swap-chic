@@ -723,8 +723,9 @@ jQuery(document).ready(function () {
         jQuery('.filters-membres').hide();
         jQuery('#data-type').html('produits');
         // Init or reset carousel
-        if (jQuery('.catalogue #produits').hasClass('slick-initialized')) {
+        if (jQuery('.catalogue #produits, .catalogue #membres').hasClass('slick-initialized')) {
             jQuery('.catalogue #produits.slick-initialized.slick-slider').slick('setPostion');
+			jQuery('.catalogue #membres.slick-initialized.slick-slider').slick('setPostion');
         } else {
             if(isMobile) {
                 jQuery('.catalogue #produits, .catalogue #membres').slick({
