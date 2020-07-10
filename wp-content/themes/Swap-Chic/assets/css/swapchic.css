@@ -512,9 +512,7 @@ header {
   background-color: #F0F0F0;
   -webkit-transition: 0.3s ease-in all;
   -o-transition: 0.3s ease-in all;
-  transition: 0.3s ease-in all;
-   border-bottom: 1px solid #b2895d;
-}
+  transition: 0.3s ease-in all; }
 
 .customize-support header {
   top: 46px; }
@@ -769,9 +767,6 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
-  .sp-menu-content img{
-	 display: none;
-   }
   .header{
 	  top: 20px;
   }
@@ -1584,6 +1579,7 @@ footer a img {
           align-items: center;
 }
 
+main.actualites,
 main.editer-produit,
 main.alertes-enregistrees,
 main.liste-de-souhait,
@@ -1628,7 +1624,7 @@ main.editer-produit {
 }
 
 main.actualites > .top {
-  /* margin-bottom: 20px;  */ }
+  margin-top: -60px;  }
 
 main.messagerie > .top {
   padding-top: 80px;
@@ -2032,7 +2028,7 @@ main > .top #scope-modal input[type=text] {
 .map {
   overflow: hidden;
   display: block;
-  max-height: 500px;
+  /* max-width: 420px; */
   min-width: 320px;
   padding: 20px 0;
   margin: 0 auto; }
@@ -4933,10 +4929,6 @@ main .on-parle-de-nous {
 		height: 100px;
 		margin-top: 20px;
 	}
-	.sp-menu-content img{
-	   display: block;
-	   width: 30px;
-    }
 	
 }
 
@@ -5593,6 +5585,9 @@ main .on-parle-de-nous {
   .desktop {
     display: none!important;
   }
+  .catalogue #produits .slick-slide .produit-thumbnail img{
+	  height: auto;
+  }
 }
 
 @media all and (min-width:769px) {
@@ -5773,8 +5768,7 @@ main .on-parle-de-nous {
   #searchresults,
   #page-wrap {
     width: 100%;
-    text-align: center;
-    margin: 0 auto;
+    max-width: 600px!important;
   }
   
   main .on-parle-de-nous{
@@ -6032,7 +6026,6 @@ main .on-parle-de-nous {
     display: none!important;
   }
 }
-
 .misha_loadmore{
 	background-color: #ddd;
 	border-radius: 2px;
@@ -6056,12 +6049,23 @@ main .on-parle-de-nous {
 .wcContainer .wcWindowTitle{
 	display: none !important;
 }
+
 /*new actual fil ui*/
 .sp-menu-content{	
-    padding: 25px 25px 5px 25px;
+    padding: 45px 25px 5px 25px;
     /*background: #F0F0F0;*/
 	display: flex;
 }
-.sp-menu-content .alert-notice{
-	
+@media all and (max-width:480px) {
+.sp-menu-content img{
+	   display: block;
+	   width: 30px;
+    }
+}
+
+#thread .swapplace{
+	display: none;
+}
+#thread .produit{
+	display: none;
 }

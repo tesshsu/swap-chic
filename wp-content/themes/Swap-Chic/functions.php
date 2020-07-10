@@ -2389,7 +2389,7 @@ function isDiscussionRead($partner_id) {
 * Parameters : int $reciever_id, string $event, string  $link, int $event_on
 * Return : bool
 */
-function notify($reciever_id, $event, $link, $event_on){
+/*function notify($reciever_id, $event, $link, $event_on){
 
 	$user_id = get_current_user_id();
 	// We start building the notification text with the username 
@@ -2444,7 +2444,7 @@ function notify($reciever_id, $event, $link, $event_on){
 	);
 
 	add_row('field_5e010aea5c731', $row, 'user_'.$reciever_id);
-}
+}*/
 
 /* 
 * Ajax function to like a post, see the ajax.swapchic.js file for more infos

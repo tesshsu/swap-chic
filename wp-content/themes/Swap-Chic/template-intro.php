@@ -39,7 +39,7 @@ Template Post Type: page
 
 </div>
 <div class="intro-actions">
-    <div class="skip">Passer l'intro</div>
+	<div class="skip"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/sign-in' ?>">Passer l'intro</a></div>
     <div class="prev hidden btn">Précedent</div>
     <div class="next btn">Suivant</div>
 </div>

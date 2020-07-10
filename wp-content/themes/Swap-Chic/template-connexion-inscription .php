@@ -86,7 +86,7 @@ if($_POST) {
                 get_template_part( 'partials/user/user', 'login' );
                 get_template_part( 'partials/user/user', 'signup' );
             ?>
-            <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'] ?>" class="link intro-replay">Revoir l'introduction</a>
+            <a href="https://swap-chic.com/" class="link intro-replay">Revoir l'introduction</a>
         </div>
 <?php
     get_footer();

@@ -1781,11 +1781,6 @@ jQuery(document).ready(function () {
         }
     });
 
-    jQuery('.intro-actions .skip').click(function(){
-        Cookies.set("intro_seen", 1, { expires: 36500 });
-        window.location.assign(window.location.origin+"/sign-in");        
-    });
-
     jQuery('#intro-title img').animate({opacity: 1}, 1200);
     jQuery('.intro-actions').delay(1200).animate({bottom: 0}, 600);
 

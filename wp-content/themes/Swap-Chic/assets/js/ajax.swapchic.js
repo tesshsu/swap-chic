@@ -441,7 +441,7 @@ function sendSellConfirmation(id, element) {
 * Parameters : int id, int partner_id, HTMLElement element
 * Return : none
 */
-function confirmSell(id, partner_id, element) {
+/*function confirmSell(id, partner_id, element) {
     if(jQuery('#confirmation-popup').children().length == 1) {
         jQuery('#confirmation-popup').remove();
         location.reload(true);
@@ -459,7 +459,7 @@ function confirmSell(id, partner_id, element) {
             // console.log(response);
         }
     );
-}
+}*/
 
 /*
 * Deny a sale

@@ -47,6 +47,9 @@
             <?php foreach($adresses as $adresse) { ?>
                 <div data-id="<?php echo $adresse[0] ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $adresse[0] ); ?>">
                     <img src="<?php echo get_field('images', $adresse[0])[0] ?>" alt="">
+					 <p class="h1"><?php echo get_the_title($adresse[0]) ?></p>
+                     <p><?php echo $adresse[1] ?></p>
+                     <p class="href">En savoir plus...</p>
                 </div> 
             <?php } ?>
         </div>
@@ -60,4 +63,5 @@
             <?php } ?>
         </div>
     </div>
+	<div class="alert-notice"> <a href="/recherche-avancee">Rconterant connais tex endrois proche de chez toi! </br> et tu prete a le lance plus zero dechet </a> </div>
 </div>

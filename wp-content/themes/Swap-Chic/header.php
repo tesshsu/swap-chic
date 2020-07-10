@@ -5,10 +5,10 @@
 
 $path = getPath();
 
-if( empty($path[1]) && isset($_COOKIE["intro_seen"]) && $_COOKIE["intro_seen"] == 1){ 
+/*if( empty($path[1]) && isset($_COOKIE["intro_seen"]) && $_COOKIE["intro_seen"] == 1){ 
 	header('Location: https://'.$_SERVER['HTTP_HOST'].'/sign-in');
 	exit();
-} 
+}*/ 
 
 if(is_user_logged_in()) {
 	$scope = getScope();
@@ -68,19 +68,7 @@ if(is_user_logged_in()) {
 				<div class="search-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/mag.svg' ?>" alt="Recherche"></div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
 					<img src="<?php echo get_template_directory_uri().'/assets/images/env.svg' ?>" alt="Messagerie">
-					<?php 
-						$notifs = get_field('notifications', 'user_'.$user_id);
-						if($notifs) { ?>
-							<span class="notifs"><?php echo count($notifs) ?></span> 
-					<?php 
-							$notifs_confirmation = array();
-							foreach($notifs as $notif) {
-								if($notif[event] == 'sell' || $notif[event] == 'swap') {
-									$notifs_confirmation[] = $notif;
-								}
-							}
-						} 
-					?>
+					
 				</a>
 			</nav>
 		</header>
@@ -89,10 +77,10 @@ if(is_user_logged_in()) {
 			<div class="alert-notice"> <a href="/recherche-avancee">Créé ton Event !</a> </div>
 		</nav>
 		<?php 
-			if(!empty($notifs_confirmation)) {
+			/*if(!empty($notifs_confirmation)) {
 				set_query_var('notifs', $notifs_confirmation);
 				get_template_part('partials/content/content', 'notifconf');
-			}
+			}*/
 		?>
 	<?php get_search_form(); ?>
 	<aside class="profil">
