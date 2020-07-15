@@ -603,21 +603,20 @@ function unvalidate(id, element) {
         jQuery(element).parents('.produit').hide();
     }
     jQuery.post(
-        swapchic_ajax.ajax_url,
+        snapeco_ajax.ajax_url,
         {
             'action': 'ajaxUnvalidate',
             'post_id': id
         },
         function(){
             if(jQuery(element).parents('.produit-single').length == 0) {
-                jQuery(element).parents('.produit').remove(); 
+                jQuery(element).parents('.produit').remove(); 				
             } else {
                 window.location.assign('https://' + window.location.host + '/articles-a-valider/');
             }
         }
     );
 }
-
 /*
 * Set a featured product
 * Parameters : int id, HTMLElement element

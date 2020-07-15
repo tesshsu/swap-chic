@@ -58,7 +58,7 @@ function checkUserAlerts($user_id) {
 	}
 	if(!empty($alerts_with_new_posts)) {
 		$to = get_userdata($user_id)->data->user_email;
-		$to = 'tomceccarelli2@gmail.com';
+		//$to = 'tomceccarelli2@gmail.com';
 		$subject = "Alerte : Nous avons trouvé un article qui peut t'intéresser";
 		$from = "noreply@swap-chic.com";
 		$headers = "Reply-To: Swap-Chic <noreply@swap-chic.com>\r\n";
@@ -3087,6 +3087,14 @@ function ajaxUnvalidate(){
 }
 add_action( 'wp_ajax_ajaxUnvalidate', 'ajaxUnvalidate' );
 
+add_action('wp_ajax_moveposttotrash', function(){
+ 
+	check_ajax_referer( 'trash-post_' . $_POST['post_id'] );
+	wp_trash_post( $_POST['post_id'] );
+ 
+	die();
+ 
+});
 
 /* 
 * Ajax function to delete a notification, see the ajax.swapchic.js file for more infos
@@ -3145,7 +3153,7 @@ function ajaxDeleteProduct(){
 add_action( 'wp_ajax_ajaxDeleteProduct', 'ajaxDeleteProduct' );
 
 /* 
-* Ajax function to send a sale confiramtion, see the ajax.swapchic.js file for more infos
+* Ajax function to send a sale confiramtion, ajaxValidatesee the ajax.swapchic.js file for more infos
 * Parameters : int $post_id, int $partner_id,
 * Return : none
 */

@@ -31,8 +31,9 @@
             }
         ?>
     </div>
-    <div class="admin-actions">
+   <div class="admin-actions">
         <div onclick="validate(<?php echo $post_id?>, this)" class="btn validate">Accepter</div>
-        <div onclick="unvalidate(<?php echo $post_id?>, this)" class="btn unvalidate">Refuser</div>
+        
+		<p class="btn unvalidate"><a onclick="unvalidate(<?php echo $post_id?>, this)" href="<?php echo get_delete_post_link( $post->ID ) ?>">Refuser</a></p>
     </div>
 </div>
