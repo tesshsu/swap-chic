@@ -8,10 +8,10 @@ $path = getPath();
 /*if( empty($path[1]) && isset($_COOKIE["intro_seen"]) && $_COOKIE["intro_seen"] == 1){ 
 	header('Location: https://'.$_SERVER['HTTP_HOST'].'/sign-in');
 	exit();
-}*/ 
+}*/
 
 if(is_user_logged_in()) {
-	$scope = getScope();
+	$scope = getScope($_GET);
 	$user_id = get_current_user_id();
 	$user = wp_get_current_user();
 	
@@ -58,29 +58,23 @@ if(is_user_logged_in()) {
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; if(!empty($_GET)){ echo $scope; } ?>" <?php if($path[1] == 'acutalites'){ echo "class='active'"; } ?>><img src="<?php echo get_template_directory_uri().'/assets/images/fil.svg' ?>" alt="">Mon fil</a>
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/catalogue/'; if(!empty($_GET)){ echo $scope; }'#produits' ?>" <?php if($path[1] == 'catalogue'){ echo "class='active'"; } ?> ><img src="<?php echo get_template_directory_uri().'/assets/images/catalogue.svg' ?>" alt="">Mon catalogue</a>
 				</div>
-				<div class="profil-memuIcon">
-				    <a href="<?php echo $logout_url ?>">
-						<img src="<?php echo get_template_directory_uri().'/assets/images/profile.svg' ?>" alt="">
-					</a>
-				</div>
+				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
 				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
-				<div class="search-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/mag.svg' ?>" alt="Recherche"></div>
+				<div class="search-toggle"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">
+						</a>
+				</div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
 					<img src="<?php echo get_template_directory_uri().'/assets/images/env.svg' ?>" alt="Messagerie">
-					
 				</a>
 			</nav>
 		</header>
-		<nav class="sp-menu-content">
-			<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
-			<div class="alert-notice"> <a href="/recherche-avancee">Créé ton Event !</a> </div>
-		</nav>
 		<?php 
-			/*if(!empty($notifs_confirmation)) {
-				set_query_var('notifs', $notifs_confirmation);
-				get_template_part('partials/content/content', 'notifconf');
-			}*/
+			if(!empty($notifs_confirmation)) {
+				//set_query_var('notifs', $notifs_confirmation);
+				//get_template_part('partials/content/content', 'notifconf');
+			}
 		?>
 	<?php get_search_form(); ?>
 	<aside class="profil">
@@ -134,9 +128,6 @@ if(is_user_logged_in()) {
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/inviter-amies' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Invite tes amies
-						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous' ?>" id="parlon_de_nous">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/calendar.svg'; ?>" alt="">On parle de nous
 						</a>
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);

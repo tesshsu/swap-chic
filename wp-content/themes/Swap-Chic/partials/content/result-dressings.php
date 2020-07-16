@@ -47,7 +47,7 @@
             <span><?php echo getCommentsNumber($dressing) ?></span>
         </div>
         <div class="share">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/share_social.svg'?>" alt="">
             <span>Partager</span>
         </div>
         <?php 

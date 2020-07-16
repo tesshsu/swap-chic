@@ -1058,10 +1058,10 @@ jQuery(document).ready(function () {
             jQuery('#searchform').submit();            
         }
     });
-    if(isMobile == false) {
+    if(isMobile == true) {
         jQuery('#search').click(function(e){
             e.stopPropagation();
-            jQuery('.search-options').css('display', 'flex'); 
+            jQuery('.search-options').css('display', 'block'); 
             jQuery('#searchform').css('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.25)'); 
             jQuery('.search-input').css('background', 'linear-gradient(180deg, transparent 50%, #f2f2f2 50%)'); 
         });
@@ -2028,5 +2028,62 @@ jQuery(document).ready(function () {
                     arrows: false
                 });
             }
+        }
+		
+	//add banner slider in home page
+	if (jQuery('.actualites #topBanner').hasClass('slick-initialized')) {
+
+            jQuery('.actualites #topBanner.slick-initialized.slick-slider').slick('setPostion');
+
+        } else {
+
+            if(isMobile) {
+
+                jQuery('.actualites #topBanner').slick({
+                    
+					slidesToShow: 1,
+
+                    slidesToScroll: 1,
+
+                    infinite: false,
+
+                    centerMode: true,
+
+                    centerPadding: '30px',
+
+                    arrows: false,
+
+                    adaptiveHeight: false,
+					
+					autoplay: true,
+					
+					autoplaySpeed: 2000
+
+                });
+
+            } else {
+
+                jQuery('.actualites #topBanner').slick({                  
+					
+					slidesToShow: 1,
+
+                    slidesToScroll: 1,
+
+                    infinite: false,
+
+                    centerMode: false,
+
+                    arrows: false,
+
+                    adaptiveHeight: false,
+					
+					autoplay: true,
+					
+					autoplaySpeed: 2000
+
+                });
+
+            }
+
         }
 });

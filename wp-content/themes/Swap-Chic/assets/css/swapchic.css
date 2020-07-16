@@ -87,10 +87,6 @@ blockquote.right {
 	float: right;
 	}
 
-#wpadminbar {
-  position: fixed;
-  top: 0 !important; }
-
 html, body {
   width: 100%;
   min-width: 320px;
@@ -699,7 +695,7 @@ header nav > *:last-child {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -767,6 +763,10 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+  #wpadminbar {
+	  position: relative;
+	  top: 30px !important; 
+  }
   .header{
 	  top: 20px;
   }
@@ -1624,7 +1624,7 @@ main.editer-produit {
 }
 
 main.actualites > .top {
-  margin-top: -60px;  }
+  /* margin-bottom: 20px;  */ }
 
 main.messagerie > .top {
   padding-top: 80px;
@@ -4929,7 +4929,13 @@ main .on-parle-de-nous {
 		height: 100px;
 		margin-top: 20px;
 	}
-	
+	#wpadminbar {
+	  position: relative;
+	  top: 10px !important; 
+    }
+	#searchform {
+		display: block;
+	}
 }
 
 .hidden {
@@ -6048,24 +6054,4 @@ main .on-parle-de-nous {
 /*chat UI*/
 .wcContainer .wcWindowTitle{
 	display: none !important;
-}
-
-/*new actual fil ui*/
-.sp-menu-content{	
-    padding: 45px 25px 5px 25px;
-    /*background: #F0F0F0;*/
-	display: flex;
-}
-@media all and (max-width:480px) {
-.sp-menu-content img{
-	   display: block;
-	   width: 30px;
-    }
-}
-
-#thread .swapplace{
-	display: none;
-}
-#thread .produit{
-	display: none;
 }

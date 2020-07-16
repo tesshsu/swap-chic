@@ -158,7 +158,7 @@ if($user['ID'] == $current_user_id) {
                 <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
             <div class="share">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/assets/images/share_social.svg';?>" alt="">
                 <span></span>
                 <div class="addtoany-wrapper">
                     <div class="a2a_kit a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($dressing) ?>" data-a2a-title="<?php echo get_post_field( 'post_name', get_post($dressing)) ?>">
