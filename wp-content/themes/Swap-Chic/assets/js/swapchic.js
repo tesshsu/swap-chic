@@ -2082,8 +2082,30 @@ jQuery(document).ready(function () {
 					autoplaySpeed: 2000
 
                 });
-
             }
-
         }
+	//add home page member slider
+    if (jQuery('.actualites #membresHome').hasClass('slick-initialized')) {
+            jQuery('.actualites #membresHome.slick-initialized.slick-slider').slick('setPostion');
+        } else {
+            if(isMobile) {
+                jQuery('.actualites #membresHome').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    infinite: false,
+                    centerMode: true,
+                    arrows: true,
+                    adaptiveHeight: false
+                  });
+            } else {
+                jQuery('.actualites #membresHome').slick({
+                    slidesToShow: 10,
+                    slidesToScroll: 10,
+                    infinite: false,
+                    centerMode: false,
+                    arrows: true,
+                    adaptiveHeight: false
+                  });
+            }          
+        }	
 });

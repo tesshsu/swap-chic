@@ -58,7 +58,7 @@ function checkUserAlerts($user_id) {
 	}
 	if(!empty($alerts_with_new_posts)) {
 		$to = get_userdata($user_id)->data->user_email;
-		//$to = 'tomceccarelli2@gmail.com';
+		$to = 'tomceccarelli2@gmail.com';
 		$subject = "Alerte : Nous avons trouvé un article qui peut t'intéresser";
 		$from = "noreply@swap-chic.com";
 		$headers = "Reply-To: Swap-Chic <noreply@swap-chic.com>\r\n";
@@ -2025,7 +2025,7 @@ function displayPosts($postlist) {
 			} else {
 				$nom = json_decode(file_get_contents('https://geo.api.gouv.fr/departements/'.$_GET['more'].'?fields=nom'))->nom;
 			}
-			print '<p class="h2">Plus d\'actualités de <br><span class="scope-level">'.$nom.'</span></p>';
+			//print '<p class="h2">Plus d\'actualités de <br><span class="scope-level">'.$nom.'</span></p>';
 		}
 		foreach($postlist["more"] as $key => $post) {
 			if($post[0] == 'comments') {
@@ -3087,14 +3087,6 @@ function ajaxUnvalidate(){
 }
 add_action( 'wp_ajax_ajaxUnvalidate', 'ajaxUnvalidate' );
 
-add_action('wp_ajax_moveposttotrash', function(){
- 
-	check_ajax_referer( 'trash-post_' . $_POST['post_id'] );
-	wp_trash_post( $_POST['post_id'] );
- 
-	die();
- 
-});
 
 /* 
 * Ajax function to delete a notification, see the ajax.swapchic.js file for more infos
@@ -3153,7 +3145,7 @@ function ajaxDeleteProduct(){
 add_action( 'wp_ajax_ajaxDeleteProduct', 'ajaxDeleteProduct' );
 
 /* 
-* Ajax function to send a sale confiramtion, ajaxValidatesee the ajax.swapchic.js file for more infos
+* Ajax function to send a sale confiramtion, see the ajax.swapchic.js file for more infos
 * Parameters : int $post_id, int $partner_id,
 * Return : none
 */
@@ -3998,13 +3990,72 @@ function flhm_wp_html_compression_start()
 {
     ob_start('flhm_wp_html_compression_finish');
 }
-add_action('admin_head', 'my_custom_fonts');
-
-function my_custom_fonts() {
-  echo '<style>
-    #menu-posts-discussions{
-	display: none;
-}
-  </style>';
-}
 add_action('get_header', 'flhm_wp_html_compression_start');
+
+/*Add check attempted login not over 5 time*/
+function check_attempted_login( $user, $username, $password ) {
+    if ( get_transient( 'attempted_login' ) ) {
+        $datas = get_transient( 'attempted_login' );
+
+        if ( $datas['tried'] >= 5 ) {
+            $until = get_option( '_transient_timeout_' . 'attempted_login' );
+            $time = time_to_go( $until );
+
+            return new WP_Error( 'too_many_tried',  sprintf( __( '<strong>ERROR</strong>: You have reached authentication limit, you will be able to try again in %1$s.' ) , $time ) );
+        }
+    }
+
+    return $user;
+}
+
+add_filter( 'authenticate', 'check_attempted_login', 30, 5 ); 
+function login_failed( $username ) {
+    if ( get_transient( 'attempted_login' ) ) {
+        $datas = get_transient( 'attempted_login' );
+        $datas['tried']++;
+
+        if ( $datas['tried'] <= 5 )
+            set_transient( 'attempted_login', $datas , 300 );
+    } else {
+        $datas = array(
+            'tried'     => 1
+        );
+        set_transient( 'attempted_login', $datas , 300 );
+    }
+}
+add_action( 'wp_login_failed', 'login_failed', 10, 1 ); 
+
+function time_to_go($timestamp)
+{
+
+    // converting the mysql timestamp to php time
+    $periods = array(
+        "second",
+        "minute",
+        "hour",
+        "day",
+        "week",
+        "month",
+        "year"
+    );
+    $lengths = array(
+        "60",
+        "60",
+        "24",
+        "7",
+        "4.35",
+        "12"
+    );
+    $current_timestamp = time();
+    $difference = abs($current_timestamp - $timestamp);
+    for ($i = 0; $difference >= $lengths[$i] && $i < count($lengths) - 1; $i ++) {
+        $difference /= $lengths[$i];
+    }
+    $difference = round($difference);
+    if (isset($difference)) {
+        if ($difference != 1)
+            $periods[$i] .= "s";
+            $output = "$difference $periods[$i]";
+            return $output;
+    }
+}

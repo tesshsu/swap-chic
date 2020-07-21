@@ -574,9 +574,11 @@ function denySwap(id, partner_post_id, partner_id, element) {
 */
 function validate(id, element) {
     if(jQuery(element).parents('.produit-single').length == 0) {
-        var msg = '<div class="pending-validation"><img src="https://' + window.location.host + '/wp-content/themes/Swap-Chic/assets/images/loader.gif" alt="" class="spinner">En cours de traitement ...</div>';
-        jQuery(element).parents('.produit').append(msg);
+        //var msg = '<div class="pending-validation"><img src="https://' + window.location.host + '/wp-content/themes/Swap-Chic/assets/images/loader.gif" alt="" class="spinner">En cours de traitement ...</div>';
+        //jQuery(element).parents('.produit').append(msg);
+		jQuery(element).parents('.produit').hide();
     }
+	console.log('pass click');
     jQuery.post(
         swapchic_ajax.ajax_url,
         {
@@ -585,7 +587,7 @@ function validate(id, element) {
         },
         function(){
             if(jQuery(element).parents('.produit-single').length == 0) {
-                jQuery(element).parents('.produit').remove(); 
+                jQuery(element).parents('.produit').remove();
             } else {
                 window.location.assign('https://' + window.location.host + '/articles-a-valider/');
             }

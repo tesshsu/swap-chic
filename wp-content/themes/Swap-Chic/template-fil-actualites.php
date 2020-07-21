@@ -23,9 +23,7 @@ $scope = getScope($_GET);
 $lowest_scope_level = getScopeFormat($scope["scope"]);
 set_query_var('scope', $scope);
 set_query_var('scope_string', getScopeString($_GET));
-
-$current_user_id = get_current_user_id();
-
+	
 // Display help bubbles if the cookies are not set
 if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     get_template_part( 'partials/content/content', 'helpgeo' );
@@ -38,22 +36,54 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 ?>
 <div id="topBanner" class="top">    
     <a href="#">
-       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pub1.jpg' ?>" alt="pub1">
+       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb1.jpg' ?>" alt="pub1">
     </a>
 	<a href="#">
-       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pub2.jpg' ?>" alt="pub2">
+       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb2.jpg' ?>" alt="pub2">
     </a>
 	<a href="#">
-      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pub3.jpg' ?>" alt="pub3">
+      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb3.jpg' ?>" alt="pub3">
     </a>
 </div>
+<div class="membre_block">
+  <h4>Membres connectees dans votre region</h4>
+  <div id="membresHome">
+  <?php 
+    wp_reset_query();
+    $membres = array();
+    $args = array(
+        'role' => 'contributor',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'nopaging' => true,
+	    'exclude' => array( '-'.$current_user_id )
+    );
+    $user_query = new WP_User_Query( $args );
 
+    if ( ! empty( $user_query->results ) ) {
+        foreach ( $user_query->results as $user ) {
+            $user_id = $user->ID;
+			array_push($membres, $user_id);
+        }
+    }
+	if(!empty($membres)) {
+        foreach($membres as $membre){
+            set_query_var( 'user', $membre );
+            get_template_part( 'partials/content/content', 'membrehome' );
+        }        
+    } else {
+        //get_template_part( 'partials/content/content', 'noproducts' );
+		echo "no membres in your region";
+    }
+    ?>
+  </div>
+</div>
 <div class="top">
+    <div class="alert-notice">
+        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Ajoute ton dressing Swap et echanges pres de chez toi !</a>
+    </div>
     <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
     <?php get_template_part( 'partials/form/scope', 'change'); ?>
-    <div class="alert-notice">
-        <a href="/recherche-avancee">Tu recherches un produit en particulier ?</br>Utilise la recherche avancée et créé ton alerte !</a>
-    </div>
 </div>
 
 <div id="thread">
@@ -61,8 +91,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     $postlist = array(
         "featured" => array(
             "cdc" => null, // Featured product
-            "popular" => null, // Most liked product
-            "vip" => null, // Influencer profile
+            "popular" => null, // Most liked product            
             "map" => null // swap places to display
         ),
         "scope" => array(),
@@ -164,12 +193,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     $user_query = new WP_User_Query( $args );
     if (!empty($user_query->results)) {
         foreach ( $user_query->results as $user ) {
-            $user_id = $user->ID;
-            if(get_field('is_influenceuse', 'user_'.$user_id) == 1){
-                if(checkUserRegion($user_id, $scope)){
-                    $postlist["featured"]["vip"] = $user_id;
-                }
-            }
+            $user_id = $user->ID;            
             if(userHasProducts($user_id)) {
                 $user_scope = getUserScope($user_id, $scope);
                 if($user_scope != false) {

@@ -763,6 +763,9 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+  #topBanner {
+	  margin-top: 30px;
+  }
   #wpadminbar {
 	  position: relative;
 	  top: 30px !important; 
@@ -1600,6 +1603,7 @@ main.recherche-avancee,
   padding-top:300px
 }
 
+
 @media screen and (min-width: 450px) {
   main.actualites,
   main.editer-produit,
@@ -2248,6 +2252,11 @@ img.wider {
 .produit .infos-wrapper .user {
   position: relative;
   padding-right: 32px;
+}
+
+.actualites .membre_block {
+	text-align: center;
+	padding: 1em;
 }
 
 .swaporsell {
@@ -3848,9 +3857,6 @@ img.wider {
 
 .slick-dots li.slick-active button {
   opacity: 1; }
-
-.slick-prev {
-  left: -10px; }
 
 .slick-prev:before {
   content: url("../images/arrowleft.svg"); }
