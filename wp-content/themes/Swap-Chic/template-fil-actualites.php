@@ -84,6 +84,9 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     </div>
     <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
     <?php get_template_part( 'partials/form/scope', 'change'); ?>
+    <?php 
+            get_template_part( 'partials/content/content', 'sort');
+        ?>
 </div>
 
 <div id="thread">
@@ -110,7 +113,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     );
 
     $args = array (
-        'post_type' => array('produits', 'swapplaces'),
+        'post_type' => array('produits', 'swapplaces'),	
         'post_status' => 'publish',
         'orderby' => 'date',
         'order' => 'DESC',

@@ -19,13 +19,12 @@ $current_user_id = get_current_user_id();
     </div>
     <h2 class="h2">Les <span id="data-type">produits</span> à <span class="scope-toggle"><span class="scope"><?php echo $scope_location?></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
     <?php get_template_part( 'partials/form/scope', 'change'); ?>
-    <?php if($_SERVER['REMOTE_ADDR'] == '2.15.174.220') { ?>
    <div class="filter-sort">
         <?php 
             get_template_part( 'partials/content/content', 'filter');
         ?>
     </div>
-    <?php } ?>
+
 </div>
 
 <div id="produits">

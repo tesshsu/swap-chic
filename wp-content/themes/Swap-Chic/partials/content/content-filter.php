@@ -1,8 +1,8 @@
 <div class="filter-open"><p>Filtrer...</p>
     <div class="filter-close" style="display:none"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
-    <div class="filters" style="display:none">
+    <div class="filters">
         <div id="filterform">
-            <div class="filters-produits" style="display:none">
+            <div class="filters-produits" style="display:block">
                 <p class="h3">Filtres produits :</p>
                 <div class="filter-action">
                     <p class="h4">Action : <span class="check-all">Cocher tout</span></p>
@@ -139,7 +139,7 @@
                         </label>
                     <?php } ?>
                 </div>
-                <div class="filter-etat">
+                <div class="filter-etat" style="display:none">
                     <p class="h4">État : <span class="check-all">Cocher tout</span></p>
                     <label for="filter-Neuf-avec-étiquette">
                         <input type="checkbox" value="Neuf avec étiquette" name="etat[]" data-name="etat" id="filter-Neuf-avec-étiquette" <?php if(in_array( 'Neuf avec étiquette', $filters['etat'])) echo 'checked' ?>>Neuf avec étiquette
@@ -157,7 +157,7 @@
                         <input type="checkbox" value="Correct" name="etat[]" data-name="etat" id="filter-Correct" <?php if(in_array( 'Correct', $filters['etat'])) echo 'checked' ?>>Correct
                     </label>
                 </div>
-                <div class="filter-couleur">
+                <div class="filter-couleur" style="display:none">
                     <p class="h4">Couleur : <span class="check-all">Cocher tout</span></p>
                     <?php foreach(get_field_object('field_5dea219f73216')['choices'] as $key => $value) {?>
                         <label for="filter-<?php echo $key ?>">
@@ -165,7 +165,7 @@
                         </label>
                     <?php } ?>
                 </div>
-                <div class="filter-imprime">
+                <div class="filter-imprime" style="display:none">
                     <p class="h4">Imprimé : <span class="check-all">Cocher tout</span></p>
                     <?php foreach(get_field_object('field_5e0f3060688f0')['choices'] as $key => $value) {?>
                         <label for="filter-<?php echo $key ?>">
@@ -173,7 +173,7 @@
                         </label>
                     <?php } ?>
                 </div>
-                <div class="filter-matiere">
+                <div class="filter-matiere" style="display:none">
                     <p class="h4">Matière : <span class="check-all">Cocher tout</span></p>
                     <?php foreach(get_field_object('field_5e0f2efd94455')['choices'] as $key => $value) {?>
                         <label for="filter-<?php echo $key ?>">
@@ -181,7 +181,7 @@
                         </label>
                     <?php } ?>
                 </div>
-                <div class="filter-saison">
+                <div class="filter-saison" style="display:none">
                     <p class="h4">Saison : <span class="check-all">Cocher tout</span></p>
                     <label for="filter-Automne">
                         <input type="checkbox" value="Automne" name="saison[]" data-name="saison" id="filter-Automne" <?php if(in_array( 'Automne', $filters['saison'])) echo 'checked' ?> >Automne

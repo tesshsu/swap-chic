@@ -2041,23 +2041,14 @@ jQuery(document).ready(function () {
 
                 jQuery('.actualites #topBanner').slick({
                     
+					dots: true,
+					infinite: false,
+					mobileFirst: true,
+					speed: 500,
 					slidesToShow: 1,
-
                     slidesToScroll: 1,
-
-                    infinite: false,
-
-                    centerMode: true,
-
                     centerPadding: '30px',
-
-                    arrows: false,
-
-                    adaptiveHeight: false,
-					
-					autoplay: true,
-					
-					autoplaySpeed: 2000
+                    arrows: false
 
                 });
 
@@ -2090,10 +2081,11 @@ jQuery(document).ready(function () {
         } else {
             if(isMobile) {
                 jQuery('.actualites #membresHome').slick({
-                    slidesToShow: 5,
-                    slidesToScroll: 5,
+                    slidesToShow: 7,
+                    slidesToScroll: 7,
                     infinite: false,
-                    centerMode: true,
+                    centerMode: false,
+					centerPadding: '30px',
                     arrows: true,
                     adaptiveHeight: false
                   });

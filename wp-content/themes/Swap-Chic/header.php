@@ -62,7 +62,7 @@ if(is_user_logged_in()) {
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
 				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'; ?>" alt="">
 						</a>
 				</div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
