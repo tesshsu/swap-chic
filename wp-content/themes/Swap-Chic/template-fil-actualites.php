@@ -46,7 +46,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     </a>
 </div>
 <div class="membre_block">
-  <h4>Membres connectees dans votre region</h4>
+  <h4>Membres connectées dans ta ville</h4>
   <div id="membresHome">
   <?php 
     wp_reset_query();
@@ -83,10 +83,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Ajoute ton dressing Swap et echanges pres de chez toi !</a>
     </div>
     <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
-    <?php get_template_part( 'partials/form/scope', 'change'); ?>
-    <?php 
-            get_template_part( 'partials/content/content', 'sort');
-        ?>
+    <?php get_template_part( 'partials/form/scope', 'change'); ?>    
 </div>
 
 <div id="thread">

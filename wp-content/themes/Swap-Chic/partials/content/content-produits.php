@@ -18,7 +18,7 @@
     </div>
     <div class="infos-wrapper">
         <h3 class="h1"><?php echo generateProductTitle($post_id) ?></h3>
-        <div class="user">
+        <!--div class="user">
             <p>
                 <a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user['ID'])) ?>">
                     <img src="<?php echo get_field('photo_profil', 'user_'.$user['ID']) ?>" alt="">
@@ -26,7 +26,7 @@
                 </a>
             </p>
             <div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)"><img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
-        </div>
+        </div-->
         <div class="infos">
             <p class="swaporsell">
                 <b><?php 
@@ -57,8 +57,9 @@
                 <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
                 <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
+			<div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)"><img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
             <div class="share">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/share_social.svg'?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
                 <span></span>
                 <div class="addtoany-wrapper">
                     <div class="a2a_kit a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($post_id) ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">

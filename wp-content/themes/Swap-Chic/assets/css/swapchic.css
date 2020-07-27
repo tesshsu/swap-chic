@@ -2027,8 +2027,6 @@ main > .top #scope-modal input[type=text] {
   margin-left: 10px; 
   cursor: pointer;}
 
-.swapplace,
-.produit,
 .map {
   overflow: hidden;
   display: block;
@@ -2036,6 +2034,14 @@ main > .top #scope-modal input[type=text] {
   min-width: 320px;
   padding: 20px 0;
   margin: 0 auto; }
+  
+.swapplace,
+.produit {
+	box-sizing: border-box;
+    width: 50%;
+    position: relative;
+	display: inline-block;
+}
 
 .catalogue .dressing,
 .catalogue .swapplace,
@@ -2058,14 +2064,7 @@ main > .top #scope-modal input[type=text] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border: 2px solid #fff;
   background: #EEEEEE;
   padding: 20px; }
 
@@ -2250,6 +2249,7 @@ img.wider {
   margin-right: 20px; }
 
 .produit .infos-wrapper .user {
+  display: none;
   position: relative;
   padding-right: 32px;
 }
@@ -2270,7 +2270,6 @@ img.wider {
 .on-parle-de-nous .post .social,
 .blog .post .social,
 .single-post .social,
-.infos-wrapper .social,
 .social-swapplace {
   cursor: pointer;
   position: relative;
@@ -2300,6 +2299,14 @@ img.wider {
   -o-transition: all ease .3s;
   transition: all ease .3s; }
 
+.infos-wrapper .social{
+	cursor: pointer;
+    position: relative;
+	display: flex;
+	align-items: center;
+	transition: all ease .3s;
+     margin: 0 auto;
+}
 
 .single-post .social {
   position: fixed;
@@ -4941,6 +4948,7 @@ main .on-parle-de-nous {
     }
 	#searchform {
 		display: block;
+		margin-top: -30px;
 	}
 }
 
