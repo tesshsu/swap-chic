@@ -19,7 +19,7 @@ if(!is_user_logged_in()) {
 get_header();
 
 $scope = getScope($_GET);
-
+$current_user_id = get_current_user_id();
 $lowest_scope_level = getScopeFormat($scope["scope"]);
 set_query_var('scope', $scope);
 set_query_var('scope_string', getScopeString($_GET));
@@ -59,7 +59,19 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 	    'exclude' => array( '-'.$current_user_id )
     );
     $user_query = new WP_User_Query( $args );
-
+    
+	/*if ( ! empty( $user_query->results ) ) {
+        foreach ( $user_query->results as $user ) {
+            $user_id = $user->ID;
+           if(userHasProducts($user_id)) {
+                $user_scope = getUserScope($user_id, $scope);
+                if($user_scope == 'scope') {
+                    array_push($membres, $user_id);
+                }
+            }
+        }
+    }*/
+	
     if ( ! empty( $user_query->results ) ) {
         foreach ( $user_query->results as $user ) {
             $user_id = $user->ID;
@@ -69,11 +81,11 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 	if(!empty($membres)) {
         foreach($membres as $membre){
             set_query_var( 'user', $membre );
-            get_template_part( 'partials/content/content', 'membrehome' );
-        }        
+			get_template_part( 'partials/content/content', 'membrehome' );
+        }	
     } else {
-        //get_template_part( 'partials/content/content', 'noproducts' );
-		echo "no membres in your region";
+		echo "no membres dans ta vi	lle";
+		get_template_part( 'partials/content/content', 'noproducts' );
     }
     ?>
   </div>

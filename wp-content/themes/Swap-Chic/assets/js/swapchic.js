@@ -2077,7 +2077,7 @@ jQuery(document).ready(function () {
         }
 	//add home page member slider
     if (jQuery('.actualites #membresHome').hasClass('slick-initialized')) {
-            jQuery('.actualites #membresHome.slick-initialized.slick-slider').slick('setPostion');
+            jQuery('.actualites #membresHome').slick('setPostion');
         } else {
             if(isMobile) {
                 jQuery('.actualites #membresHome').slick({
@@ -2099,5 +2099,5 @@ jQuery(document).ready(function () {
                     adaptiveHeight: false
                   });
             }          
-        }	
+        }
 });

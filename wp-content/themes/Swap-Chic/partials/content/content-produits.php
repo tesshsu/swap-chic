@@ -15,6 +15,7 @@
 <div data-id="<?php echo $post_id ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $post_id ); ?>" data-type="produit" class="produit<?php if($featured) echo ' cdc' ?><?php if($is_liked) echo ' liked' ?>">
     <div class="produit-thumbnail">
         <img src="<?php echo get_the_post_thumbnail_url($post_id) ?>"alt="">
+		<div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)"><img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
     </div>
     <div class="infos-wrapper">
         <h3 class="h1"><?php echo generateProductTitle($post_id) ?></h3>
@@ -57,7 +58,6 @@
                 <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
                 <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
-			<div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)"><img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
                 <span></span>
