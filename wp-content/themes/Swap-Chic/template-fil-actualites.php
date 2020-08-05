@@ -34,15 +34,9 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 }
 
 ?>
-<div id="topBanner" class="top">    
-    <a href="#">
-       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb1.jpg' ?>" alt="pub1">
-    </a>
+<div id="topBanner" class="top">
 	<a href="#">
-       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb2.jpg' ?>" alt="pub2">
-    </a>
-	<a href="#">
-      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb3.jpg' ?>" alt="pub3">
+      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.png' ?>" alt="pub4">
     </a>
 </div>
 <div class="membre_block">
@@ -59,18 +53,6 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 	    'exclude' => array( '-'.$current_user_id )
     );
     $user_query = new WP_User_Query( $args );
-    
-	/*if ( ! empty( $user_query->results ) ) {
-        foreach ( $user_query->results as $user ) {
-            $user_id = $user->ID;
-           if(userHasProducts($user_id)) {
-                $user_scope = getUserScope($user_id, $scope);
-                if($user_scope == 'scope') {
-                    array_push($membres, $user_id);
-                }
-            }
-        }
-    }*/
 	
     if ( ! empty( $user_query->results ) ) {
         foreach ( $user_query->results as $user ) {

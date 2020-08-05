@@ -2031,7 +2031,7 @@ jQuery(document).ready(function () {
         }
 		
 	//add banner slider in home page
-	if (jQuery('.actualites #topBanner').hasClass('slick-initialized')) {
+	/*if (jQuery('.actualites #topBanner').hasClass('slick-initialized')) {
 
             jQuery('.actualites #topBanner.slick-initialized.slick-slider').slick('setPostion');
 
@@ -2074,7 +2074,7 @@ jQuery(document).ready(function () {
 
                 });
             }
-        }
+        }*/
 	//add home page member slider
     if (jQuery('.actualites #membresHome').hasClass('slick-initialized')) {
             jQuery('.actualites #membresHome').slick('setPostion');

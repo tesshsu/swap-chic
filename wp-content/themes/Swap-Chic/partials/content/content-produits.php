@@ -16,7 +16,9 @@
     <div class="produit-thumbnail">
         <img src="<?php echo get_the_post_thumbnail_url($post_id) ?>"alt="">
 		<div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)"><img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
-    </div>
+        <p class="produit-size"><span><?php echo $sous_categorie ?></span><span class="mini"> <?php echo $categorie ?> </span></p>
+		<div class="size-block"><?php if($size = getProductSize($post_id)) echo $size; ?></div>
+	</div>
     <div class="infos-wrapper">
         <h3 class="h1"><?php echo generateProductTitle($post_id) ?></h3>
         <!--div class="user">
@@ -35,14 +37,12 @@
                     if( $action[0] == 'À vendre' && count($action) == 1) {
                         echo 'À vendre : '.get_field('prix', $post_id).'€'; 
                     } elseif(isset($action[1])) {
-                        echo 'À swaper ou à vendre : '.get_field('prix', $post_id).'€';
+                        echo 'À swaper/ à vendre : '.get_field('prix', $post_id).'€';
                     } else {
                         echo 'À swaper';
                     }
                 ?></b>
             </p>
-            <p><span><?php echo $sous_categorie ?></span><span class="mini"> <?php echo $categorie ?></span></p>
-            <p><?php if($size = getProductSize($post_id)) echo $size ?></p>
         </div>
         <div class="social">
             <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
