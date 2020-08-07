@@ -1978,9 +1978,9 @@ function displayPosts($postlist) {
 				set_query_var( 'post', $post );
 				get_template_part( 'partials/content/content', 'produits' );
 			} elseif($key == 'popular' && $post != null) {
-				print '<p class="h1" style="margin-top: 20px">Get it, le produit le plus liké</p>';
+				print '<p class="h1 plusLiked" style="margin-top: 20px">Get it, le produit le plus liké</p>';
 				set_query_var( 'post', $post );
-				get_template_part( 'partials/content/content', 'produits' );
+				get_template_part( 'partials/content/content', 'produitsPlusLiked' );
 				// Since we do not want to show the most popular product again
 				$skip = $post;
 			} elseif($key == 'vip' && $post != null) {

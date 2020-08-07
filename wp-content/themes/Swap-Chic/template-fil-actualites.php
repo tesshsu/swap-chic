@@ -36,7 +36,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 ?>
 <div id="topBanner" class="top">
 	<a href="#">
-      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.png' ?>" alt="pub4">
+      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.jpg' ?>" alt="pub4">
     </a>
 </div>
 <div class="membre_block">
@@ -74,7 +74,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 </div>
 <div class="top">
     <div class="alert-notice">
-        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Ajoute ton dressing Swap et echanges pres de chez toi !</a>
+        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Ajoute rapidement ton dressing : swap et vends dans ta ville avec tes amies</a>
     </div>
     <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
     <?php get_template_part( 'partials/form/scope', 'change'); ?>    
