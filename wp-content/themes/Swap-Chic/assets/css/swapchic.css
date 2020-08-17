@@ -103,7 +103,7 @@ main {
   width: 100%;
   max-width: 1400px;
   height: 100%;
-  margin-top: 30px; }
+  margin-top: -20px; }
 
 b, strong {
   font-family: 'Montserrat Bold';
@@ -554,8 +554,8 @@ header .profil-toggle img {
   width: 100%; }
 
 header nav > *:not(h1) {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -570,8 +570,8 @@ header nav .add-product-link {
   width: auto; }
 
 header nav .add-product-link img {
-  height: 23px;
-  margin-bottom: -3px;}
+  height: 26px;
+}
 
 header nav > .h1 {
   margin: 0 20px; }
@@ -667,7 +667,7 @@ header nav > *:last-child {
   z-index: 4;
   width: 100%;
   background-color: #F0F0F0;
-  padding: 28px 20px 0px;
+  padding: 28px 20px 20px;
   }
   
 .actualites .swapplace{
@@ -764,6 +764,22 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+  main.actualites,
+	main.editer-produit,
+	main.alertes-enregistrees,
+	main.liste-de-souhait,
+	main.membres-suivies,
+	main.swap-places-favorites,
+	main.proposer-swap-place,
+	main.inviter-amies,
+	main.articles-a-valider,
+	main.coups-de-coeur,
+	main.recherche-avancee,
+	#dashboard,
+	#searchresults,
+	#page-wrap {
+	  padding: 68px 0;
+	  margin: 0 auto; }
   #topBanner {
 	  margin-top: 30px;
   }
@@ -1591,24 +1607,6 @@ footer a img {
       -ms-flex-align: center;
           align-items: center;
 }
-
-main.actualites,
-main.editer-produit,
-main.alertes-enregistrees,
-main.liste-de-souhait,
-main.membres-suivies,
-main.swap-places-favorites,
-main.proposer-swap-place,
-main.inviter-amies,
-main.articles-a-valider,
-main.coups-de-coeur,
-main.recherche-avancee,
-#dashboard,
-#searchresults,
-#page-wrap {
-  padding: 68px 0;
-  margin: 0 auto; }
-
 .main.search-shown {
   padding-top:300px
 }
@@ -2139,9 +2137,6 @@ img.wider {
 .produit-carousel img {
   max-height: initial; }
 
-.cdc {
-  overflow: visible; }
-
 #thread > .h1 {
   font-size: 20px;
   line-height: normal;
@@ -2150,11 +2145,23 @@ img.wider {
   margin: 0;
   padding: 0 20px; }
 
-.cdc .infos-wrapper .h1 {
+.actualites .cdc .infos-wrapper .h1 {
   text-align: left;
   padding: 0; }
 		  
-.cdc .infos-wrapper .social	{
+.actualites .cdc .infos-wrapper .social	{
+	position: absolute;
+	right: 0;
+    bottom: 10px;
+}
+
+.liked .infos-wrapper .social	{
+	position: absolute;
+	right: 0;
+    bottom: 10px;
+}
+
+.plusLiked .infos-wrapper .social	{
 	position: absolute;
 	right: 0;
     bottom: 10px;
@@ -2291,6 +2298,10 @@ img.wider {
 .actualites .membre_block {
 	text-align: center;
 	padding: 1em;
+}
+
+.actualites .membre_block h4{
+	margin-bottom: 10px;
 }
 
 .swaporsell {
@@ -3142,7 +3153,7 @@ img.wider {
   display: none;
   position: absolute;
   left: 0;
-  top: 0;
+  top: -25px;
   padding: 10px; }
 
 .social.open > .social-close {
@@ -4703,16 +4714,14 @@ div.notfound {
 }
 
 .alert-notice a {
-  text-decoration: none;
-    background-color: #B2895D;
+    text-decoration: none;
     font-weight: 700;
     font-family: 'Playfair Display';
     padding: 10px 20px;
-    color: #B2895D;
+    color: #713d06;
     text-transform: none;
-    background-color: #fceed5;
-    border: 1px solid #B2895D;
-    border-radius: 8px;
+    background-color: #eeeeee;
+    border-radius: 20px;
 }
 
 /* RESPONSIVE */
@@ -4985,7 +4994,8 @@ main .on-parle-de-nous {
     }
 	#searchform {
 		display: block;
-		margin-top: -30px;
+        margin-top: 38px;
+		position: relative;
 	}
 	.actualites .produit-thumbnail{
 		padding: 0;
@@ -5010,9 +5020,6 @@ main .on-parle-de-nous {
     }
 	#intro-video h4{
 		margin-top: 350px;
-	}
-	main.actualites, main.editer-produit, main.alertes-enregistrees, main.liste-de-souhait, main.membres-suivies, main.swap-places-favorites, main.proposer-swap-place, main.inviter-amies, main.articles-a-valider, main.coups-de-coeur, main.recherche-avancee, #dashboard, #searchresults, #page-wrap{
-	    padding: 68px 0;
 	}
 }
 

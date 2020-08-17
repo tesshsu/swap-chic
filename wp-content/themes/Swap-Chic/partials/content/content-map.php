@@ -63,5 +63,5 @@
             <?php } ?>
         </div>
     </div>
-	<div class="alert-notice"> <a href="/recherche-avancee">Rconterant connais tex endrois proche de chez toi! </br> et tu prete a le lance plus zero dechet </a> </div>
+	<div class="alert-notice"> <a href="/recherche-avancee">Le swap est la meilleure façon de contribuer à une mode plus écologique </br> Prête à utiliser swap-chic ? </a> </div>
 </div>

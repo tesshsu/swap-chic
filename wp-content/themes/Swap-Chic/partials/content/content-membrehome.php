@@ -13,7 +13,7 @@
 <div data-id="<?php echo $dressing ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $dressing ); ?>" data-type="dressing" class="dressing<?php if($is_liked) echo ' liked' ?>">
     <div class="user">
 	   <a href="<?php echo get_permalink($dressing) ?>">
-        <img src="<?php echo $photo_profil_url ?>" alt="profil_photo">
+        <img src="<?php echo $photo_profil_url ?>" alt="">
        </a>
     </div>
 </div>

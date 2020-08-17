@@ -54,17 +54,26 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     );
     $user_query = new WP_User_Query( $args );
 	
-    if ( ! empty( $user_query->results ) ) {
+	if ( ! empty( $user_query->results ) ) {
         foreach ( $user_query->results as $user ) {
             $user_id = $user->ID;
-			array_push($membres, $user_id);
+           if(userHasProducts($user_id)) {
+                $user_scope = getUserScope($user_id, $scope);
+                if($user_scope == 'even_more') {
+                    array_push($membres, $user_id);
+                }
+            }
         }
     }
+	
 	if(!empty($membres)) {
         foreach($membres as $membre){
             set_query_var( 'user', $membre );
 			get_template_part( 'partials/content/content', 'membrehome' );
-        }	
+			
+        }
+         //set_query_var('scope_lvl', getLowestScopeLevel($_GET));
+         //set_query_var('category', 'membres');		
     } else {
 		echo "no membres dans ta vi	lle";
 		get_template_part( 'partials/content/content', 'noproducts' );
@@ -74,7 +83,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 </div>
 <div class="top">
     <div class="alert-notice">
-        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Ajoute rapidement ton dressing : swap et vends dans ta ville avec tes amies</a>
+        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Le swap est la meilleure façon de contribuer à une mode plus écologique, Prête à utiliser swap-chic ?</a>
     </div>
     <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
     <?php get_template_part( 'partials/form/scope', 'change'); ?>    
