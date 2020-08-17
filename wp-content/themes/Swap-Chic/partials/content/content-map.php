@@ -1,5 +1,6 @@
 <?php 
-    $swapplaces = get_query_var('swapplaces'); 
+    $swapplaces = get_query_var('swapplaces');
+	$dressing = get_query_var('dressing');
     $scope_position = getScopeLatLng(getScope($_GET));
     sortSwapplacesByDistance($swapplaces, $scope_position);
     $scope_lvl = get_query_var('map_scope'); 
@@ -37,7 +38,7 @@
 ?>
 
 <div class="map" data-level="<?php echo $map_lvl ?>">
-    <p>Nous avons trouvé <b><?php echo count($swapplaces) ?> swap-places</b> dans <?php echo $scope_name ?> :</p>
+    <p>Nous avons trouvé <b><?php echo count($swapplaces) ?> swap-places</b> dans <?php echo $scope_name ?> et <b><?php echo count($dressing) ?> articles</b>  :</p>
     <div class="map-iframe" id="map-<?php echo $scope_lvl ?>"></div>
     <div class="map-locate btn"><img src="<?php echo get_template_directory_uri().'/assets/images/target.svg' ?>" alt=""></div>
     <div class="map-draw btn">Voir le trajet</div>
@@ -63,5 +64,5 @@
             <?php } ?>
         </div>
     </div>
-	<div class="alert-notice"> <a href="/recherche-avancee">Le swap est la meilleure façon de contribuer à une mode plus écologique </br> Prête à utiliser swap-chic ? </a> </div>
+	<div class="alert-notice"> <a href="/recherche-avancee">Maintenant que tu fais partie de la communauti une bedhie contact tes membres de ta ville te comment ton SWAP? </a> </div>
 </div>

@@ -4,13 +4,6 @@ Template Name: Fil d'actualités
 Template Post Type: page
 */
 
-// This page has HUGE performance issues, asynchronous
-// loading (just images as well as whole posts) was 
-// reported as not working by the clients (but no bug
-// report was provided) and a page by page view is not
-// what they want, I'm out of ideas, good luck.
-
-
 if(!is_user_logged_in()) {
     header('Location: https://'.$_SERVER['HTTP_HOST']);
     exit();
@@ -23,7 +16,9 @@ $current_user_id = get_current_user_id();
 $lowest_scope_level = getScopeFormat($scope["scope"]);
 set_query_var('scope', $scope);
 set_query_var('scope_string', getScopeString($_GET));
-	
+
+
+
 // Display help bubbles if the cookies are not set
 if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     get_template_part( 'partials/content/content', 'helpgeo' );
@@ -59,7 +54,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
             $user_id = $user->ID;
            if(userHasProducts($user_id)) {
                 $user_scope = getUserScope($user_id, $scope);
-                if($user_scope == 'even_more') {
+                if($user_scope == 'scope') {
                     array_push($membres, $user_id);
                 }
             }
@@ -70,23 +65,21 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         foreach($membres as $membre){
             set_query_var( 'user', $membre );
 			get_template_part( 'partials/content/content', 'membrehome' );
-			
         }
-         //set_query_var('scope_lvl', getLowestScopeLevel($_GET));
-         //set_query_var('category', 'membres');		
+        set_query_var('scope_lvl', getLowestScopeLevel($_GET));
+        set_query_var('category', 'membres');
     } else {
-		echo "no membres dans ta vi	lle";
-		get_template_part( 'partials/content/content', 'noproducts' );
+		echo " Tu est l’une des premières membres dans ta ville, reste connectée pour voir les prochaines";
     }
     ?>
   </div>
 </div>
 <div class="top">
-    <div class="alert-notice">
-        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">Le swap est la meilleure façon de contribuer à une mode plus écologique, Prête à utiliser swap-chic ?</a>
-    </div>
     <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
-    <?php get_template_part( 'partials/form/scope', 'change'); ?>    
+    <?php get_template_part( 'partials/form/scope', 'change'); ?>
+    <div class="alert-notice">
+        <a href="/recherche-avancee">Ajoute rapidement ton dressing : Swap et vends dans ta villes avec tes amies</a>
+    </div>
 </div>
 
 <div id="thread">
@@ -94,7 +87,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     $postlist = array(
         "featured" => array(
             "cdc" => null, // Featured product
-            "popular" => null, // Most liked product            
+            "popular" => null, // Most liked product
             "map" => null // swap places to display
         ),
         "scope" => array(),
@@ -113,7 +106,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     );
 
     $args = array (
-        'post_type' => array('produits', 'swapplaces'),	
+        'post_type' => array('produits', 'swapplaces'),
         'post_status' => 'publish',
         'orderby' => 'date',
         'order' => 'DESC',
@@ -196,7 +189,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     $user_query = new WP_User_Query( $args );
     if (!empty($user_query->results)) {
         foreach ( $user_query->results as $user ) {
-            $user_id = $user->ID;            
+            $user_id = $user->ID;
             if(userHasProducts($user_id)) {
                 $user_scope = getUserScope($user_id, $scope);
                 if($user_scope != false) {
@@ -220,6 +213,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     displayPosts(sortPosts($postlist, 'distance'));
 ?>
 </div>
+<div class="chat-pop"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/chat.svg'?>" alt=""></a></div>
 
 <?php
     get_template_part( 'partials/content/content', 'end' );

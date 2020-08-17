@@ -14,6 +14,7 @@
     <div class="user">
 	   <a href="<?php echo get_permalink($dressing) ?>">
         <img src="<?php echo $photo_profil_url ?>" alt="">
+		<p><?php echo ucfirst($user->data->display_name) ?></p>
        </a>
     </div>
 </div>

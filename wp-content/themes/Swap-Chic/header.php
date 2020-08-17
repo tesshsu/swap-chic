@@ -53,6 +53,7 @@ if(is_user_logged_in()) {
 } ?>
 <?php wp_body_open(); ?>
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
+			<h4>Ton vide dressing éco-responsable</h4>
 			<nav>
 				<div class="desktop nav-desktop">
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; if(!empty($_GET)){ echo $scope; } ?>" <?php if($path[1] == 'acutalites'){ echo "class='active'"; } ?>><img src="<?php echo get_template_directory_uri().'/assets/images/fil.svg' ?>" alt="">Mon fil</a>
