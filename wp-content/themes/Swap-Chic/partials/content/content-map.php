@@ -64,5 +64,5 @@
             <?php } ?>
         </div>
     </div>
-	<div class="alert-notice"> <a href="/recherche-avancee">Maintenant que tu fais partie de la communauti une bedhie contact tes membres de ta ville te comment ton SWAP? </a> </div>
+	<div class="alert-notice"> <a href="/ajouter-produit">Maintenant que tu fais partie de la communauté #ActGreenBeChic, commence ton swap en contactant les membres de ta ville, alors, prête ? </a> </div>
 </div>

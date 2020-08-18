@@ -15,8 +15,10 @@ $path = getPath();
         <div class="checkboxes">
             <label for="search-produits"><input type="checkbox" value="produits" name="post_type[]" id="search-produits" checked />Produits</label>
             <label for="search-dressing"><input type="checkbox" value="dressings" name="post_type[]" id="search-dressing" />Membres</label>
-            <label for="search-swapplaces"><input type="checkbox" value="swapplaces" name="post_type[]" id="search-swapplaces" />Swap-places</label>
-        </div>
+            <label for="search-swapplaces"><input type="checkbox" value="swapplaces" name="post_type[]" id="search-swapplaces" />Swap-places</label>           
+		</div>
         <a href="/recherche-avancee">Recherche avancée</a>		
+    </div>
+	
     </div>
 </form>

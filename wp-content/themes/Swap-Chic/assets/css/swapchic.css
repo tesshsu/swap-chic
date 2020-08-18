@@ -578,7 +578,7 @@ header nav > *:not(h1) {
           align-items: center; }
 
 header nav > *:not(h1) img {
-  height: 30px; }
+  height: 25px; }
 
 header nav .add-product-link {
   width: auto; }
@@ -774,6 +774,9 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+  .chat-pop {
+	  display: none;
+  }
   #topBanner {
     margin-top: 30px;
 }
@@ -6173,7 +6176,7 @@ main .on-parle-de-nous {
     -ms-flex-align: center;
     align-items: center;
     padding: 15px;
-    background-color: #F0F0F0;
+    background-color: #3c3c3c;
     -webkit-transition: 0.3s ease-in all;
     -o-transition: 0.3s ease-in all;
     transition: 0.3s ease-in all;

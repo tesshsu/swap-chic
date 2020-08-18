@@ -34,10 +34,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.jpg' ?>" alt="pub4">
     </a>
 </div>
-<div class="membre_block">
-  <h4>Membres connectées dans ta ville</h4>
-  <div id="membresHome">
-  <?php 
+<?php 
     wp_reset_query();
     $membres = array();
     $args = array(
@@ -60,6 +57,15 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
             }
         }
     }
+?>
+<div class="membre_block">
+  <?php
+     if(!empty($membres)) {
+        echo "<h4>Membres connectées dans ta ville</h4>";
+	 }
+  ?>
+  <div id="membresHome">
+  <?php 
 	
 	if(!empty($membres)) {
         foreach($membres as $membre){
