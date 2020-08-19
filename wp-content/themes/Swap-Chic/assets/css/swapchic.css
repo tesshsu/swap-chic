@@ -578,7 +578,7 @@ header nav > *:not(h1) {
           align-items: center; }
 
 header nav > *:not(h1) img {
-  height: 25px; }
+  height: 24px; }
 
 header nav .add-product-link {
   width: auto; }
@@ -775,7 +775,7 @@ header nav > *:last-child {
 
 @media (min-width: 1050px) {
   .chat-pop {
-	  display: none;
+	  width: 6% !important;
   }
   #topBanner {
     margin-top: 30px;
@@ -6160,6 +6160,7 @@ main .on-parle-de-nous {
 .chat-pop{
 	width: 12%;
     position: fixed;
+	right: 0;
     top: 550px;
     z-index: 9;
     display: -webkit-box;
