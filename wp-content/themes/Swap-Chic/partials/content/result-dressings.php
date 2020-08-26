@@ -11,26 +11,17 @@
         <img src="<?php echo get_field('photo_profil', 'user_'.$user_id) ?>" alt="">
         <span><a href="<?php echo get_permalink($dressing) ?>"><?php echo ucfirst($user->data->display_name) ?></a>, <?php echo get_field('ville', 'user_'.$user_id) ?></span>
     </div>
-    <div class="dressing-products">
-    <?php 
-        if(count($products) > 6) {
-            $i = 0;
-            foreach($products as $product) {
-                if($i < 5) { ?>
-                    <a href="<?php echo get_permalink($product['produit']); ?>">
-                        <img src="<?php echo get_field('images', $product['produit'])[0] ?>" alt="">
-                    </a> <?php 
-                    $i++;
-                }
-            } ?>
-            <?php
-        } else {
+    <div class="dressing-products result-dressing">
+    <?php
+     
             foreach($products as $product) { ?>
-                <a href="<?php echo get_permalink($product['produit']); ?>">
-                    <img src="<?php echo get_field('images', $product['produit'])[0] ?>" alt="">
-                </a> <?php 
+                <a class="result-dressing-img" href="<?php echo get_permalink($product); ?>">
+                <?php echo get_the_post_thumbnail($product) ?>
+                </a>
+				 <p><?php echo get_the_title($produit) ?></p>
+				<?php 
             }
-        } ?>
+             ?>
     </div>
     <div class="social">
         <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
@@ -47,7 +38,7 @@
             <span><?php echo getCommentsNumber($dressing) ?></span>
         </div>
         <div class="share">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/share_social.svg'?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
             <span>Partager</span>
         </div>
         <?php 

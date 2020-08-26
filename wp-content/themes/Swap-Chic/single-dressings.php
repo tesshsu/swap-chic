@@ -58,7 +58,7 @@ if($user['ID'] == $current_user_id) {
 
 <div class="dressing-single <?php if($is_owner) echo 'profile'?>" data-type="dressing" data-id="<?php echo $post_id ?>">
     <div class="dressing-title">
-        <a href="<?php if( $_GET['from_product_add'] == 1) { echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; } else { echo 'javascript:history.back()'; } ?>" class="dressing-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
+        <a href="javascript:history.back()" class="dressing-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
     </div>
     <div class="pp">
         <img src="<?php echo get_field('photo_profil', 'user_'.$user['ID'])?>" alt="">
@@ -158,7 +158,7 @@ if($user['ID'] == $current_user_id) {
                 <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
             <div class="share">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/share_social.svg';?>" alt="">
+                <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">
                 <span></span>
                 <div class="addtoany-wrapper">
                     <div class="a2a_kit a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($dressing) ?>" data-a2a-title="<?php echo get_post_field( 'post_name', get_post($dressing)) ?>">

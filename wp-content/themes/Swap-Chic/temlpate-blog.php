@@ -33,7 +33,7 @@ Template Post Type: page
 			foreach($the_query->posts as $post) {
 				get_template_part( 'partials/content/content', 'posts' );
 			}
-		    //next_post_link();
+		    //next_post_link();
 			echo '<div class="misha_loadmore">More posts</div>';
 		}
     } else {
