@@ -96,7 +96,7 @@ jQuery(document).ready(function () {
                     1 != Cookies.get("alert_geolocation") &&
                         "actualites" == window.location.pathname.split("/")[1] &&
                         (alert(
-                            "Chère membre,\n Tu as refusé de partager tes données de gólocalisation avec Swap-Chic, si dans le futur tu change d'avis, rends toi dans les options de ton navigateur ou dans les paramètres de ton appareil !\n Bon shopping 😉"
+                            "Chère membre,\n Tu as refusé de partager tes données de géolocalisation avec Swap-Chic, si dans le futur tu change d'avis, rends toi dans les options de ton navigateur ou dans les paramètres de ton appareil !\n Bon shopping 😉"
                         ),
                         Cookies.set("alert_geolocation", 1, { expires: 36500 })),
                     (t = []),

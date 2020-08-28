@@ -1,5 +1,5 @@
 <?php 
-    $swapplaces = get_query_var('swapplaces');	
+    $swapplaces = get_query_var('swapplaces');    $produits = get_query_var('produits');	
     $scope_position = getScopeLatLng(getScope($_GET));
     sortSwapplacesByDistance($swapplaces, $scope_position);
     $scope_lvl = get_query_var('map_scope'); 
@@ -38,7 +38,8 @@
 ?>
 
 <div class="map" data-level="<?php echo $map_lvl ?>">
-    <div class="map-iframe" id="map-<?php echo $scope_lvl ?>"></div>
+    <p>Nous avons trouvé <b><?php echo count($swapplaces) ?> swap-places</b> dans <?php echo $scope_name ?> :</p>
+	<div class="map-iframe" id="map-<?php echo $scope_lvl ?>"></div>
     <div class="map-locate btn"><img src="<?php echo get_template_directory_uri().'/assets/images/target.svg' ?>" alt=""></div>
     <div class="map-draw btn">Voir le trajet</div>
     <div class="map-reset btn">Réinitialiser</div>
@@ -63,5 +64,4 @@
             <?php } ?>
         </div>
     </div>
-	<div class="alert-notice"> <a href="/ajouter-produit">Maintenant que tu fais partie de la communauté #ActGreenBeChic, commence ton swap en contactant les membres de ta ville, alors, prête ? </a> </div>
 </div>

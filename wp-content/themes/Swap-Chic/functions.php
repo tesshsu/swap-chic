@@ -2044,7 +2044,7 @@ function displayPosts($postlist) {
 				set_query_var( 'swapplaces', $post[1] );
 				set_query_var( 'produits', $post[1] );
 				set_query_var('map_scope', 'more');
-				get_template_part( 'partials/content/content', 'map' );
+				get_template_part( 'partials/content/content', 'map' );								print '<div class="alert-notice"> <a href="/ajouter-produit">Maintenant que tu fais partie de la communauté #ActGreenBeChic, commence ton swap en contactant les membres de ta ville, alors, prête ? </a> </div>';
 			}
 		}
 	}

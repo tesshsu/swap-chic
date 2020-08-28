@@ -81,11 +81,9 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
   </div>
 </div>
 <div class="top">
-    <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
-    <?php get_template_part( 'partials/form/scope', 'change'); ?>
-    <div class="alert-notice">
-        <a href="/recherche-avancee">Ajoute rapidement ton dressing : Swap et vends dans ta ville avec tes amies</a>
-    </div>
+    <div class="alert-notice-home">
+        <a href="/recherche-avancee">Ajoute rapidement ton dressing : Swap et vends dans ta ville avec tes amies</a>		        <a href="https://swap-chic.com/ajouter-produit/" class="btn add-product-home">Par ici</a>
+    </div>		 <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>    <?php get_template_part( 'partials/form/scope', 'change'); ?>
 </div>
 
 <div id="thread">
@@ -217,14 +215,13 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     }
 
     if(!empty($swapplaces['scope'])) {
-        $postlist["featured"]["map"] = $swapplaces['scope'];
+        print '<p class="text-count">Nous avons trouvé <b>'.count($produits['scope']).' articles </b> dans ton département</p>';		$postlist["featured"]["map"] = $swapplaces['scope'];
     }
     if(!empty($swapplaces['more'])) {
-        print '<p class="text-count">Nous avons trouvé <b>'.count($swapplaces['more']).' swap-places </b> dans ta département et <b>'.count($produits['more']).' articles </b></p>';
+        print '<p class="text-count">Nous avons trouvé <b>'.count($produits['more']).' articles </b> dans ton département</p>';
 		array_unshift($postlist["more"], array('map', $swapplaces['more']));
     } 
-    if(!empty($swapplaces['even_more'])) {
-	    array_unshift($postlist["even_more"], array('map', $swapplaces['even_more']));
+    if(!empty($swapplaces['even_more'])) {		print '<p class="text-count">Nous avons trouvé <b>'.count($produits['even_more']).' articles </b> dans ton département</p>';		array_unshift($postlist["even_more"], array('map', $swapplaces['even_more']));
     }
 
     // Then we sort and finally display the postlist
