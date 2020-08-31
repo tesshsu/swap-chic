@@ -103,12 +103,6 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 
     $posts = array();
     $product_nbr = 0;
-    $swapplaces = array(
-        "scope" => array(),
-        "more" => array(),
-        "even_more" => array()
-    );
-	
 	$produits = array(
         "scope" => array(),
         "more" => array(),
@@ -116,7 +110,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     );
 
     $args = array (
-        'post_type' => array('produits', 'swapplaces'),
+        'post_type' => 'produits',
         'post_status' => 'publish',
 		'posts_per_page' => 20,
         'orderby' => 'date',
@@ -125,11 +119,11 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         'paged' => $paged,
 		'nopaging' => false
     );
-    $the_query = new WP_Query( $args );
+    $product_query = new WP_Query( $args );
 
-    if ( $the_query->have_posts() ) {
-        while ( $the_query->have_posts() ) {
-            $the_query->the_post();
+    if ( $product_query->have_posts() ) {
+        while ( $product_query->have_posts() ) {
+            $product_query->the_post();
             $post_id = get_the_id();
             $post_type = get_post_type();
             if(get_field('is_coup_de_coeur', $post_id) == 1 && checkFeaturedPostCity($post_id, $scope)) {
@@ -155,27 +149,22 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
                     if($post_type == 'produits') {
                         $product_nbr ++;
 						array_push($produits[$post_scope], $post_id);
-                    }
-                    if($post_type == 'swapplaces') {
-                        array_push($swapplaces[$post_scope], $post_id);
-                    }
+                    }
                 }
             }
         }
     }
-    wp_reset_postdata();
-
+    //wp_reset_postdata();    	 $swapplaces = array(        "scope" => array(),        "more" => array(),        "even_more" => array()    );    $args = array (        'post_type' => 'swapplaces',        'post_status' => 'publish',        'orderby' => 'date',        'order' => 'DESC',        'author__not_in' => array($current_user_id),        'nopaging' => true    );	
+   $swp_query = new WP_Query( $args );      if ( $swp_query->have_posts() ) {	   while ( $swp_query->have_posts() ) {		    $swp_query->the_post();            $post_id = get_the_id();            $post_type = get_post_type();			if($post_type == 'swapplaces') {                        array_push($swapplaces[$post_scope], $post_id);                    }		   	   }   }
     $comms = array();
     $args = array(
         'type'           => 'comment',
         'post_status'    => 'publish',
         'post_type'      => array('produits', 'swapplaces', 'dressings'),
         'order'          => 'DESC',
-		'posts_per_page' => 20,
         'orderby'        => 'comment_date',
         'author__not_in' => array($current_user_id),
-        'paged' => $paged,
-		'nopaging' => false
+		'nopaging' => true
     );
 
     $comments_query = new WP_Comment_Query;
@@ -218,7 +207,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         print '<p class="text-count">Nous avons trouvé <b>'.count($produits['scope']).' articles </b> dans ton département</p>';		$postlist["featured"]["map"] = $swapplaces['scope'];
     }
     if(!empty($swapplaces['more'])) {
-        print '<p class="text-count">Nous avons trouvé <b>'.count($produits['more']).' articles </b> dans ton département</p>';
+        //print '<p class="text-count">Nous avons trouvé <b>'.count($produits['more']).' articles </b> dans ton département</p>';
 		array_unshift($postlist["more"], array('map', $swapplaces['more']));
     } 
     if(!empty($swapplaces['even_more'])) {		print '<p class="text-count">Nous avons trouvé <b>'.count($produits['even_more']).' articles </b> dans ton département</p>';		array_unshift($postlist["even_more"], array('map', $swapplaces['even_more']));

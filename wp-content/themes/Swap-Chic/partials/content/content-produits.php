@@ -9,10 +9,10 @@
 
     $categorie = get_field('categorie-'.strtolower(get_field('categorie-parente', $post_id)), $post_id)['label'];
     $sous_categorie = get_field('sous_categorie_'.get_field('categorie-'.strtolower(get_field('categorie-parente', $post_id)), $post_id)['value'], $post_id)['label'];  
-    $is_liked = isPostLiked($post_id);
+    $is_liked = isPostLiked($post_id);		//search scoop area		$scope_lvl = get_query_var('map_scope');     $scope_lowest_lvl =  getLowestScopeLevel($_GET);    if($scope_lowest_lvl == 'ville') {        if($scope_lvl == 'scope') {            $scope_name = 'ta ville';            $map_lvl = 'ville';        } elseif($scope_lvl == 'more') {            $scope_name = 'ton département';            $map_lvl = 'departement';        } else {            $scope_name = 'ta région';            $map_lvl = 'region';        }    } elseif($scope_lowest_lvl == 'departement') {        if($scope_lvl == 'scope') {            $scope_name = 'ton département';            $map_lvl = 'departement';        } elseif($scope_lvl == 'more') {            $scope_name = 'ta région';            $map_lvl = 'region';        }    } else {        if($scope_lvl == 'scope') {            $scope_name = 'ta région';            $map_lvl = 'region';        }    }
 ?>
 
-<div data-id="<?php echo $post_id ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $post_id ); ?>" data-type="produit" class="produit<?php if($featured) echo ' cdc' ?><?php if($is_liked) echo ' liked' ?>">
+<div data-id="<?php echo $post_id ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $post_id ); ?>" data-level="<?php echo $map_lvl ?>" data-type="produit" class="produit<?php if($featured) echo ' cdc' ?><?php if($is_liked) echo ' liked' ?>">
     <div class="produit-thumbnail">
         <img src="<?php echo get_the_post_thumbnail_url($post_id) ?>"alt="">
 		<div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)"><img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
