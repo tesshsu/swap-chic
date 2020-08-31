@@ -108,16 +108,14 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         "more" => array(),
         "even_more" => array()
     );
-
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;	
     $args = array (
         'post_type' => 'produits',
         'post_status' => 'publish',
-		'posts_per_page' => 20,
         'orderby' => 'date',
         'order' => 'DESC',
         'author__not_in' => array($current_user_id),
-        'paged' => $paged,
-		'nopaging' => false
+        'paged' => $paged,				'posts_per_page' => 6
     );
     $product_query = new WP_Query( $args );
 
@@ -148,13 +146,13 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
                     array_push($postlist[$post_scope], array($post_type, $post_id));
                     if($post_type == 'produits') {
                         $product_nbr ++;
-						array_push($produits[$post_scope], $post_id);
+						array_push($produits[$post_scope], $post_id);																		
                     }
                 }
             }
         }
     }
-    //wp_reset_postdata();    	 $swapplaces = array(        "scope" => array(),        "more" => array(),        "even_more" => array()    );    $args = array (        'post_type' => 'swapplaces',        'post_status' => 'publish',        'orderby' => 'date',        'order' => 'DESC',        'author__not_in' => array($current_user_id),        'nopaging' => true    );	
+    wp_reset_postdata();    	 $swapplaces = array(        "scope" => array(),        "more" => array(),        "even_more" => array()    );    $args = array (        'post_type' => 'swapplaces',        'post_status' => 'publish',        'orderby' => 'date',        'order' => 'DESC',        'author__not_in' => array($current_user_id),        'nopaging' => true    );	
    $swp_query = new WP_Query( $args );      if ( $swp_query->have_posts() ) {	   while ( $swp_query->have_posts() ) {		    $swp_query->the_post();            $post_id = get_the_id();            $post_type = get_post_type();			if($post_type == 'swapplaces') {                        array_push($swapplaces[$post_scope], $post_id);                    }		   	   }   }
     $comms = array();
     $args = array(
@@ -214,7 +212,7 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
     }
 
     // Then we sort and finally display the postlist
-    displayPosts(sortPosts($postlist, 'distance'));
+    displayPosts(sortPosts($postlist, 'distance'));		if ($product_query->max_num_pages > 1) {		echo '<div class="moreBlock"><button class="loadmore">Load More</button></div>';							    }
 ?>
 </div>
 <div class="chat-pop"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/chat.svg'?>" alt=""></a></div>

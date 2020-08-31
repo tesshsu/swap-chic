@@ -6187,5 +6187,4 @@ main .on-parle-de-nous {
     -webkit-transition: 0.3s ease-in all;
     -o-transition: 0.3s ease-in all;
     transition: 0.3s ease-in all;
-}
-}
+}.moreBlock{	text-align: center;}.loadmore{	font-family: 'Montserrat Bold', sans-serif;    font-size: 18px;    text-align: center;    text-transform: uppercase;    text-decoration: none;    color: #f2f2f2;    padding: 10px 15px;    background-color: #B2895D;    border: 1px solid #B2895D;    border-radius: 8px;    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);    -webkit-transition: .3s ease-in all;    -o-transition: .3s ease-in all;    transition: .3s ease-in all;}
