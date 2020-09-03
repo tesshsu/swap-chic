@@ -58,34 +58,10 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
         }
     }
 ?>
-<div class="membre_block">
-  <?php
-     if(!empty($membres)) {
-        echo "<h4>Membres connectées dans ta ville</h4>";
-	 }
-  ?>
-  <div id="membresHome">
-  <?php 
-	
-	if(!empty($membres)) {
-        foreach($membres as $membre){
-            set_query_var( 'user', $membre );
-			get_template_part( 'partials/content/content', 'membrehome' );
-        }
-        set_query_var('scope_lvl', getLowestScopeLevel($_GET));
-        set_query_var('category', 'membres');
-    } else {
-		echo " Tu est l’une des premières membres dans ta ville, reste connectée pour voir les prochaines";
-    }
-    ?>
-  </div>
+<div class="membre_block">  <h4>be part of the change</h4> <hr style="height: 2px;border-width:0;color:gray;background-color:gray;margin: 40px;">
+</div><div class="alert-notice-home">        <a href="/recherche-avancee">Ajoute rapidement ton dressing : Swap et vends dans ta ville avec tes amies</a>		        <a href="https://swap-chic.com/ajouter-produit/" class="btn add-product-home">Par ici</a>    </div><div id="membresHome" style="margin-top: 20px;">  <?php 		if(!empty($membres)) {        foreach($membres as $membre){            set_query_var( 'user', $membre );			get_template_part( 'partials/content/content', 'membrehome' );        }        set_query_var('scope_lvl', getLowestScopeLevel($_GET));        set_query_var('category', 'membres');    } else {		echo " Tu est l’une des premières membres dans ta ville, reste connectée pour voir les prochaines";    }    ?></div>
+<div class="top">		 <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>    <?php get_template_part( 'partials/form/scope', 'change'); ?>
 </div>
-<div class="top">
-    <div class="alert-notice-home">
-        <a href="/recherche-avancee">Ajoute rapidement ton dressing : Swap et vends dans ta ville avec tes amies</a>		        <a href="https://swap-chic.com/ajouter-produit/" class="btn add-product-home">Par ici</a>
-    </div>		 <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>    <?php get_template_part( 'partials/form/scope', 'change'); ?>
-</div>
-
 <div id="thread">
 <?php
     $postlist = array(
