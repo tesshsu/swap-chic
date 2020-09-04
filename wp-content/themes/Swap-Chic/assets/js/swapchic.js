@@ -2008,7 +2008,7 @@ jQuery(document).ready(function () {
 
     // Toggle discussion more
 
-    jQuery('#send-more-toggle').click(function() {
+    /*jQuery('#send-more-toggle').click(function() {
 
         if(!isSendmoreShown) {
 
@@ -2040,7 +2040,7 @@ jQuery(document).ready(function () {
 
         }
 
-    });
+    });*/
 
     jQuery('.send-product').click(function() {
 

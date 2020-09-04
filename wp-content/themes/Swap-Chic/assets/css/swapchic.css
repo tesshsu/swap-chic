@@ -792,8 +792,7 @@ header nav > *:last-child {
   .header{
 	  top: 20px;
   }
-  #searchform {
-     margin: 70px 15px 0 0;    border-radius: 10px;    padding: 0;    z-index: 5;    display: block;    right: 27%;
+  #searchform {		display: -webkit-box;    display: -ms-flexbox;    display: flex;    width: 200px;    margin: 40px 15px 0 0;    border-radius: 10px;    padding: 0;    z-index: 5;    right: 0;	top: 0;
   }
 
 .search-input,  
@@ -4730,7 +4729,7 @@ div.notfound {
     background-color: #eeeeee;
     border-radius: 20px;
 }.add-product-home{	margin: 0 auto;	margin-top: 20px;}.alert-notice-home {	text-decoration: none;    font-weight: 700;    font-family: 'Playfair Display';    color: #713d06;    text-transform: none;   background-image: url('../images/block_sentence.jpg'); /* The image used */  height: 350px; /* You must set a specified height */  background-position: center; /* Center the image */  background-repeat: no-repeat; /* Do not repeat the image */  background-size: cover; /* Resize the background image to cover the entire container */    border-radius: 20px;	}
-.alert-notice-home a {  text-decoration: none;    font-weight: 700;    padding: 10px 20px;    color: #f7f7f7;    text-transform: none;    border-radius: 20px;    display: flex;    font-size: 25px;    line-height: 30px;    justify-content: space-between;    position: relative;    top: 160px;}.membre_block h4{	text-align: center;    margin-top: 20px;    font-weight: 700;    font-family: 'Montserrat Bold';	text-transform: uppercase;}
+.alert-notice-home a {  text-decoration: none;    font-weight: 700;    padding: 10px 20px;    color: #f7f7f7;    text-transform: none;    border-radius: 20px;    display: flex;    font-size: 23px;    line-height: 30px;    justify-content: space-between;    position: relative;    top: 165px;}.membre_block h4{	text-align: center;    margin-top: 20px;    font-weight: 700;    font-family: 'Montserrat Bold';	text-transform: uppercase;}
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .desktop {
