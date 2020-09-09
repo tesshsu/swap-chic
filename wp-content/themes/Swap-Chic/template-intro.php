@@ -14,6 +14,7 @@ Template Post Type: page
         <h1><img src="<?php echo get_template_directory_uri().'/assets/images/logo-devise.svg' ?>" alt="Swap-Chic"></h1>
     </div>
     <div class="intro-slide" id="intro-video">
+	   <h4>Swap-Chic, c'est quoi ?</h4>
 	    <img src="<?php echo get_template_directory_uri().'/assets/images/sp_intro.jpg' ?>" alt="Swap-Chic-img">
         <video id="video" poster="<?php echo get_template_directory_uri().'/assets/images/poster.png' ?>" disablepictureinpicture controlslist="nodownload">
             <source src="<?php echo get_template_directory_uri().'/assets/Swap_chic.mp4' ?>" type="video/mp4">
