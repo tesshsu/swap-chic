@@ -21,7 +21,7 @@ $current_user_id = get_current_user_id();
     <?php get_template_part( 'partials/form/scope', 'change'); ?>
    <div class="filter-sort">
         <?php 
-            //get_template_part( 'partials/content/content', 'filter');
+            get_template_part( 'partials/content/content', 'filter');
         ?>
     </div>
 

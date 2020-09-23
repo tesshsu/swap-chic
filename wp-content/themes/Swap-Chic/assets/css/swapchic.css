@@ -776,7 +776,7 @@ header nav > *:last-child {
   } 
 }
 
-@media (min-width: 1050px) {  .alert-notice-home h4{	  margin-left: 30%;  }
+@media (min-width: 1050px) {  .alert-notice-home h4{	  margin-left: 30%;	  width: 50%;  }
   #discussions, #notifications {
 	  padding-top: 150px!important; }
   .chat-pop {
@@ -1502,11 +1502,10 @@ footer a img {
   opacity: 0;
 }
 
-#intro-video {
+#intro-video {  overflow-y: scroll;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -2047,7 +2046,7 @@ main > .top #scope-modal input[type=text] {
 .actualites .membre_block {
     text-align: center;
     padding: 1em;
-}#membresHome{	margin-top: 20px;}#membresHome .user p{	font-family: Montserrat;    font-size: 8px;	margin-right: 10px;	white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;  max-width: 200px;}
+}.memberSentence{	text-align: center;}#membresHome{	margin-top: 20px;}#membresHome .user p{	font-family: Montserrat;    font-size: 8px;	margin-right: 10px;	white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;  max-width: 200px;}
 .actualites .membre_block p{
     font-family: Montserrat;
     font-size: 8px;
@@ -4729,7 +4728,7 @@ div.notfound {
     background-color: #eeeeee;
     border-radius: 20px;
 }.add-product-home{	margin: 0 auto;	margin-top: 20px;}.alert-notice-home {	text-decoration: none;    font-weight: 700;    font-family: 'Playfair Display';    color: #713d06;    text-transform: none;   background-image: url('../images/block_sentence.jpg'); /* The image used */  height: 350px; /* You must set a specified height */  background-position: center; /* Center the image */  background-repeat: no-repeat; /* Do not repeat the image */  background-size: cover; /* Resize the background image to cover the entire container */    border-radius: 20px;	}
-.alert-notice-home a {  text-decoration: none;    font-weight: 700;    padding: 10px 20px;    color: #f7f7f7;    text-transform: none;    border-radius: 20px;    display: flex;    font-size: 23px;    line-height: 30px;    justify-content: space-between;    position: relative;    top: 165px;}.alert-notice-home h4{	text-decoration: none;    font-weight: 700;    padding: 10px 20px;    color: #2a2a2a;    text-transform: none;    border-radius: 20px;    display: flex;    font-size: 23px;    line-height: 30px;    justify-content: space-between;    position: relative;    top: 165px;}.membre_block h4{	text-align: center;    margin-top: 20px;    font-weight: 700;    font-family: 'Montserrat Bold';	text-transform: uppercase;}
+.alert-notice-home a {  text-decoration: none;    font-weight: 700;    padding: 10px 20px;    color: #f7f7f7;    text-transform: none;    border-radius: 20px;    display: flex;    font-size: 23px;    line-height: 30px;    justify-content: space-between;    position: relative;    top: 205px;}.alert-notice-home h4{	text-decoration: none;    font-weight: 700;    padding: 10px 20px;    color: #f8f8f8;    text-transform: none;    border-radius: 20px;    display: flex;    font-size: 23px;    line-height: 30px;    justify-content: space-between;    position: relative;    top: 205px;	padding: 8px;    background: #2a2a2a57;}.membre_block h4{	text-align: center;    margin-top: 20px;    font-weight: 700;    font-family: 'Montserrat Bold';	text-transform: uppercase;}
 /* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .desktop {
@@ -4926,7 +4925,7 @@ main .on-parle-de-nous {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 480px) {	.alert-notice-home h4{	  margin-left: 10%;   }	header nav{		margin-top: 15px;	}
+@media screen and (max-width: 480px) {	.alert-notice-home h4{	  margin-left: 10%;	  width: 80%;   }	header nav{		margin-top: 15px;	}
    #page-wrap {
     padding: 78px 0;
     margin: 0 auto;
