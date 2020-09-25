@@ -3620,14 +3620,14 @@ img.wider {
   top: 20px;
   left: 50px;
   border: 2px solid #f8f8f8; }
-  
+#membresHome .user::before{	 content: '';  height: 12px;  width: 12px;  border-radius: 6px;  position: absolute;  background: #7ebc63;  top: 0px;  left: 30px;  border: 2px solid #7ebc63;	}	#listing .produit{	width: 100%;}
 .discussion-title .h1::before {
   top: 0;
   left: 30px;
 }
 
 .discussion-title.online .h1::before,
-#discussions .discussion.online .user::before,
+.discussion.online .user::before,
 .user-min.online::before {
   background: #7ebc63; }
 
@@ -3926,7 +3926,7 @@ img.wider {
 .slick-next:before {
   content: url("../images/arrowright.svg"); }
 
-.end {
+.end {  margin-bottom: 80px;
   padding: 20px 10px; }
 
 .end p {
@@ -4924,7 +4924,7 @@ main .on-parle-de-nous {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 480px) {	.alert-notice-home h4{	  margin-left: 10%;	  width: 80%;   }	header nav{		margin-top: 15px;	}
+@media screen and (max-width: 480px) {	.delete-favori{	 margin-left: 250px;    }	.alert-notice-home h4{	  margin-left: 10%;	  width: 80%;   }	header nav{		margin-top: 15px;	}
    #page-wrap {
     padding: 78px 0;
     margin: 0 auto;
@@ -4954,7 +4954,7 @@ main .on-parle-de-nous {
   #searchform {
 		display: block;
 		position: relative;
-		padding: 78px 20px 10px;
+		padding: 128px 20px 10px;
 	}
   #searchform .search-options .search-toggle{
 	position: absolute;
@@ -5509,7 +5509,7 @@ main .on-parle-de-nous {
   margin-left: 10px;
   background-color: #f44336;
 }
-
+#topBanner img {		border-radius: 30px;	}
 .help {
   font-size: 14px;
   padding: 10px;
@@ -6164,7 +6164,7 @@ main .on-parle-de-nous {
 	width: 12%;
     position: fixed;
 	right: 0;
-    top: 550px;
+    top: 480px;
     z-index: 9;
     display: -webkit-box;
     display: -ms-flexbox;
