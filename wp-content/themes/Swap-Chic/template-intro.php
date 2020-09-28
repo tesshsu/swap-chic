@@ -16,9 +16,10 @@ Template Post Type: page
     <div class="intro-slide" id="intro-video" style="overflow-y: scroll; -webkit-overflow-scrolling: touch; height: 100%;">
 	   <h4>Swap-Chic, c'est quoi ?</h4>
 	    <img src="<?php echo get_template_directory_uri().'/assets/images/sp_intro.jpg' ?>" alt="Swap-Chic-img">
-        <video id="video" poster="<?php echo get_template_directory_uri().'/assets/images/poster.png' ?>" disablepictureinpicture controlslist="nodownload">
-            <source src="<?php echo get_template_directory_uri().'/assets/Swap_chic.mp4' ?>" type="video/mp4">
-        </video>		
+        <div class="video-responsive">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Qrv10M4APcs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+				
     </div>
 
     <div class="intro-slide intro-tutorial" id="intro-tutorial">

@@ -1522,7 +1522,7 @@ footer a img {
   width: 100%;
   max-width: 500px;
   padding-bottom: 20px;
-}
+}.video-responsive { }.video-responsive iframe {    left: 20px;    height: 60%;    width: 90%;    position: absolute;}
 
 #intro-video p {
   font-size: 16px;
