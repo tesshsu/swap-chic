@@ -1387,8 +1387,7 @@ footer a {
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center;
-  font-family: 'Montserrat Regular';
-  opacity: .5;
+  font-family: 'Montserrat Regular';
   text-decoration: none; }
 
 footer a.active {
@@ -1522,7 +1521,7 @@ footer a img {
   width: 100%;
   max-width: 500px;
   padding-bottom: 20px;
-}.video-responsive { }.video-responsive iframe {    left: 20px;    height: 60%;    width: 90%;    position: absolute;}
+}.video-responsive iframe {    left: 20px;    height: 60%;    width: 90%;    position: absolute;}
 
 #intro-video p {
   font-size: 16px;
@@ -4923,7 +4922,7 @@ main .on-parle-de-nous {
   color: #B2895D;
   text-decoration: underline;
 }
-
+@media screen and (max-width: 400px) {#searchform {		padding: 140px 20px 10px;	}}
 @media screen and (max-width: 480px) {	.delete-favori{	 margin-left: 250px;    }	.alert-notice-home h4{	  margin-left: 10%;	  width: 80%;   }	header nav{		margin-top: 15px;	}
    #page-wrap {
     padding: 78px 0;

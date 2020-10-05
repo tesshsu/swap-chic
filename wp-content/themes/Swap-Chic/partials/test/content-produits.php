@@ -1,7 +1,7 @@
 <?php 
     $post_id = get_query_var('post'); 
     $user = get_field('proprietaire', $post_id);
-    if(get_field('is_coup_de_coeur', $post_id) == 1){
+    if(get_field('is_coup_de_coeur')){
         $featured = true;
     } else {
         $featured = false;

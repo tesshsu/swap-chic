@@ -10,6 +10,10 @@
 	;?>
 		<footer class="mobile social">
 		    <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous-1' ?>" id="blog">
+					On parle de nous&nbsp; 
+					<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">
+				</a>		   
 			<div class="share">
                 Invite tes amies
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
