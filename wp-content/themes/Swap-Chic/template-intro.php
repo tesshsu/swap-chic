@@ -13,11 +13,11 @@ Template Post Type: page
     <div class="intro-slide" id="intro-title">
         <h1><img src="<?php echo get_template_directory_uri().'/assets/images/logo-devise.svg' ?>" alt="Swap-Chic"></h1>
     </div>
-     <div class="intro-slide" id="intro-video" style="overflow-y: scroll; -webkit-overflow-scrolling: touch; ">
+    <div class="intro-slide" id="intro-video" style="overflow-y: scroll; -webkit-overflow-scrolling: touch; ">
 	    <img src="<?php echo get_template_directory_uri().'/assets/images/sp_intro.jpg' ?>" alt="Swap-Chic-img">
-        <div class="video-responsive">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/Qrv10M4APcs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
+        <video id="video" poster="<?php echo get_template_directory_uri().'/assets/images/poster.png' ?>" disablepictureinpicture controlslist="nodownload">
+            <source src="<?php echo get_template_directory_uri().'/assets/Swap_chic.mp4' ?>" type="video/mp4">
+        </video>
     </div>
 
     <div class="intro-slide intro-tutorial" id="intro-tutorial">
@@ -36,7 +36,7 @@ Template Post Type: page
 
 </div>
 <div class="intro-actions">
-	<div class="skip"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/sign-in' ?>">Passer l'intro</a></div>
+    <div class="skip"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/sign-in' ?>">Passer l'intro</a></div>
     <div class="prev hidden btn">Précedent</div>
     <div class="next btn">Suivant</div>
 </div>

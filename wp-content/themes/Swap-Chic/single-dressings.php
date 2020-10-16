@@ -58,7 +58,7 @@ if($user['ID'] == $current_user_id) {
 
 <div class="dressing-single <?php if($is_owner) echo 'profile'?>" data-type="dressing" data-id="<?php echo $post_id ?>">
     <div class="dressing-title">
-        <a href="javascript:history.back()" class="dressing-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
+        <a href="<?php if( $_GET['from_product_add'] == 1) { echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; } else { echo 'javascript:history.back()'; } ?>" class="dressing-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
     </div>
     <div class="pp">
         <img src="<?php echo get_field('photo_profil', 'user_'.$user['ID'])?>" alt="">
@@ -152,10 +152,6 @@ if($user['ID'] == $current_user_id) {
                     <img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
                 <?php } ?>           
                 <span><?php echo getLikesNumber($post_id) ?></span>
-            </div>
-            <div class="comments" onclick="getComments(<?php echo '\'dressings\', \''.$post_id.'\'' ?>, this)">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
-                <span><?php echo getCommentsNumber($post_id) ?></span>
             </div>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">

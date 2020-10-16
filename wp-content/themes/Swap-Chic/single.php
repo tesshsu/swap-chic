@@ -25,10 +25,6 @@ $is_liked = isPostLiked($post_id);
                 <?php } ?>
                 <span><?php echo getLikesNumber($post_id) ?></span>
             </div>
-            <div class="comments" onclick="getComments(<?php echo '\'posts\', \''.$post_id.'\'' ?>, this)">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
-                <span><?php echo getCommentsNumber($post_id) ?></span>
-            </div>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">
                 <span></span>

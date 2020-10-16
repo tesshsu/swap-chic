@@ -54,7 +54,7 @@
         <span id="chat-area"></span>
     </div>
     <form id="send-message-area">
-        <div id="send-more-toggle"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/plus.svg'; ?>" alt=""></a></div>
+        <div id="send-more-toggle"><a href="<?php echo get_permalink(get_field('dressing', 'user_'.$partner_id)) ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/plus.svg'; ?>" alt=""></a></div>
         <textarea id="sendie" placeholder="Votre message..." ></textarea>
         <div id="send"><img src="<?php echo get_template_directory_uri().'/assets/images/send.svg'; ?>" alt=""></div>
     </form>

@@ -17,10 +17,7 @@ $path = getPath();
             <label for="search-dressing"><input type="checkbox" value="dressings" name="post_type[]" id="search-dressing" />Membres</label>
             <label for="search-swapplaces"><input type="checkbox" value="swapplaces" name="post_type[]" id="search-swapplaces" />Swap-places</label>           
 		</div>
-        <a href="/recherche-avancee">Recherche avancée</a>
-        <div class="search-close">
-		 <img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt="">
-		</div>		
+        <a href="/recherche-avancee">Recherche avancée</a>		
     </div>
 	
     </div>

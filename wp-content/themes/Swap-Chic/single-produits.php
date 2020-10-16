@@ -3,49 +3,58 @@
  * The template for displaying single products
 **/
 
-get_header(); 
-?>
 
-<?php
-    global $post;
-    $post_slug = $post->post_name;
-    $post_id = get_the_id(); 
-    $user = get_field('proprietaire', $post_id);
-    $images = get_field('images', $post_id);
-    $current_user = wp_get_current_user();
-    $is_liked = isPostLiked($post_id);
-
-    if($user['ID'] == get_current_user_id()) {
-        $is_owner = true;
+if($_POST){
+    $response_code = validate($_POST['ID']);
+    print_r($response_code);
+    if($response_code == 200) {
+        header('Location: https://'.$_SERVER['HTTP_HOST'].'/articles-a-valider/');
     } else {
-        $is_owner = false;
+        header('Location: https://'.$_SERVER['HTTP_HOST'].'/articles-a-valider/?response_code='.$response_code."&post_id=".$_POST['ID']);
     }
+}
 
-    $status = get_post_status($post_id);
+get_header(); 
 
-    $title = get_the_title($post_id);
-    
-    $categorie = get_field('categorie-'.strtolower(get_field('categorie-parente', $post_id)), $post_id)['label'];
-    $sous_categorie = get_field('sous_categorie_'.get_field('categorie-'.strtolower(get_field('categorie-parente', $post_id)), $post_id)['value'], $post_id)['label'];
+global $post;
+$post_slug = $post->post_name;
+$post_id = get_the_id(); 
+$user = get_field('proprietaire', $post_id);
+$images = get_field('images', $post_id);
+$current_user = wp_get_current_user();
+$is_liked = isPostLiked($post_id);
 
-    $couleur = get_field('couleur', $post_id);
-    $matiere - get_field('matiere', $post_id);
-    $imprime - get_field('imprime', $post_id);
-    $content = get_post_field('post_content', $post_id);
-    $size = getProductSize($post_id);
-    
-    $saison_array = get_field('saison', $post_id);
-    if(!empty($saison_array)) {
-        $i = 0;
-        foreach($saison_array as $saison) {
-            if($i == 0) {
-                $saisons .= $saison;
-            } else {
-                $saisons .= ', '.strtolower($saison);
-            }
-            $i++;
+if($user['ID'] == get_current_user_id()) {
+    $is_owner = true;
+} else {
+    $is_owner = false;
+}
+
+$status = get_post_status($post_id);
+
+$title = get_the_title($post_id);
+
+$categorie = get_field('categorie-'.strtolower(get_field('categorie-parente', $post_id)), $post_id)['label'];
+$sous_categorie = get_field('sous_categorie_'.get_field('categorie-'.strtolower(get_field('categorie-parente', $post_id)), $post_id)['value'], $post_id)['label'];
+
+$couleur = get_field('couleur', $post_id);
+$matiere - get_field('matiere', $post_id);
+$imprime - get_field('imprime', $post_id);
+$content = get_post_field('post_content', $post_id);
+$size = getProductSize($post_id);
+
+$saison_array = get_field('saison', $post_id);
+if(!empty($saison_array)) {
+    $i = 0;
+    foreach($saison_array as $saison) {
+        if($i == 0) {
+            $saisons .= $saison;
+        } else {
+            $saisons .= ', '.strtolower($saison);
         }
+        $i++;
     }
+}
 ?>
 
 <div class="produit-single <?php if(in_array('administrator', $current_user->roles)) echo 'admin' ?>" data-id="<?php echo $post_id ?>" data-type="produit">
@@ -101,20 +110,22 @@ get_header();
         </div>
     </div>
     <div class="user-wrapper">
-    <?php if(!is_user_logged_in()) { ?>
+    <?php
+    // Depending on the user role and the post status, we display different options
+    if(!is_user_logged_in()) { ?>
             <div class="not-connected">
                 <p>Connectez vous pour accéder à toutes les fonctionnalités de Swap-Chic.</p>
                 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'] ?>" class="btn">Connexion</a>
             </div>
        <?php } elseif(!$is_owner && $status == 'publish') {?>
             <div data-userid="<?php echo $user['ID'] ?>" class="openChat btn" onclick="openChat(<?php echo get_current_user_id().', '.$user['ID'] ?>)">Contacter<img src="<?php echo get_template_directory_uri().'/assets/images/chat-white.svg'; ?>" alt=""></div>
-        <?php } elseif($is_owner) { ?>
-            <div class="btn">Éditer</div>
+
         <?php } elseif(in_array('administrator', $current_user->roles) && $status == 'draft') { ?>
-            <div class="admin-actions">
-                <div onclick="validate(<?php echo $post_id?>, this)" class="btn validate">Accepter</div>
+            <form class="admin-actions" method="post">
+                <input type="hidden" name="ID" value="<?php echo $post_id ?>">
+                <div class="btn validate">Accepter</div>
                 <div onclick="unvalidate(<?php echo $post_id?>, this)" class="btn unvalidate">Refuser</div>
-            </div>
+            </form>
         <?php  } 
         if($status == 'publish' && is_user_logged_in()) { ?>
             <div class="social">
@@ -126,10 +137,6 @@ get_header();
                         <img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
                     <?php } ?>
                     <span><?php echo getLikesNumber($post_id) ?></span>
-                </div>
-                <div class="comments" onclick="getComments(<?php echo '\'produits\', \''.$post_id.'\'' ?>, this)">
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
-                    <span><?php echo getCommentsNumber($post_id) ?></span>
                 </div>
                 <div class="share">
                     <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">

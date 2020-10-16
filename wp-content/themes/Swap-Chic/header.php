@@ -55,20 +55,52 @@ if(is_user_logged_in()) {
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
 			<h4 class="headerSlogan">Ton vide dressing éco-responsable</h4>
 			<nav>
-				<div class="desktop nav-desktop">
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; if(!empty($_GET)){ echo $scope; } ?>" <?php if($path[1] == 'acutalites'){ echo "class='active'"; } ?>><img src="<?php echo get_template_directory_uri().'/assets/images/fil.svg' ?>" alt="">Mon fil</a>
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/catalogue/'; if(!empty($_GET)){ echo $scope; }'#produits' ?>" <?php if($path[1] == 'catalogue'){ echo "class='active'"; } ?> ><img src="<?php echo get_template_directory_uri().'/assets/images/catalogue.svg' ?>" alt="">Mon catalogue</a>
+				<div class="desktop nav-desktop social">
+					<div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+					<div class="share">							
+						   
+							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Invites tes amies
+			 
+							<span></span>
+
+							<div class="addtoany-wrapper">
+
+								<div class="a2a_kit top a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($post_id) ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">
+
+									<a class="a2a_button_facebook"></a>
+
+									<a class="a2a_button_twitter"></a>
+
+									<a class="a2a_button_pinterest"></a>
+
+									<a class="a2a_button_email"></a>
+
+									<a class="a2a_button_whatsapp"></a>
+
+									<a class="a2a_button_facebook_messenger"></a>
+
+								</div>
+
+							</div>
+
+						</div>
+					<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous-1' ?>" id="blog">
+						<img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'; ?>" alt="">
+						On parle de nous
+				    </a>
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
 				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
-				<div class="search-toggle"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'; ?>" alt="">
-						</a>
+				<div class="search-toggle">
+				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
+						<img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'; ?>" alt="">
+					</a>
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
+					   <img src="<?php echo get_template_directory_uri().'/assets/images/env.svg' ?>" alt="Messagerie">
+				    </a>
 				</div>
-				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
-					<img src="<?php echo get_template_directory_uri().'/assets/images/env.svg' ?>" alt="Messagerie">
-				</a>
 			</nav>
 		</header>
 		<?php 
@@ -77,7 +109,9 @@ if(is_user_logged_in()) {
 				//get_template_part('partials/content/content', 'notifconf');
 			}
 		?>
-	<?php get_search_form(); ?>
+		<div class="mobile">
+			<?php get_search_form(); ?>
+		</div>
 	<aside class="profil">
 		<div class="user">
 			<?php if(is_user_logged_in()) { ?>
@@ -107,7 +141,7 @@ if(is_user_logged_in()) {
 							<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
 						</a>
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Dressing
+							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">Notre blog
