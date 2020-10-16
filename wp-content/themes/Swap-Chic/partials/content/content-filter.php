@@ -1,8 +1,8 @@
 <div class="filter-open"><p>Filtrer...</p>
     <div class="filter-close" style="display:none"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
-    <div class="filters">
+    <div class="filters" style="display:none">
         <div id="filterform">
-            <div class="filters-produits" style="display:block">
+            <div class="filters-produits" style="display:none">
                 <p class="h3">Filtres produits :</p>
                 <div class="filter-action">
                     <p class="h4">Action : <span class="check-all">Cocher tout</span></p>

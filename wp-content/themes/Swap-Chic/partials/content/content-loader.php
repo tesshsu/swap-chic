@@ -9,10 +9,18 @@
     <img src="<?php echo get_template_directory_uri().'/assets/images/leaves.png' ?>" alt="" class="leaves">
 </div>
 
+<?php 
+    if($_SERVER['REMOTE_ADDR'] == '90.8.182.58'){
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+    }
+?>
+
 <script>
     var loader_timeout = setTimeout( function() {     
-    jQuery('.loader').fadeOut(function(){
-        jQuery('.loader').remove();
-    });
+        jQuery('.loader').fadeOut(function(){
+            jQuery('.loader').remove();
+        });
     } , 5000);
 </script>

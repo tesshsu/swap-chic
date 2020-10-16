@@ -31,10 +31,10 @@
             }
         ?>
     </div>
-    <form class="admin-actions" method="post">
+	<form class="admin-actions" method="post">
         <input type="hidden" name="ID" value="<?php echo $post_id ?>">
         <div onclick="validate(<?php echo $post_id?>, this)" class="btn validate">Accepter</div>
        <p class="btn unvalidate"><a onclick="unvalidate(<?php echo $post_id?>, this)" href="<?php echo get_delete_post_link( $post->ID ) ?>">Refuser</a></p>
-       <p class="btn unvalidate"><a href="<?php echo get_delete_post_link( $post->ID ) ?>">DUPLICATE</a></p>
-	</form>
+	   <p class="btn unvalidate"><a href="<?php echo get_delete_post_link( $post->ID ) ?>">DUPLICATE</a></p>
+    </form>
 </div>

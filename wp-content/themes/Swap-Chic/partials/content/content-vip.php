@@ -67,10 +67,6 @@
             <?php } ?>
                 <span><?php echo getLikesNumber($dressing) ?></span>
             </div>
-            <div class="comments" onclick="getComments(<?php echo '\'dressings\', \''.$dressing.'\'' ?>, this)">
-                <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
-                <span><?php echo getCommentsNumber($dressing) ?></span>
-            </div>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
                 <span></span>

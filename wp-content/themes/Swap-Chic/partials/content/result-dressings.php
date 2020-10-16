@@ -9,19 +9,28 @@
 <div data-id="<?php echo $dressing ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $dressing ); ?>" data-type="dressing" class="dressing<?php if($is_liked) echo ' liked' ?>">
     <div class="user">
         <img src="<?php echo get_field('photo_profil', 'user_'.$user_id) ?>" alt="">
-        <span><a href="<?php echo get_permalink($dressing) ?>"><?php echo ucfirst($user->data->display_name) ?></a>, <?php echo get_field('ville', 'user_'.$user_id) ?></span>
+        <p><a href="<?php echo get_permalink($dressing) ?>"><?php echo ucfirst($user->data->display_name) ?></a>, <?php echo get_field('ville', 'user_'.$user_id) ?></p>
     </div>
-    <div class="dressing-products result-dressing">
-    <?php
-     
+    <div class="dressing-products">
+    <?php 
+        if(count($products) > 6) {
+            $i = 0;
+            foreach($products as $product) {
+                if($i < 5) { ?>
+                    <a href="<?php echo get_permalink($product['produit']); ?>">
+                        <img src="<?php echo get_field('images', $product['produit'])[0] ?>" alt="">
+                    </a> <?php 
+                    $i++;
+                }
+            } ?>
+            <a href="<?php echo get_permalink($dressing); ?>">Voir son dressing complet</a><?php
+        } else {
             foreach($products as $product) { ?>
-                <a class="result-dressing-img" href="<?php echo get_permalink($product); ?>">
-                <?php echo get_the_post_thumbnail($product) ?>
-                </a>
-				 <p><?php echo get_the_title($produit) ?></p>
-				<?php 
+                <a href="<?php echo get_permalink($product['produit']); ?>">
+                    <img src="<?php echo get_field('images', $product['produit'])[0] ?>" alt="">
+                </a> <?php 
             }
-             ?>
+        } ?>
     </div>
     <div class="social">
         <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
@@ -32,10 +41,6 @@
             <img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
         <?php } ?>
             <span><?php echo getLikesNumber($dressing) ?></span>
-        </div>
-        <div class="comments" onclick="getComments(<?php echo '\'dressings\', \''.$dressing.'\'' ?>, this)">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
-            <span><?php echo getCommentsNumber($dressing) ?></span>
         </div>
         <div class="share">
             <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">

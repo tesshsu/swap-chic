@@ -92,7 +92,7 @@ if(is_user_logged_in()) {
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
-				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
+				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle">
 				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
 						<img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'; ?>" alt="">

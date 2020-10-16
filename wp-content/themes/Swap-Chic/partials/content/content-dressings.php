@@ -12,7 +12,7 @@
     }
 ?>
 
-<div data-id="<?php echo $user ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $dressing ); ?>" data-type="dressing" class="dressing<?php if($is_liked) echo ' liked' ?>">
+<div data-id="<?php echo $dressing ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $dressing ); ?>" data-type="dressing" class="dressing<?php if($is_liked) echo ' liked' ?>">
     <div class="user">
         <img src="<?php echo get_field('photo_profil', 'user_'.$user_id) ?>" alt="">
         <p><a href="<?php echo get_permalink($dressing) ?>"><?php echo ucfirst($user->data->display_name) ?></a>, <?php echo get_field('ville', 'user_'.$user_id) ?></p>
@@ -51,12 +51,8 @@
             <?php } ?>
             <span><?php echo getLikesNumber($dressing) ?></span>
         </div>
-        <div class="comments" onclick="getComments(<?php echo '\'dressings\', \''.$dressing.'\'' ?>, this)">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
-            <span><?php echo getCommentsNumber($dressing) ?></span>
-        </div>
         <div class="share">
-            <img src="<?php echo get_template_directory_uri().'/assets/images/share_social.svg'?>" alt="">
+            <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
             <span></span>
                 <div class="addtoany-wrapper">
                     <div class="a2a_kit a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($dressing) ?>" data-a2a-title="<?php echo get_post_field( 'post_name', get_post($dressing)) ?>">

@@ -23,7 +23,6 @@
         <p id="msg"></p>
         <input type="text" name="zipcode" id="signup-zipcode" placeholder="Code postal" required>
         <span><input type="checkbox" name="cguv" id="signup-cguv"> J'accepte les <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/cguv/' ?>" target="_blank" class="link">conditions générales</a></span>
-        <p style="margin-top: 20px; text-align: center; font-style: italic; max-width: 375px;">Durant cette période de confinement, respectons les regles #restezchezvous. Mais profitez en pour faire du tri dans votre joli dressing et ajouter votre premier article <span style="font-style:normal">😉</span></p>
         <input type="hidden" name="type" value="signup" required>
         <input type="submit" value="Inscription" class="btn">
     </form>
