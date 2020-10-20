@@ -216,7 +216,7 @@ jQuery(document).ready(function() {
     */
     if(scope == false || scope["scope"][0] == "") { 
         if(window.location.pathname == "/actualites/" 
-        || window.location.pathname == "/catalogue/" 
+        || window.location.pathname == "/swap-places-2/" 
         || window.location.pathname == "/messagerie/nouvelle-discussion/") { 
             // If no scope is set and the user is on one of the relevant pages
             var other_params = '&'+window.location.search.substr(1, window.location.search.length - 1);
