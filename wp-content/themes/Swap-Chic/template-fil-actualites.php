@@ -59,9 +59,8 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
 
 
 ?>
-<div class="desktop">
-	<?php get_search_form(); ?>
-</div>
+
+<?php get_search_form(); ?>
 
 <div id="topBanner" class="top">
 
@@ -237,39 +236,6 @@ if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
             }
         }
     }
-    //wp_reset_postdata();
-	
-	/*$swapplaces = array(
-
-        "scope" => array(),
-
-        "more" => array(),
-
-        "even_more" => array()
-
-    );
-    
-	$args = array (
-        'post_type' => 'swapplaces',
-        'post_status' => 'publish',
-        'author__not_in' => array($current_user_id),
-        'posts_per_page' => 50,
-        'nopaging' => false
-    );
-	
-	$swp_query = new WP_Query( $args );
-	
-	if ( $swp_query->have_posts() ) {
-	   while ( $swp_query->have_posts() ) {
-		    $swp_query->the_post();
-            $post_id = get_the_id();
-            $post_type = get_post_type();
-			if($post_type == 'swapplaces') {
-                        array_push($swapplaces[$post_scope], $post_id);
-                    }
-		   
-	   }
-   }*/
 	
     $args = array(
         'role' => 'contributor',

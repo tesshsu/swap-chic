@@ -1159,7 +1159,7 @@ header .profil-toggle {
 
 header .profil-toggle img {
 
-  width: 100%; }
+  width: 55px; }
 
 
 
@@ -1197,7 +1197,9 @@ header nav > *:not(h1) img {
 
 header nav .add-product-link {
 
-  width: auto; }
+  width: auto;
+  margin-left: -20px;
+}
 
 
 
@@ -1327,9 +1329,9 @@ header nav > *:last-child {
 
   position: absolute;
 
-  top: -8px;
+  top: -6px;
 
-  right: -8px;
+  right: -12px;
 
   font-size: 12px;
 
@@ -1574,7 +1576,7 @@ header nav > *:last-child {
 
   #discussions, #notifications {
 
-	  padding-top: 30px!important; }
+	  padding-top: 150px!important; }
 
   .chat-pop {
 
@@ -9983,6 +9985,24 @@ footer{
 	}
 }
 @media screen and (max-width: 480px) {
+	#chat-wrap{
+		padding: 0 0 40px 0;
+	}
+	#discussions, #notifications {
+	  padding-top: 160px!important; 
+	}
+	.search-toggle img {
+		padding-right: 20px;
+	}
+	header h1.logo {
+       margin: 0 40px 0 0;
+    }
+    #discussions {
+		padding-top: 150px;
+	}
+	.messagerie-toggle-wrapper{
+		top: 88px !important;
+	}
 	header nav > *:not(h1) img{
 		height: 25px;
 		padding-right: 10px;
@@ -10007,7 +10027,7 @@ footer{
 		top: 185px !important;
 	}
 	#chat-area{
-		padding-bottom: 90px !important;
+		margin-top: 160px !important;
 	}
 	.discussion-title{
 	   top: 100px !important;

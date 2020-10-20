@@ -99,6 +99,19 @@ if(is_user_logged_in()) {
 					</a>
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
 					   <img src="<?php echo get_template_directory_uri().'/assets/images/env.svg' ?>" alt="Messagerie">
+					   <?php 
+								$notifs = get_field('notifications', 'user_'.$user_id);
+								if($notifs) { ?>
+									<span class="notifs"><?php echo count($notifs) ?></span> 
+							<?php 
+									$notifs_confirmation = array();
+									foreach($notifs as $notif) {
+										if($notif[event] == 'sell' || $notif[event] == 'swap') {
+											$notifs_confirmation[] = $notif;
+										}
+									}
+								} 
+							?>
 				    </a>
 				</div>
 			</nav>
@@ -109,9 +122,7 @@ if(is_user_logged_in()) {
 				//get_template_part('partials/content/content', 'notifconf');
 			}
 		?>
-		<div class="mobile">
-			<?php get_search_form(); ?>
-		</div>
+		
 	<aside class="profil">
 		<div class="user">
 			<?php if(is_user_logged_in()) { ?>
@@ -143,26 +154,20 @@ if(is_user_logged_in()) {
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
 						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">Notre blog
-						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">Liste de souhait
+							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">Wishlist
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-favorites' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/spf.svg'; ?>" alt="">Swap-places favorites
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/membres-suivies' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/ms.svg'; ?>" alt="">Membres suivies
-						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/alertes-enregistrees' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/alertes.svg'; ?>" alt="">Alertes enregistrées
-						</a>
+						</a>						
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/proposer-swap-place' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/psp.svg'; ?>" alt="">Propose une swap-place
 						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/inviter-amies' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Invite tes amies
+						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">Notre blog
 						</a>
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);
