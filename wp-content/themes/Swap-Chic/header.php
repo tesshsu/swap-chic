@@ -138,6 +138,9 @@ if(is_user_logged_in()) {
 			<div class="profil-links">
 				<?php if(is_user_logged_in()) { ?>
 					<?php if(in_array('administrator', $user->roles)) { ?>
+						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg'; ?>" alt="">Swap-places
+						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/articles-a-valider' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Produits à valider
 						</a>
@@ -153,6 +156,9 @@ if(is_user_logged_in()) {
 						</a>
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
+						</a>
+						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg'; ?>" alt="">Swap-places
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">Wishlist
