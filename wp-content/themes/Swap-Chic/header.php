@@ -53,9 +53,10 @@ if(is_user_logged_in()) {
 } ?>
 <?php wp_body_open(); ?>
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
-			<h4 class="headerSlogan">Ton vide dressing éco-responsable</h4>
+			<h4 class="headerSlogan mobile">Ton vide dressing éco-responsable</h4>
 			<nav>
 				<div class="desktop nav-desktop social">
+					<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 					<div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
 					<div class="share">							
 						   
@@ -84,11 +85,7 @@ if(is_user_logged_in()) {
 							</div>
 
 						</div>
-					<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous-1' ?>" id="blog">
-						<img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'; ?>" alt="">
-						On parle de nous
-				    </a>
+					
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
@@ -157,21 +154,21 @@ if(is_user_logged_in()) {
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
 						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg'; ?>" alt="">Swap-places
-						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">Wishlist
+						</a>
+						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg'; ?>" alt="">Swap-places
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-favorites' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/spf.svg'; ?>" alt="">Swap-places favorites
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/membres-suivies' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/ms.svg'; ?>" alt="">Membres suivies
-						</a>						
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/proposer-swap-place' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/psp.svg'; ?>" alt="">Propose une swap-place
 						</a>
+                        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous-1' ?>" id="blog">
+						   <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'; ?>" alt="">On parle de nous
+				        </a>						
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">Notre blog
 						</a>
