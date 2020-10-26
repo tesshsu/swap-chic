@@ -1140,93 +1140,8 @@ jQuery(document).ready(function () {
                     jQuery(this).change();
                 });
             }
-        }
-        if(jQuery(this).val() == 'accessoires') {
-            jQuery('.filter-subcategory-accessoires').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-accessoires').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'bijoux') {
-            jQuery('.filter-subcategory-bijoux').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-bijoux').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'chaussures') {
-            jQuery('.filter-subcategory-chaussures').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-chaussures').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-            jQuery('.filter-taille-femme-chaussures').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-taille-femme-chaussures').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'lingerie') {
-            jQuery('.filter-subcategory-lingerie').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-lingerie').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'makeup') {
-            jQuery('.filter-subcategory-makeup').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-makeup').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'sacs') {
-            jQuery('.filter-subcategory-sacs').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-sacs').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'sports') {
-            jQuery('.filter-subcategory-sports').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-sports').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
-        if(jQuery(this).val() == 'vetements') {
-            jQuery('.filter-subcategory-vetements').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-subcategory-vetements').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-            jQuery('.filter-taille-femme-vetements').toggle();
-            if(jQuery(this).prop('checked') == false) {
-                jQuery('.filter-taille-femme-vetements').find('input:checked').each(function() {
-                    jQuery(this).prop('checked', false);
-                    jQuery(this).change();
-                });
-            }
-        }
+        }              
+       
         if(jQuery(this).val() == 'enfant') {
             jQuery('.filter-category-enfant').toggle();
             if(jQuery(this).prop('checked') == false) {
@@ -1301,48 +1216,7 @@ jQuery(document).ready(function () {
             jQuery('.asf-taille-enfant-vetements').css('display', 'none');
             jQuery('.asf-taille-enfant-chaussures').css('display', 'none');
         }
-        if(jQuery(this).val() == 'accessoires') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-accessoires').show();
-        }
-        if(jQuery(this).val() == 'bijoux') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-bijoux').show();
-        }
-        if(jQuery(this).val() == 'chaussures') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-chaussures').show();
-            jQuery('.asf-taille-femme-chaussures').show();
-        }
-        if(jQuery(this).val() == 'lingerie') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-lingerie').show();
-        }
-        if(jQuery(this).val() == 'makeup') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-makeup').show();
-        }
-        if(jQuery(this).val() == 'sacs') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-sacs').show();
-        }
-        if(jQuery(this).val() == 'sports') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-sports').show();
-        }
-        if(jQuery(this).val() == 'vetements') {
-            jQuery('.asf-subcategory').hide();
-            jQuery('.asf-taille').hide();
-            jQuery('.asf-subcategory-vetements').show();
-            jQuery('.asf-taille-femme-vetements').show();
-        }
+        
         if(jQuery(this).val() == 'enfant') {
             lock('.asf-category-femme');
             jQuery('.asf-subcategory-accessoires').css('display', 'none');    
