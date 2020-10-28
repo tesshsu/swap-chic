@@ -38,7 +38,7 @@
 ?>
 
 <div class="map" data-level="<?php echo $map_lvl ?>">
-    <p>Découvre nos swap-places proches de chez toi :</p>
+    <p>Tu peux aussi échanger ou vendre dans le lieux de ton choix :</p>
     <div class="map-iframe" id="map-<?php echo $scope_lvl ?>"></div>
     <div class="map-locate btn"><img src="<?php echo get_template_directory_uri().'/assets/images/target.svg' ?>" alt=""></div>
     <div class="map-draw btn">Voir le trajet</div>

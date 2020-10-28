@@ -56,6 +56,9 @@ if(is_user_logged_in()) {
 			<h4 class="headerSlogan mobile">Ton vide dressing éco-responsable</h4>
 			<nav>
 				<div class="desktop nav-desktop social">
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
+							<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
+					</a>
 					<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 					<div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
 					<div class="share">							
@@ -85,10 +88,12 @@ if(is_user_logged_in()) {
 							</div>
 
 						</div>
-					
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class=""><img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt=""></a>
+				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="likeButton"><img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg' ?>" alt="
+					"></a>
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
-				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>" class="add-product-link"><img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg' ?>" alt="Ajouter un produit"></a>
+				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>" class="swap-place-icon"><img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg' ?>" alt="sp"></a>
 				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="recherche-avancee"><img src="<?php echo get_template_directory_uri().'/assets/images/search.svg' ?>" alt="recherche-avancee"></a>
 				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle">
@@ -149,9 +154,6 @@ if(is_user_logged_in()) {
 							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Statistiques
 						</a>
 					<?php } else { ?>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
-						</a>
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
 						</a>

@@ -17,11 +17,12 @@ $current_user_id = get_current_user_id();
 
 
 <div class="top">
-    <h2 class="h2">Vos swap place actualités à <span class="scope-toggle"><span class="scope"><?php echo $scope?></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
-    <?php get_template_part( 'partials/form/scope', 'change'); ?>
+    <h2 class="h2">Tu recherches une swap-place dans <span class="scope-toggle"><span class="scope"><?php echo $scope?></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
+    
     <div class="alert-notice">
-        <a href="/recherche-avancee">Tu recherches un swap cafe ?</br>Utilise la recherche par la carte map !</a>
+        <a href="">Navigues sur la map, clic sur l’une d’entres elles et découvres le lieux.</br>la remise en main propre reste le moyen le plus écologique pour éviter les envois de colis et faire de belles rencontres, alors prêtes à te lancer ?</a>
     </div>
+	<?php get_template_part( 'partials/form/scope', 'change'); ?>
 </div>
 
 <div id="thread">

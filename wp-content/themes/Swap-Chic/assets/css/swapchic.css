@@ -152,6 +152,10 @@
 
 	}
 
+.likeButton img{
+	margin-left: -40px !important;
+}
+
 blockquote.left {
 
 	margin-right: 20px;
@@ -387,7 +391,6 @@ select {
   font-size: 18px;
 
   line-height: 1.25em; }
-
 
 
 a,
@@ -1393,9 +1396,9 @@ header nav > *:last-child {
   z-index: 4;
 
   width: 40%;
-  margin-left: 10px;
+  margin-left: 30px;
 
-  padding: 48px 30px; }
+  padding: 100px 30px; }
 
   
 
@@ -2782,8 +2785,6 @@ footer {
 
 
 footer a {
-   
-  /* width: 50%; */
 
   text-align: center;
 
@@ -2825,59 +2826,13 @@ footer a img {
 
 
 
-
-
-
-
-/* .intro-presentation {
-
-  overflow-y: hidden;
-
-    overflow-x: hidden;
-
-    position: absolute;
-
-    z-index: 1;
-
-    height: calc(100% - 54px);
-
-    min-width: 100%;
-
-    width: 500%; 
-
-    display: flex;
-
-    flex-flow: row nowrap;
-
-} */
-
-
-
 .intro-slide {
 
   width: 100%;
 
-  /* height: 100%; */
-
-  /* min-width: 20%; */
-
-  /* width: 20%; */
-
-  /* max-width: 20%; */
-
   padding: 20px;
 
 }
-
-
-
-/* .intro-slide  > * {
-
-  padding: 0 20px;
-
-} */
-
-
 
 
 
@@ -3224,6 +3179,8 @@ main.actualites,
 
 main.swap-places-2,
 
+main.recherche-avancee,
+
 main.editer-produit,
 
 main.alertes-enregistrees,
@@ -3262,7 +3219,9 @@ main.recherche-avancee,
 
 }
 
-
+main.recherche-avancee{
+	margin-top: 50px;
+}
 
 @media screen and (min-width: 450px) {
 
@@ -11805,6 +11764,18 @@ footer{
 
   }
   
+  header .swap-place-icon {
+
+    left: 310px;
+
+  }
+  
+  header .swap-place-icon img{
+
+    height: 30px;
+
+  }
+  
   header .recherche-avancee img {
 
     height: 26px;
@@ -11880,7 +11851,7 @@ footer{
 
     font-family: 'Montserrat Regular';
 
-    opacity: .5; }
+  }
 
 
 
@@ -11963,6 +11934,8 @@ footer{
   main.actualites,
   
   main.swap-places-2,
+  
+  main.recherche-avancee,
 
   main.alertes-enregistrees,
 
@@ -12684,7 +12657,7 @@ footer{
 	position: relative;
 	display: inline-block;
 	padding: 20px;
-	width: 110px;
+	width: 180px;
 	font-size: 14px;
 	line-height: 20px;
 	letter-spacing: 1px;
