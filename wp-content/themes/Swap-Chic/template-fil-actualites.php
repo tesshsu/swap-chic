@@ -35,29 +35,6 @@ set_query_var('scope', $scope);
 set_query_var('scope_string', getScopeString($_GET));
 
 
-
-
-
-
-
-// Display help bubbles if the cookies are not set
-
-if(!isset($_COOKIE["hide-helps"]) || $_COOKIE["hide-helps"] != 1) {
-
-    get_template_part( 'partials/content/content', 'helpgeo' );
-
-    get_template_part( 'partials/content/content', 'helpfil' );
-
-    get_template_part( 'partials/content/content', 'helpcatalogue' );
-
-    get_template_part( 'partials/content/content', 'helpajoutproduit' );
-
-    get_template_part( 'partials/content/content', 'helpmap' );
-
-}
-
-
-
 ?>
 
 <?php get_search_form(); ?>

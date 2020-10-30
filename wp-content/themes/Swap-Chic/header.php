@@ -5,23 +5,13 @@
 
 $path = getPath();
 
-/*if( empty($path[1]) && isset($_COOKIE["intro_seen"]) && $_COOKIE["intro_seen"] == 1){ 
-	header('Location: https://'.$_SERVER['HTTP_HOST'].'/sign-in');
-	exit();
-}*/
-
 if(is_user_logged_in()) {
 	$scope = getScope($_GET);
 	$user_id = get_current_user_id();
-	$user = wp_get_current_user();
-	
-	// Maintenance mode
-	// if(!in_array('administrator', $user->roles)) {
-	// 	wp_die('<h1>Site en maintenance</h1><br />Le site est en cours de travaux, cela ne devrait pas durer plus de quelques heures, merci de ta comprehension.');
-	// }
+	$user = wp_get_current_user();	
 
 	if($_GET['s']) {
-		// Nothing
+
 	} elseif( $path[1] == '#' || $path[1] == 'sign-in' || empty($path[1])) {
 		header('Location: https://'.$_SERVER['HTTP_HOST'].'/actualites');
 		exit();
@@ -88,13 +78,20 @@ if(is_user_logged_in()) {
 							</div>
 
 						</div>
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class=""><img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt=""></a>
-				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="likeButton"><img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg' ?>" alt="
-					"></a>
+						<ul class="rightIconMenu">
+							<li>
+							  <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class=""><img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt=""></a>
+							</li>
+							<li>
+							 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="likeButton"><img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg' ?>" alt=""></a>
+							</li>
+							<li>
+							 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="searchButton"><img src="<?php echo get_template_directory_uri().'/assets/images/search.svg' ?>" alt="recherche-avancee"></a>
+							</li>
+						</ul>
 				</div>
-				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>
-				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>" class="swap-place-icon"><img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg' ?>" alt="sp"></a>
-				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="recherche-avancee"><img src="<?php echo get_template_directory_uri().'/assets/images/search.svg' ?>" alt="recherche-avancee"></a>
+				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>				
+				
 				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle">
 				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
@@ -130,15 +127,16 @@ if(is_user_logged_in()) {
 		<div class="user">
 			<?php if(is_user_logged_in()) { ?>
 				<div class="pp"><img src="<?php echo get_field('photo_profil', 'user_'.$user->ID) ?>" alt=""></div>
-				<p class="h1"><?php echo ucfirst($user->data->display_name) ?></p>
-				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-profil' ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/cog.svg'; ?>" alt=""></a>
+				<p class="h1"><?php echo ucfirst($user->data->display_name) ?><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-profil' ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/cog.svg'; ?>" alt=""></a></p>
+				
 			<?php } ?>
 		</div>
 		<div class="website">
 			<img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="">
 		</div>
 		<div class="links">
-			<div class="profil-links">
+			<div class="profil-links social">
+			    <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
 				<?php if(is_user_logged_in()) { ?>
 					<?php if(in_array('administrator', $user->roles)) { ?>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
@@ -154,17 +152,12 @@ if(is_user_logged_in()) {
 							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Statistiques
 						</a>
 					<?php } else { ?>
+					    
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">Wishlist
-						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg'; ?>" alt="">Swap-places
-						</a>
-						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-favorites' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/spf.svg'; ?>" alt="">Swap-places favorites
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/membres-suivies' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/ms.svg'; ?>" alt="">Membres suivies

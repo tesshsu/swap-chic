@@ -2013,7 +2013,7 @@ function displayPosts($postlist) {
 				}
 			} elseif($post[0] == 'swapplaces') {
 				set_query_var( 'post', $post[1] );
-				get_template_part( 'partials/content/content', 'swapplaces' );
+				//get_template_part( 'partials/content/content', 'swapplaces' );
 				//print '<p class="h2">loop 1 swp : <br><span class="scope-level">'.count($post).'</span></p>';
 			}
 		}
@@ -2037,7 +2037,7 @@ function displayPosts($postlist) {
 				get_template_part( 'partials/content/content', 'produits' );
 			} elseif($post[0] == 'swapplaces') {
 				set_query_var( 'post', $post[1] );
-				get_template_part( 'partials/content/content', 'swapplaces' );
+				//get_template_part( 'partials/content/content', 'swapplaces' );
 			} elseif($post[0] == 'map') {
 				set_query_var( 'swapplaces', $post[1] );
 				set_query_var( 'produits', $post[1] );
@@ -2061,7 +2061,7 @@ function displayPosts($postlist) {
 				get_template_part( 'partials/content/content', 'produits' );
 			} elseif($post[0] == 'swapplaces') {
 				set_query_var( 'post', $post[1] );
-				get_template_part( 'partials/content/content', 'swapplaces' );
+				//get_template_part( 'partials/content/content', 'swapplaces' );
 			} elseif($post[0] == 'map') {				
 				set_query_var( 'swapplaces', $post[1] );
 				set_query_var( 'produits', $post[1] );
