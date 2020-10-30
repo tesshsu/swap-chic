@@ -34,7 +34,6 @@ set_query_var('scope', $scope);
 
 set_query_var('scope_string', getScopeString($_GET));
 
-
 ?>
 
 <?php get_search_form(); ?>

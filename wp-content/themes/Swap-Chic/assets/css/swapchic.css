@@ -1059,9 +1059,6 @@ header {
    .headerSlogan {
 	  font-size: 10px;
    }
-   #searchform {
-    padding: 48px 20px 10px;
-   }
 }
 
 .headerSlogan {
@@ -2578,9 +2575,9 @@ aside.profil .links-switch > * {
 
 aside.profil .links-switch span {
 
-  font-family: 'Montserrat Bold';
+  font-family: 'Montserrat Regular';
 
-  opacity: 1; 
+  opacity: .5;
 
   text-align: center; }
 
@@ -2594,9 +2591,9 @@ aside.profil .links-switch span img {
 
 aside.profil .links-switch .active {
 
-  font-family: 'Montserrat Regular';
+  font-family: 'Montserrat Bold';
 
-  opacity: .5; }
+  opacity: 1;  }
 
 
 
@@ -9955,15 +9952,6 @@ header nav{
 .headerSlogan{
 	font-size: 10px;
 }
-#searchform {
-
-		display: block;
-
-		position: relative;
-
-		padding: 108px 20px 10px;
-
-	}
 }
 @media screen and (max-width: 375px) {
 footer.mobile{
@@ -9982,17 +9970,42 @@ footer{
 .headerSlogan{
 	font-size: 10px;
 }
-#searchform {
-
-		display: block;
-
-		position: relative;
-
-		padding: 128px 20px 10px;
-
-	}
 }
 @media screen and (max-width: 480px) {
+	main.recherche-avancee,
+
+	main.editer-produit,
+
+	main.alertes-enregistrees,
+
+	main.liste-de-souhait,
+
+	main.membres-suivies,
+
+	main.swap-places-favorites,
+
+	main.proposer-swap-place,
+
+	main.inviter-amies,
+
+	main.articles-a-valider,
+
+	main.coups-de-coeur,
+
+	main.recherche-avancee,
+
+	#dashboard,
+
+	#searchresults,
+
+	#page-wrap {
+
+	  padding: 0 !important;
+
+	  margin: 0 auto; }
+	#topBanner img{
+		border-radius: 0 !important;
+	}
 	#searchresults{
 		margin-top: 90px;
 	}
