@@ -10022,6 +10022,7 @@ footer{
 	  padding: 10px; }
 	.a2a_kit {
 
+		  z-index: 99;
 		  margin-left: 0 !important;
 
 		  display: -webkit-box !important;

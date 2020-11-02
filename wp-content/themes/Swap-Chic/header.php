@@ -63,15 +63,15 @@ if(is_user_logged_in()) {
 
 									<a class="a2a_button_facebook"></a>
 
+									<a class="a2a_button_whatsapp"></a>
+									
+									<a class="a2a_button_facebook_messenger"></a>
+									
+									<a class="a2a_button_email"></a>
+									
 									<a class="a2a_button_twitter"></a>
 
 									<a class="a2a_button_pinterest"></a>
-
-									<a class="a2a_button_email"></a>
-
-									<a class="a2a_button_whatsapp"></a>
-
-									<a class="a2a_button_facebook_messenger"></a>
 
 								</div>
 
