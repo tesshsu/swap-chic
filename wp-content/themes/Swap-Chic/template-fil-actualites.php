@@ -38,11 +38,21 @@ set_query_var('scope_string', getScopeString($_GET));
 
 <?php get_search_form(); ?>
 
-<div id="topBanner" class="top">
+<div id="topBanner" class="top desktop">
 
 	<a href="#">
 
       <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.jpg' ?>" alt="pub4">
+
+    </a>
+
+</div>
+
+<div id="topBanner" class="top mobile">
+
+	<a href="#">
+
+      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4_mobile.jpg' ?>" alt="pub4">
 
     </a>
 

@@ -85,9 +85,6 @@ if(is_user_logged_in()) {
 							<li>
 							 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="likeButton"><img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg' ?>" alt=""></a>
 							</li>
-							<li>
-							 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="searchButton"><img src="<?php echo get_template_directory_uri().'/assets/images/search.svg' ?>" alt="recherche-avancee"></a>
-							</li>
 						</ul>
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>				
@@ -162,7 +159,7 @@ if(is_user_logged_in()) {
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/membres-suivies' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/ms.svg'; ?>" alt="">Membres suivies
 						</a>
-                        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parle-de-nous-1' ?>" id="blog">
+                        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parler-de-nous-1' ?>" id="blog">
 						   <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'; ?>" alt="">On parle de nous
 				        </a>						
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">

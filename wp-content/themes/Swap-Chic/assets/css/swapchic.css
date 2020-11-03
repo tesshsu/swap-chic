@@ -9972,6 +9972,13 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	#searchform{
+		top: 120px;
+		width: 90%;
+	}
+	main.actualites > .top{
+		margin-top: 140px !important;
+	}
 	main.recherche-avancee,
 
 	main.editer-produit,

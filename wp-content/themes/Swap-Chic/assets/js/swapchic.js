@@ -283,19 +283,6 @@ jQuery(document).ready(function () {
         jQuery('body').removeClass('isMobile');
     }
 
-    // Remember scroll position
-    if(urlArray[1] == 'actualites') {
-        if ( Cookies.get("scroll-actu") !== null && Cookies.get("hide-helps") != 1) {
-            jQuery(document).scrollTop( Cookies.get("scroll-actu") );
-        }
-        jQuery('*').on("click", function() {
-            Cookies.set("scroll-actu", jQuery(document).scrollTop());
-        });
-    } else if(urlArray[1] == 'catalogue' && urlArray[3] == null) {
-        jQuery("html, body").scrollTop(0);
-    }
-
-
     // Redirect to homepage on logo click
     jQuery('h1.logo').click(function(){
        window.location.assign(window.location.origin+"/actualites");
