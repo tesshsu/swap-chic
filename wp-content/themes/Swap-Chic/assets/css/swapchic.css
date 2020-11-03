@@ -3261,13 +3261,6 @@ main.editer-produit {
 }
 
 
-
-main.actualites > .top {
-
-  /* margin-bottom: 20px;  */ }
-
-
-
 main.messagerie > .top {
 
   padding-top: 80px;
@@ -4056,7 +4049,10 @@ main > .top #scope-modal input[type=text] {
 
   cursor: pointer;}
 
-
+.newsMenu ul{
+  list-style-type: square;	
+  list-style: square !important;
+}
 
 .map {
 
@@ -5620,10 +5616,13 @@ img.wider {
 
 }
 
-
-
+#chat-wrap{
+	overflow-y: scroll !important;
+}
 #chat-area {
 
+  overflow-y: scroll !important;
+  
   padding: 20px;
 
   display: -webkit-box;
@@ -5994,7 +5993,7 @@ img.wider {
 
   position: fixed;
 
-  top: 80px;
+  top: 150px;
 
   bottom: 82px;
 
@@ -9972,12 +9971,12 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	#chat-area{
+		margin-top: 140px;
+	}
 	#searchform{
 		top: 120px;
 		width: 90%;
-	}
-	main.actualites > .top{
-		margin-top: 140px !important;
 	}
 	main.recherche-avancee,
 
@@ -10087,12 +10086,12 @@ footer{
 	.dressing .user img,
 
     .inthread.comment .user img {
-	  height: 45px;
-	  width: 45px;
+	  height: 55px;
+	  width: 55px;
 	  border-radius: 20px;
     }
 	.page, .post{
-		padding: 0px 20px 82px;
+		padding: 70px 20px 82px;
 	}
 	.delete-favori{
 	  margin-left: 250px;
@@ -10103,11 +10102,8 @@ footer{
 	.alert-notice-home a{
 		top: 185px !important;
 	}
-	#chat-area{
-		margin-top: 160px !important;
-	}
 	.discussion-title{
-	   top: 100px !important;
+	   top: 90px !important;
 	}
 	.articles-a-valider{
 		padding: 0 0 50px 0;
@@ -12013,7 +12009,7 @@ footer{
 
     left: 300px;
 
-    top: 85px;
+    top: 70px;
 
   }
 

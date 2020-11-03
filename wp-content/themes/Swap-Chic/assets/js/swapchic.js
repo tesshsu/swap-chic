@@ -969,7 +969,7 @@ jQuery(document).ready(function () {
     }
 
     // Toggle discussion more
-    /*jQuery('#send-more-toggle').click(function() {
+    jQuery('#send-more-toggle').click(function() {
         if(!isSendmoreShown) {
             jQuery('#send-more-toggle').css({
                 transform : 'rotate(45deg)',
@@ -1001,7 +1001,7 @@ jQuery(document).ready(function () {
         });
         jQuery('#send-more').hide();
         jQuery(document).scrollTop(jQuery(document).height());
-    });*/
+    });
 
 
     // Toggle search
@@ -1763,11 +1763,11 @@ jQuery(document).ready(function () {
         } else {
             if(isMobile) {
                 jQuery('.actualites #membresHome').slick({
-                    slidesToShow: 7,
-                    slidesToScroll: 7,
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
                     infinite: false,
                     centerMode: false,
-					centerPadding: '30px',
+					centerPadding: '20px',
                     arrows: true,
                     adaptiveHeight: false
                   });

@@ -54,10 +54,85 @@
         <span id="chat-area"></span>
     </div>
     <form id="send-message-area">
-        <div id="send-more-toggle"><a href="<?php echo get_permalink(get_field('dressing', 'user_'.$partner_id)) ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/plus.svg'; ?>" alt=""></a></div>
+        <div id="send-more-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/plus.svg'; ?>" alt=""></div>
         <textarea id="sendie" placeholder="Votre message..." ></textarea>
         <div id="send"><img src="<?php echo get_template_directory_uri().'/assets/images/send.svg'; ?>" alt=""></div>
     </form>
+	<div id="send-more" style="display:none">
+        <div class="produits">
+            <p class="h1">Produits</p>
+            <div class="partner-dressing drawer closed">
+                <p class="h2">Dressing de <?php echo ucfirst($partner->data->display_name) ?></p>
+                <?php 
+                    $produits = get_field('produits', get_field('dressing', 'user_'.$partner_id));
+                    $partner_products = 0;
+                    $has_product = false;
+                    foreach($produits as $produit) {
+                        if( get_post_status($produit) == 'publish') {
+                            $partner_products ++;
+                            $has_product = true; ?>
+                            <div class="produit-min" data-id="<?php echo $produit ?>">
+                                <?php echo get_the_post_thumbnail($produit) ?>
+                                <div class="infos">
+                                    <p><?php echo generateProductTitle($produit) ?></p>
+                                    <b><?php 
+                                        $action = get_field('action', $produit);
+                                        if( $action[0] == 'À vendre' && count($action) == 1) {
+                                            echo 'À vendre : '.get_field('prix', $produit).'€'; 
+                                        } elseif($action[1]) {
+                                            echo 'À swaper ou à vendre : '.get_field('prix', $produit).'€';
+                                        } else {
+                                            echo 'À swaper';
+                                        }
+                                    ?></b>
+                                </div>
+                                <div class="send-product btn">
+                                    Envoyer
+                                    <input type="hidden" class="post-chat" value="<?php echo productToChat($produit) ?>">
+                                </div>
+                            </div>
+                        <? }
+                    }
+                ?>
+                <p class="number"><?php echo $partner_products; ?></p>
+                <div class="expand"><img src="<?php if($partner_products == 0) { echo get_template_directory_uri().'/assets/images/lock.svg'; } else {echo get_template_directory_uri().'/assets/images/arrowbot-white.svg'; } ?>" alt=""></div>
+            </div>            
+            <div class="user-dressing drawer closed">
+               <p class="h2">Votre dressing</p>
+                <?php 
+                    $produits = get_field('produits', get_field('dressing', 'user_'.$current_user_id));
+                    $user_products = 0;
+                    foreach($produits as $produit) {
+                        if( get_post_status($produit) == 'publish') {
+                            $user_products ++; ?>
+                            <div class="produit-min" data-id="<?php echo $produit ?>">
+                                <?php echo get_the_post_thumbnail($produit) ?>
+                                <div class="infos">
+                                    <p><?php echo generateProductTitle($produit) ?></p>
+                                    <b><?php 
+                                        $action = get_field('action', $produit);
+                                        if( $action[0] == 'À vendre' && count($action) == 1) {
+                                            echo 'À vendre : '.get_field('prix', $produit).'€'; 
+                                        } elseif($action[1]) {
+                                            echo 'À swaper ou à vendre : '.get_field('prix', $produit).'€';
+                                        } else {
+                                            echo 'À swaper';
+                                        }
+                                    ?></b>
+                                </div>
+                                <div class="send-product btn">
+                                    Envoyer
+                                    <input type="hidden" class="post-chat" value="<?php echo productToChat($produit) ?>">
+                                </div>
+                            </div>
+                        <? }
+                    }
+                ?>
+                <p class="number"><?php echo $user_products; ?></p>
+                <div class="expand"><img src="<?php if($user_products == 0) { echo get_template_directory_uri().'/assets/images/lock.svg'; } else {echo get_template_directory_uri().'/assets/images/arrowbot-white.svg'; } ?>" alt=""></div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
