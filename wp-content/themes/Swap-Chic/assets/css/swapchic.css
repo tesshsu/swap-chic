@@ -198,8 +198,6 @@ html, body {
 
   min-height: 100%;
 
-  overflow: hidden;
-
   font-family: 'Montserrat Regular', sans-serif;
 
   font-size: 18px;
@@ -2335,23 +2333,20 @@ aside.profil .user .pp {
   margin-right: 10px; }
 
 
-
+aside .user a{
+	display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+	text-decoration: none;
+}
 aside.profil .user .pp img {
 
   width: 100%; }
 
-
-
-aside.profil .user .h1 {
-
-  font-size: 20px;
-
-  margin-right: 20px; }
-
-
-
 aside.profil .user a img {
   height: 20px;
+  margin: 3px 0 0 5px;
  }
 
 aside.profil .website {
@@ -3165,7 +3160,7 @@ footer a img {
 	position: absolute;
 	right: 20px;
 }
-ul li{
+.rightIconMenu li{
 	display: inline-block;
 }
 main.actualites,
@@ -9971,11 +9966,14 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	#topBanner{
+		margin-top: 100px;
+	}
 	#chat-area{
 		margin-top: 140px;
 	}
 	#searchform{
-		top: 120px;
+		top: 70px;
 		width: 90%;
 	}
 	main.recherche-avancee,
@@ -10080,7 +10078,7 @@ footer{
 		top: 88px !important;
 	}
 	header nav > *:not(h1) img{
-		height: 25px;
+		height: 20px;
 		padding-right: 10px;
 	}
 	.dressing .user img,

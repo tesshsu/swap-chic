@@ -384,11 +384,11 @@ jQuery(document).ready(function() {
                     }
                     clearTimeout(loader_timeout);
                     loaderHide();
-                    if ( Cookies.get("hide-helps") == 1 ) {
+                    /*if ( Cookies.get("hide-helps") == 1 ) {
                         jQuery('html, body').css('overflow', 'visible');
                     } else {
                         jQuery("html, body").scrollTop(0);
-                    }
+                    }*/
                 });
             }
         } else {

@@ -534,7 +534,7 @@ jQuery(document).ready(function () {
             var container = jQuery('aside.profil');
             if (!container.is(e.target) && container.has(e.target).length === 0) {
                 container.hide();
-                jQuery('html').css('overflow-y', 'visible');
+                //jQuery('html').css('overflow-y', 'visible');
             }
         });
     }

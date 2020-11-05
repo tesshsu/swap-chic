@@ -88,7 +88,9 @@ if(is_user_logged_in()) {
 						</ul>
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>				
-				
+				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
+					<img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg'; ?>" alt="">
+				</a>
 				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle">
 				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
@@ -124,7 +126,7 @@ if(is_user_logged_in()) {
 		<div class="user">
 			<?php if(is_user_logged_in()) { ?>
 				<div class="pp"><img src="<?php echo get_field('photo_profil', 'user_'.$user->ID) ?>" alt=""></div>
-				<p class="h1"><?php echo ucfirst($user->data->display_name) ?><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-profil' ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/cog.svg'; ?>" alt=""></a></p>
+				<p class="h1"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-profil' ?>"><?php echo ucfirst($user->data->display_name) ?><img src="<?php echo get_template_directory_uri().'/assets/images/cog.svg'; ?>" alt=""></a></p>
 				
 			<?php } ?>
 		</div>
