@@ -13,17 +13,19 @@
 
     $post_id = get_the_id(); 
     $current_user_id = get_current_user_id();
-    
+    $user_info = get_user_meta($current_user->ID);
+	
     // We check that the current user is part of this discussion
     if(get_field('utilisateur_1', $discussion) == $current_user_id) {
-        $partner_id = get_field('utilisateur_2', $discussion);
+        $partner_id = get_field('utilisateur_2', $discussion);		
     } elseif(get_field('utilisateur_2', $discussion) == $current_user_id) {
         $partner_id = get_field('utilisateur_1', $discussion);
     } else {
         header('Location: https://'.$_SERVER['HTTP_HOST'].'/messagerie');
         exit();
     }
-
+    
+	$partner_name = ucfirst(get_userdata($partner_id)->data->display_name);
     // We delete the new message notification if it exists
 	$notifs = get_field('notifications', 'user_'.$current_user_id);
 	foreach($notifs as $key => $notif) {
@@ -60,7 +62,7 @@
     </form>
 	<div id="send-more" style="display:none">
         <div class="produits">
-            <p class="h1">Produits</p>
+            <p class="h1">Produits</p>			
             <div class="partner-dressing drawer closed">
                 <p class="h2">Dressing de <?php echo ucfirst($partner->data->display_name) ?></p>
                 <?php 

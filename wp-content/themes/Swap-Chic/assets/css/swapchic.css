@@ -9967,13 +9967,13 @@ footer{
 }
 @media screen and (max-width: 480px) {
 	#topBanner{
-		margin-top: 100px;
+		margin-top: 120px;
 	}
 	#chat-area{
 		margin-top: 140px;
 	}
 	#searchform{
-		top: 70px;
+		top: 100px;
 		width: 90%;
 	}
 	main.recherche-avancee,
