@@ -74,14 +74,14 @@ if($user['ID'] == $current_user_id) {
                     <div class="produit-min <?php if(get_field('pending_deletion', $produit) == 1) echo 'pending-delete' ?>" data-id="<?php echo $produit ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $produit ); ?>" data-type="produit">
                         <?php echo get_the_post_thumbnail($produit) ?>
                         <p><?php echo get_the_title($produit) ?></p>
-                        <div class="likes">
-                            <?php if(!$product_is_liked) { ?>
-                                <img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'?>" alt="">
-                            <? } else { ?>
-                                <img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
-                            <?php } ?>                            
-                            <span><?php echo getLikesNumber($produit) ?></span>
-                        </div>
+                        <div class="likes" onclick="<?php if(is_user_logged_in()) echo 'like('.'\'produits\', \''.$post_id.'\''.', this)'?>">
+								<?php if(!$$product_is_liked) { ?>
+									<img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'?>" alt="">
+								<? } else { ?>
+									<img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
+								<?php } ?>
+								<span><?php echo getLikesNumber($post_id) ?></span>
+						</div>
                         <?php if($is_owner) { ?>
                             <div class="product-actions">
                                 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-produit/?produit='.$produit ?>" class="edit">Modifier</a>
@@ -145,13 +145,13 @@ if($user['ID'] == $current_user_id) {
         <?php } ?>
         <div class="social">
             <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
-            <div class="likes" onclick="<?php if(is_user_logged_in()) echo 'like('.'\'dressings\', \''.$post_id.'\''.', this)'?>">
-                <?php if(!$is_liked) { ?>
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'?>" alt="">
-                <? } else { ?>
-                    <img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
-                <?php } ?>           
-                <span><?php echo getLikesNumber($post_id) ?></span>
+            <div class="likes" onclick="<?php if(is_user_logged_in()) echo 'like('.'\'produits\', \''.$post_id.'\''.', this)'?>">
+                    <?php if(!$is_liked) { ?>
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'?>" alt="">
+                    <? } else { ?>
+                        <img src="<?php echo get_template_directory_uri().'/assets/images/liked.svg'?>" alt="">
+                    <?php } ?>
+                    <span><?php echo getLikesNumber($post_id) ?></span>
             </div>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg';?>" alt="">

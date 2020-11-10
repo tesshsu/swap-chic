@@ -41,8 +41,6 @@ if($_POST) {
     <input type="email" placeholder="E-mail..." name="email-1" id="email-1" required>
     <input type="email" placeholder="E-mail..." name="email-2" id="email-2">
     <input type="email" placeholder="E-mail..." name="email-3" id="email-3">
-    <input type="email" placeholder="E-mail..." name="email-4" id="email-4">
-    <input type="email" placeholder="E-mail..." name="email-5" id="email-5">
     <div id="send-invitation-submit" class="btn">Envoyer</div>
 </form>
 

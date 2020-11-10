@@ -89,7 +89,7 @@
                                     ?></b>
                                 </div>
                                 <div class="send-product btn">
-                                    Envoyer
+                                    <img src="<?php  echo get_template_directory_uri().'/assets/images/chat.svg'; ?>" />
                                     <input type="hidden" class="post-chat" value="<?php echo productToChat($produit) ?>">
                                 </div>
                             </div>
