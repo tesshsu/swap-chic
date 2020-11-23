@@ -6,7 +6,7 @@
 <div class="addproduct-wrapper">
     <form method="post" id="addproduct-form">
         <?php
-            get_template_part( 'partials/content/content', 'helpaddproduct' );
+            //get_template_part( 'partials/content/content', 'helpaddproduct' );
             get_template_part( 'partials/form/addproduct', 'required');
             get_template_part( 'partials/form/addproduct', 'optional');
         ?>

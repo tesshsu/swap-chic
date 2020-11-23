@@ -88,7 +88,7 @@ if(is_user_logged_in()) {
 						</ul>
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>				
-				<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
+				<a class="mobile" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
 					<img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg'; ?>" alt="">
 				</a>
 				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>

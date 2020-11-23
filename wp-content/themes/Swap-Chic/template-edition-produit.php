@@ -79,7 +79,7 @@
 
 <div class="edit-title">
     <a href="<?php echo $dressing_url ?>" class="edit-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
-    <h1 class="h1">Éditer <?php echo get_the_title(post_id) ?></h1>
+    <span>votre article a été modifié </sapn><h1 class="h1"> Éditer<?php echo get_the_title(post_id) ?></h1>
 </div>
 
 
@@ -247,16 +247,6 @@
     <input type="hidden" name="type" value="matiere">
     <input type="submit" value="Valider" class="btn">        
 </form>
-
-<!-- <form method="post" id="edit-product-saisons">
-    <p class="h2">Saisons</p>
-    <label for="addproduct-printemps"><input type="checkbox" value="printemps" name="saison[]" id="addproduct-printemps" <?php if(in_array('printemps', get_field('saison', $post_id))) echo 'checked' ?>>Printemps</label>
-    <label for="addproduct-été"><input type="checkbox" value="ete" name="saison[]" id="addproduct-été" <?php if(in_array('ete', get_field('saison', $post_id))) echo 'checked' ?>>Été</label>
-    <label for="addproduct-automne"><input type="checkbox" value="automne" name="saison[]" id="addproduct-automne" <?php if(in_array('automne', get_field('saison', $post_id))) echo 'checked' ?>>Automne</label>
-    <label for="addproduct-hiver"><input type="checkbox" value="hiver" name="saison[]" id="addproduct-hiver" <?php if(in_array('hiver', get_field('saison', $post_id))) echo 'checked' ?>>Hiver</label>
-    <input type="hidden" name="type" value="saisons">
-    <input type="submit" value="Valider" class="btn">        
-</form> -->
 
 
 <form method="post" id="edit-product-desc">

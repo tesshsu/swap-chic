@@ -58,7 +58,7 @@ if($user['ID'] == $current_user_id) {
 
 <div class="dressing-single <?php if($is_owner) echo 'profile'?>" data-type="dressing" data-id="<?php echo $post_id ?>">
     <div class="dressing-title">
-        <a href="<?php if( $_GET['from_product_add'] == 1) { echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; } else { echo 'javascript:history.back()'; } ?>" class="dressing-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
+        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; ?>" class="dressing-close"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></a>
     </div>
     <div class="pp">
         <img src="<?php echo get_field('photo_profil', 'user_'.$user['ID'])?>" alt="">

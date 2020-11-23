@@ -11,7 +11,7 @@
 
 							<div class="addtoany-wrapper">
 
-								<div class="a2a_kit top a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($post_id) ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">
+								<div class="a2a_kit top a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/actualites/'; ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">
 
 									<a class="a2a_button_facebook"></a>
 
