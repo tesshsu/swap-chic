@@ -43,49 +43,20 @@ if(is_user_logged_in()) {
 } ?>
 <?php wp_body_open(); ?>
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
-			<h4 class="headerSlogan mobile">Ton vide dressing éco-responsable</h4>
+			<h4 class="headerSlogan">Ton vide dressing éco-responsable</h4>
 			<nav>
 				<div class="desktop nav-desktop social">
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
+					    <img id="spButton" src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt="">Filter
+					</a>
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
+						<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
 					</a>
 					<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 					<div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
-					<div class="share">							
-						   
-							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Invites tes amies
-			 
-							<span></span>
-
-							<div class="addtoany-wrapper">
-
-								<div class="a2a_kit top a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($post_id) ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">
-
-									<a class="a2a_button_facebook"></a>
-
-									<a class="a2a_button_whatsapp"></a>
-									
-									<a class="a2a_button_facebook_messenger"></a>
-									
-									<a class="a2a_button_email"></a>
-									
-									<a class="a2a_button_twitter"></a>
-
-									<a class="a2a_button_pinterest"></a>
-
-								</div>
-
-							</div>
-
-						</div>
-						<ul class="rightIconMenu">
-							<li>
-							  <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class=""><img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt=""></a>
-							</li>
-							<li>
-							 <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/recherche-avancee' ?>" class="likeButton"><img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg' ?>" alt=""></a>
-							</li>
-						</ul>
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places' ?>"><img id="spButton" src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg' ?>" alt="">Swap-places</a>
+					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie' ?>" class=""><img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt="">notif</a>
+						
 				</div>
 				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>				
 				<a class="mobile" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
@@ -151,7 +122,35 @@ if(is_user_logged_in()) {
 							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Statistiques
 						</a>
 					<?php } else { ?>
-					    
+					    <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+					<a class="share">							
+						   
+							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Partager le concept
+			 
+							<span></span>
+
+							<div class="addtoany-wrapper">
+
+								<div class="a2a_kit top a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($post_id) ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">
+
+									<a class="a2a_button_facebook"></a>
+
+									<a class="a2a_button_whatsapp"></a>
+									
+									<a class="a2a_button_facebook_messenger"></a>
+									
+									<a class="a2a_button_email"></a>
+									
+									<a class="a2a_button_twitter"></a>
+
+									<a class="a2a_button_pinterest"></a>
+
+								</div>
+
+							</div>
+
+						</a>
+						
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
 						</a>

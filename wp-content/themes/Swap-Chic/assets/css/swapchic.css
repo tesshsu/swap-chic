@@ -151,7 +151,9 @@
 	max-height: 1em;
 
 	}
-
+#spButton{
+	
+}
 .likeButton img{
 	margin-left: -40px !important;
 	height: 20px !important;
@@ -985,7 +987,7 @@ h1.logo img {
 
 header {
 
-  padding: 25px 20px 15px 20px;
+  padding: 40px 20px 15px 20px;
 
   width: 100%;
 
@@ -1062,11 +1064,11 @@ header {
 .headerSlogan {
 	position: absolute;
     top: 0;
-    background: #b2895d;
+    background: #2a2a2a;
     width: 100%;
     padding: 5px;
     text-align: center;
-    color: #2a2a2a;
+    color: #fff;
     right: 1px;
 }
 
@@ -1557,6 +1559,9 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+	.headerSlogan {
+		left: 120px !important;
+	}
 	.intro-slide .imgpart {
 		box-sizing: border-box;
 		width: 50%;
@@ -2270,7 +2275,7 @@ aside.profil .user {
 
   position: absolute;
 
-  top: 0;
+  top: -10px;
 
   width: 100%;
 
@@ -2406,7 +2411,7 @@ aside.profil .links {
 
   width: 100%;
 
-  padding: 80px 20px 0;
+  padding: 100px 20px 0;
 
   margin-bottom: 230px;
 
@@ -4089,7 +4094,7 @@ main > .top #scope-modal input[type=text] {
 .memberSentence{
 	text-align: center;
     margin-top: 10px;
-    background: #2a2a2a57;
+    background: #2a2a2a;
     color: #FFF;
 	padding: 10px;
     border-radius: 20px;
@@ -11801,7 +11806,7 @@ footer{
     -ms-flex-align: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding-left: 280px;
+    padding-left: 190px;
   }
 
 
@@ -11832,7 +11837,7 @@ footer{
 
     text-decoration: none;
 
-    margin: 0 20px;}
+    margin: 0 60px;}
 
 
 
@@ -11878,7 +11883,7 @@ footer{
 
     display: flex;
 
-    top: 10px;
+    top: 0;
 
     left: 0;
 
