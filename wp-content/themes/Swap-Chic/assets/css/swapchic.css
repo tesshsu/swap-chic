@@ -1184,14 +1184,6 @@ header nav > *:not(h1) {
 
           align-items: center; }
 
-
-
-header nav > *:not(h1) img {
-
-  height: 15px; }
-
-
-
 header nav .add-product-link {
 
   width: auto;
@@ -1559,6 +1551,9 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+	header nav > *:not(h1) img {
+		  width: 20px!important;
+    }
 	.headerSlogan {
 		left: 120px !important;
 	}
@@ -2275,15 +2270,9 @@ aside.profil .user {
 
   position: absolute;
 
-  top: -10px;
+  top: 0;
 
   width: 100%;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
-  display: flex;
 
   -webkit-box-orient: horizontal;
 
@@ -2309,7 +2298,13 @@ aside.profil .user {
 
   background-color: #f2f2f2; }
 
+ .inside-part{
+	display: -webkit-box;
 
+    display: -ms-flexbox;
+
+    display: flex;
+  }
 
 aside.profil .user .pp {
 
@@ -9973,6 +9968,9 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	footer img {
+		width: 15px !important;
+	}
 	#topBanner{
 		margin-top: 120px;
 	}
@@ -12703,4 +12701,8 @@ footer{
 	background-color: var(--light);
 	color: var(--dark-blue);
 	box-shadow: 0 1x 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.logoDesktop{
+	width: 200px;
 }
