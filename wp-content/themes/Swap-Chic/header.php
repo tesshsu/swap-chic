@@ -45,19 +45,14 @@ if(is_user_logged_in()) {
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
 			<h4 class="headerSlogan">Ton vide dressing éco-responsable et locale</h4>
 			<nav>
-				<div class="desktop nav-desktop social">
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
-					    <img id="spButton" src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt="">Filter
-					</a>
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
-						<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
-					</a>
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places' ?>"><img id="spButton" src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg' ?>" alt="">Swap-places</a>
-					 <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
-					<a class="share">							
-						   
-							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Partager le concept
-			 
+				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt="">Menu</div>
+				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
+                <div class="desktop nav-desktop social">
+				    <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+					<div class="share">							
+
+							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Invites tes amies
+
 							<span></span>
 
 							<div class="addtoany-wrapper">
@@ -67,11 +62,11 @@ if(is_user_logged_in()) {
 									<a class="a2a_button_facebook"></a>
 
 									<a class="a2a_button_whatsapp"></a>
-									
+
 									<a class="a2a_button_facebook_messenger"></a>
-									
+
 									<a class="a2a_button_email"></a>
-									
+
 									<a class="a2a_button_twitter"></a>
 
 									<a class="a2a_button_pinterest"></a>
@@ -80,11 +75,27 @@ if(is_user_logged_in()) {
 
 							</div>
 
-						</a>
-					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie' ?>" class=""><img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt="">notif</a>
-						
+					</div>
 				</div>
-				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt=""></div>				
+				<div class="desktop secondMenu" id="secondMenu">
+					<ul>
+						<li>
+							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
+								<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places' ?>">
+							   <img id="spButton" src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg' ?>" alt="">Swap-places
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie' ?>" class="">
+							  <img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt="">notifications
+							</a>
+						</li>
+					</ul>
+				</div>
 				<a class="mobile" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
 					<img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg'; ?>" alt="">
 				</a>

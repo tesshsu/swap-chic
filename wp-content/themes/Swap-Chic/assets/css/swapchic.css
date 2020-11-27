@@ -1087,8 +1087,7 @@ header h1.logo {
   width: auto;
 
   margin: 0 10px;
-
-  /* margin: 0 20px; */ }
+}
 
 
 
@@ -1098,8 +1097,22 @@ header h1.logo img {
 
   width: auto; }
 
-
-
+.secondMenu ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+ }
+.secondMenu ul li {
+ float:left; /*pour IE*/
+ }
+.secondMenu{
+	position: ABSOLUTE;
+    top: 80px;
+    left: 20rem;
+}
+.secondMenu ul li a{
+    //display: inline-block !important;
+ }
 header nav {
 
   height: 100%;
@@ -1146,14 +1159,6 @@ header nav {
 
     max-width: 80%; } }
 
-
-
-header .profil-toggle {
-
-  overflow: hidden; }
-
-
-
 header .profil-toggle img {
 
   width: 55px; }
@@ -1161,8 +1166,6 @@ header .profil-toggle img {
 
 
 header nav > *:not(h1) {
-
-  height: 30px;
 
   width: 30px;
 
@@ -1551,11 +1554,13 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
-	header nav > *:not(h1) img {
-		  width: 20px!important;
-    }
-	.headerSlogan {
-		left: 120px !important;
+	header{
+		height: 140px;
+	}
+	.nav-desktop{
+		position: absolute;
+		top: 40px;
+		right: 0;
 	}
 	.intro-slide .imgpart {
 		box-sizing: border-box;
@@ -9968,6 +9973,9 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	.secondMenu{
+		display: none;
+	}
 	footer img {
 		width: 15px !important;
 	}
@@ -11646,7 +11654,8 @@ footer{
 
   header nav {
 
-    padding: 0;
+    margin-top: -50px;
+	padding: 0;
 
     max-width: 100%;
 
@@ -11657,15 +11666,6 @@ footer{
             justify-content: flex-start;
 
   }
-
-
-
-  header .profil-toggle {
-
-    display: none;
-
-  }
-
 
 
   header nav > *:not(h1):not(.desktop) {
@@ -11713,14 +11713,7 @@ footer{
 
 
   header h1.logo {
-
-    -webkit-box-ordinal-group: 1;
-
-        -ms-flex-order: 0;
-
-            order: 0;
-
-    margin: 0 20px 0 0;
+    margin: 0 auto;
 
     width: 260px;
 
@@ -11798,13 +11791,6 @@ footer{
 
   header .desktop {
     margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding-left: 190px;
   }
 
 
@@ -11874,12 +11860,6 @@ footer{
   }
 
   aside.profil {
-
-    display: -webkit-box;
-
-    display: -ms-flexbox;
-
-    display: flex;
 
     top: 0;
 
