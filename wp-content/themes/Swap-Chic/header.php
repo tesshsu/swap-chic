@@ -45,13 +45,13 @@ if(is_user_logged_in()) {
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
 			<h4 class="headerSlogan">Ton vide dressing éco-responsable et locale</h4>
 			<nav>
-				<div class="profil-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/menu.svg' ?>" alt="">Menu</div>
+				<div class="profil-toggle"><i class="fas fa-bars"></i>Menu</div>
 				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
                 <div class="desktop nav-desktop social">
-				    <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+				    <div class="social-close" onclick="closeSocial(this)"><i class="far fa-times-circle"></i></div>
 					<div class="share">							
 
-							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Invites tes amies
+							<i class="fas fa-share-alt"></i>Invites tes amies
 
 							<span></span>
 
@@ -81,17 +81,17 @@ if(is_user_logged_in()) {
 					<ul>
 						<li>
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
-								<img src="<?php echo get_template_directory_uri().'/assets/images/ap.svg'; ?>" alt="">Ajoute un produit
+								<i class="fas fa-plus-circle"></i>Ajoute un produit
 							</a>
 						</li>
 						<li>
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places' ?>">
-							   <img id="spButton" src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg' ?>" alt="">Swap-places
+							   <i class="fas fa-coffee"></i>Swap-places
 							</a>
 						</li>
 						<li>
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie' ?>" class="">
-							  <img src="<?php echo get_template_directory_uri().'/assets/images/message.svg' ?>" alt="">notifications
+							   <i class="fas fa-bell"></i>notifications
 							</a>
 						</li>
 					</ul>

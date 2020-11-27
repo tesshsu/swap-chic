@@ -1107,11 +1107,10 @@ header h1.logo img {
  }
 .secondMenu{
 	position: ABSOLUTE;
-    top: 80px;
-    left: 20rem;
+    top: 100px;
+    left: 18rem;
 }
 .secondMenu ul li a{
-    //display: inline-block !important;
  }
 header nav {
 
@@ -1381,14 +1380,16 @@ header nav > *:last-child {
           align-items: flex-start;
 
   position: relative;
-    width: 70%;
     z-index: 4;
     top: 140px;
-    margin: 0 auto;
+	width: 75%;
+    margin-left: 2rem;
  }
 
   
-
+.artGreenImg{
+	width: 850px;
+}
 
 
   
@@ -11654,7 +11655,7 @@ footer{
 
   header nav {
 
-    margin-top: -50px;
+    margin-top: -35px;
 	padding: 0;
 
     max-width: 100%;
@@ -11934,8 +11935,6 @@ footer{
   #page-wrap {
 
     width: 100%;
-
-    max-width: 700px!important;
 
   }
 

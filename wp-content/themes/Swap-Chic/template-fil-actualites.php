@@ -42,7 +42,7 @@ set_query_var('scope_string', getScopeString($_GET));
 
 	<a href="#">
 
-      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.jpg' ?>" alt="pub4">
+      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.jpg' ?>" alt="pub4" class="artGreenImg">
 
     </a>
 

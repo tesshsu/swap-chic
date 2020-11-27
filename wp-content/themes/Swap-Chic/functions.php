@@ -3810,6 +3810,7 @@ function swapchic_enqueue_styles() {
 	wp_enqueue_style( 'select2-style', get_template_directory_uri() . '/assets/css/select2.min.css', array(), null );
 	wp_enqueue_style( 'cropper-style', get_template_directory_uri() . '/assets/css/cropper.min.css', array(), null );
 	wp_enqueue_style( 'swapchic-style', get_template_directory_uri() . '/assets/css/swapchic.css', array(), false );
+	wp_enqueue_style( 'swapchic-style', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), false );
 	wp_enqueue_script( 'wp-api' );
 	wp_enqueue_script( 'jquery', get_template_directory_uri() .'/assets/js/jquery.min.js');
 	wp_enqueue_script( 'jquery-ui', get_template_directory_uri() .'/assets/js/jquery-ui.min.js', array('jquery'));
