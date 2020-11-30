@@ -51,8 +51,8 @@ $current_user_id = get_current_user_id();
 		'orderby' => 'date',
         'order' => 'DESC',
 		'author__not_in' => array($current_user_id),
-        'posts_per_page' => 150,
-        'nopaging' => false
+        //'posts_per_page' => 150,
+        'nopaging' => true
 		
     );
     $swapplaces_query = new WP_Query( $args );

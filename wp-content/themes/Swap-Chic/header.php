@@ -45,8 +45,9 @@ if(is_user_logged_in()) {
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
 			<h4 class="headerSlogan">Ton vide dressing éco-responsable et locale</h4>
 			<nav>
-				<div class="profil-toggle"><i class="fas fa-bars"></i>Menu</div>
-				<h1 class="logo"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
+				<div class="profil-toggle desktop"><i class="fas fa-bars"></i>Menu</div>
+				<div class="profil-toggle mobile"><i class="fas fa-bars"></i></div>
+				<h1 class="logo desktop"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
                 <div class="desktop nav-desktop social">
 				    <div class="social-close" onclick="closeSocial(this)"><i class="far fa-times-circle"></i></div>
 					<div class="share">							
@@ -85,7 +86,7 @@ if(is_user_logged_in()) {
 							</a>
 						</li>
 						<li>
-							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places' ?>">
+							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
 							   <i class="fas fa-coffee"></i>Swap-places
 							</a>
 						</li>
