@@ -3683,46 +3683,6 @@ function swapchic_dressing_custom_post_type() {
 }
 add_action( 'init', 'swapchic_dressing_custom_post_type', 0 );
 
-/* 
-* Adds the swap-place custom post type
-* Parameters : none
-* Return : none
-*/
-/*function swapchic_swapplace_custom_post_type() {
-
-	$labels = array(
-		'name'                => _x( 'Swap-places', 'Post Type General Name'),
-		'singular_name'       => _x( 'Swap-place', 'Post Type Singular Name'),
-		'menu_name'           => __( 'Swap-places'),
-		'all_items'           => __( 'Toutes les swap-places'),
-		'view_item'           => __( 'Voir les swap-places'),
-		'add_new_item'        => __( 'Ajouter une nouvelle swap-place'),
-		'add_new'             => __( 'Ajouter'),
-		'edit_item'           => __( 'Editer la swap-place'),
-		'update_item'         => __( 'Modifier la swap-place'),
-		'search_items'        => __( 'Rechercher une swap-place'),
-		'not_found'           => __( 'Non trouvée'),
-		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
-	);
-
-	$args = array(
-		'label'               => __( 'Swap-places'),
-		'description'         => __( 'Tous sur swap-places'),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-		'show_in_rest'        => true,
-		'hierarchical'        => false,
-		'public'              => true,
-		'has_archive'         => true,
-		'menu_icon' 		  => 'dashicons-location',
-		'rewrite'			  => array( 'slug' => 'swap-places'),
-
-	);
-
-	register_post_type( 'swapplaces', $args );
-
-}
-add_action( 'init', 'swapchic_swapplace_custom_post_type', 0 );*/
 
 function swapchic_discussion_custom_post_type() {
 
