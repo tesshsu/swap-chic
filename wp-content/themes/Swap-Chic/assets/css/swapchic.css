@@ -2,6 +2,7 @@
 
 i{
 	color: #b2895d;
+	margin-right: 5px;
 }
 
 @font-face {
@@ -1384,8 +1385,7 @@ header nav > *:last-child {
   position: relative;
     z-index: 4;
     top: 140px;
-	width: 75%;
-    margin-left: 2rem;
+	width: 25rem;
  }
 
   
@@ -1557,6 +1557,13 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+	.addtoany-wrapper a{
+		margin: 0 !important;
+	}
+	#searchform
+	{
+	  margin-left: 11rem;
+	}
 	header{
 		height: 140px;
 	}
@@ -1584,15 +1591,14 @@ header nav > *:last-child {
 
 	  display: none;
 
-	  position: relative;
+	  position: absolute;
 
 	  right: 0;
 
-	  top: 0;
+	  top: 20px;
 
 	  padding: 0; }
 	.a2a_kit{
-		margin-left: 0 !important;
 
 		  display: -webkit-box !important;
 
@@ -1600,15 +1606,13 @@ header nav > *:last-child {
 
 		  display: block !important;
 
-		  left: 0px !important;
+		  right: 0 !important;
+		  
+		  position: absolute;
 
 		  top: 40px !important;
 
 		  padding: 20px !important;
-
-		  display: flex !important;
-
-		  width: 100% !important;
 
 		  -webkit-box-pack: end !important;
 
@@ -4752,8 +4756,6 @@ img.wider {
 
 
 .social.open {
-
-  width: 100%!important;
 
   margin-bottom: 10px;}
 
@@ -9521,6 +9523,13 @@ div.notfound {
 	text-transform: uppercase;
 	font-size: 1.2em;
 }
+.membre_block h6{
+	text-align: center;
+    font-weight: 700;
+    font-family: 'Montserrat Bold';
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
@@ -9983,14 +9992,14 @@ footer{
 		width: 15px !important;
 	}
 	#topBanner{
-		margin-top: 120px;
+		margin-top: 140px;
 	}
 	#chat-area{
 		margin-top: 140px;
 	}
 	#searchform{
-		top: 100px;
-		width: 90%;
+		top: 120px;
+		width: 100%;
 	}
 	main.recherche-avancee,
 

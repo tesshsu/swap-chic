@@ -3,10 +3,10 @@
     <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit/' ?>" class="btn add-product">Ajoute un produit</a>
     <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/inviter-amies/' ?>" class="btn desktop add-member">Partager le concept</a>
 	<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/proposer-swap-place' ?>" class="btn proposer-sp">Propose une swap-place</a>
-	<div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>
+	<div class="social-close" onclick="closeSocial(this)"><i class="fas fa-times-circle"></i></div>
 	<div class="share btn desktop">							
 						   
-							<img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">Invites tes amies
+							<i class="fas fa-share-alt"></i>Invites tes amies
 			 
 							<span></span>
 

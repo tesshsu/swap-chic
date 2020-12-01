@@ -49,7 +49,7 @@ if(is_user_logged_in()) {
 				<div class="profil-toggle mobile"><i class="fas fa-bars"></i></div>
 				<h1 class="logo desktop"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
                 <div class="desktop nav-desktop social">
-				    <div class="social-close" onclick="closeSocial(this)"><i class="far fa-times-circle"></i></div>
+				    <div class="social-close" onclick="closeSocial(this)"><i class="fas fa-times-circle"></i></div>
 					<div class="share">							
 
 							<i class="fas fa-share-alt"></i>Invites tes amies
@@ -98,15 +98,15 @@ if(is_user_logged_in()) {
 					</ul>
 				</div>
 				<a class="mobile" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
-					<img src="<?php echo get_template_directory_uri().'/assets/images/addproduct.svg'; ?>" alt="">
+					<i class="fas fa-plus-circle"></i>
 				</a>
 				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
 				<div class="search-toggle">
 				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
-						<img src="<?php echo get_template_directory_uri().'/assets/images/likes.svg'; ?>" alt="">
+						<i class="fas fa-heart"></i>
 					</a>
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
-					   <img src="<?php echo get_template_directory_uri().'/assets/images/env.svg' ?>" alt="Messagerie">
+					   <i class="fas fa-comment"></i>
 					   <?php 
 								$notifs = get_field('notifications', 'user_'.$user_id);
 								if($notifs) { ?>
@@ -133,11 +133,10 @@ if(is_user_logged_in()) {
 		
 	<aside class="profil">
 		<div class="user">
-		    <img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" style="width: 200px;" alt="">
 			<?php if(is_user_logged_in()) { ?>
 			  <div class="inside-part">
 				<div class="pp"><img src="<?php echo get_field('photo_profil', 'user_'.$user->ID) ?>" alt=""></div>
-				<p class="h1"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-profil' ?>"><?php echo ucfirst($user->data->display_name) ?><img src="<?php echo get_template_directory_uri().'/assets/images/cog.svg'; ?>" alt=""></a></p>
+				<p class="h1"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-profil' ?>"><?php echo ucfirst($user->data->display_name) ?><i class="fas fa-cog"></i></a></p>
 			 </div>
 			<?php } ?>
 		</div>
@@ -150,34 +149,34 @@ if(is_user_logged_in()) {
 				<?php if(is_user_logged_in()) { ?>
 					<?php if(in_array('administrator', $user->roles)) { ?>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/coffee-cup.svg'; ?>" alt="">Swap-places
+							<i class="fas fa-coffee"></i>Swap-places
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/articles-a-valider' ?>">
 							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Produits à valider
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/coups-de-coeur' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Coups de coeur
+							<i class="fab fa-gratipay"></i>Coups de coeur
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/stats' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/parrainnage.svg'; ?>" alt="">Statistiques
+							<i class="fas fa-chart-line"></i>Statistiques
 						</a>
 					<?php } else { ?>
 					   
 						
 						<a href="<?php echo get_permalink(get_field('dressing', 'user_'.$user->ID)) ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/dressing.svg'; ?>" alt="">Ton Dressing
+							<i class="fas fa-tshirt"></i>Ton Dressing
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/lds.svg'; ?>" alt="">Wishlist
+							<i class="far fa-bookmark"></i>Wishlist
 						</a>
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/membres-suivies' ?>">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/ms.svg'; ?>" alt="">Membres suivies
+							<i class="fas fa-user-friends"></i>Membres suivies
 						</a>
                         <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parler-de-nous-1' ?>" id="blog">
-						   <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'; ?>" alt="">On parle de nous
+						   <i class="far fa-comments"></i>On parle de nous
 				        </a>						
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
-							<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">Notre blog
+							<i class="far fa-newspaper"></i>Notre blog
 						</a>
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);
@@ -185,7 +184,7 @@ if(is_user_logged_in()) {
 						$logout_url = substr($logout_tag[0], 6, strlen($logout_tag[0]) - 8);
 					?>
 					<a href="<?php echo $logout_url ?>">
-						<img src="<?php echo get_template_directory_uri().'/assets/images/logout.svg'; ?>" alt="">Déconnexion
+						<i class="fas fa-sign-out-alt"></i>Déconnexion
 					</a>
 				<?php } else { ?>
 					<div class="not-connected">
@@ -229,10 +228,10 @@ if(is_user_logged_in()) {
 		</div>
 		<div class="links-switch">
 			<div class="profil-links-switch">
-				<span class="active"><img src="<?php echo get_template_directory_uri().'/assets/images/profil.svg'; ?>" alt="">Mon profil</span>
+				<span class="active"><i class="fas fa-id-badge"></i>Mon profil</span>
 			</div>
 			<div class="website-links-switch">
-				<span><img src="<?php echo get_template_directory_uri().'/assets/images/wl.svg'; ?>" alt="">Liens utiles</span>
+				<span><i class="fas fa-link"></i>Liens utiles</span>
 			</div>
 		</div>
 		<div class="rs">

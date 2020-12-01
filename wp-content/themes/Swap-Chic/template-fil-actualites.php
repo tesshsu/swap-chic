@@ -109,10 +109,9 @@ set_query_var('scope_string', getScopeString($_GET));
 <div class="membre_block">
   <h4>"be part of the change"</h4>
  <hr style="height: 2px;border-width:0;color:gray;background-color:gray;margin: 40px;">
+ <h6> Ajoute ton dressing en un clic: Swap/Vends/rencontre <a href="https://swap-chic.com/ajouter-produit/" class="add-product-home"> par ici</a></h6>
 </div>
-<div class="alert-notice-home">
-    <h4>Ajoute ton dressing en un clic : <a href="https://swap-chic.com/ajouter-produit/" class="add-product-home"> par ici</a></h4>
-</div>
+
 
 <div class="top">
 	
