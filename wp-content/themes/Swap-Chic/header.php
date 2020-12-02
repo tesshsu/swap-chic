@@ -43,7 +43,7 @@ if(is_user_logged_in()) {
 } ?>
 <?php wp_body_open(); ?>
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
-			<h4 class="headerSlogan">Ton vide dressing éco-responsable et locale</h4>
+			<h4 class="headerSlogan">Ton vide dressing éco-responsable et local</h4>
 			<nav>
 				<div class="profil-toggle desktop"><i class="fas fa-bars"></i>Menu</div>
 				<div class="profil-toggle mobile"><i class="fas fa-bars"></i></div>
