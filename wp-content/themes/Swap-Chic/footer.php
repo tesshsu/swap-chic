@@ -14,10 +14,10 @@
 		  }
 	;?>
 		<footer class="mobile social">
-		    <div class="social-close" onclick="closeSocial(this)"><img src="<?php echo get_template_directory_uri().'/assets/images/close.svg'; ?>" alt=""></div>		   
+		    <div class="social-close" onclick="closeSocial(this)"><i class="fas fa-times-circle"></i></div>		   
 			<div class="share">
                 Invite tes amies
-                <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
+                <i class="fas fa-share-alt"></i>
 
                 <span></span>
 
@@ -42,7 +42,7 @@
             </div>
 			<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parler-de-nous-1/' ?>" id="blog">
 					On parle de nous&nbsp; 
-					<img src="<?php echo get_template_directory_uri().'/assets/images/blog.svg'; ?>" alt="">
+					<i class="far fa-comments"></i>
 			</a>
 		</footer>
 	<?php } ?>

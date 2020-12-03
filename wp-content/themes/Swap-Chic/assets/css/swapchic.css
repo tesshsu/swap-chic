@@ -1,7 +1,7 @@
 /* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
 i{
-	color: 2a2a2a;
+	color: #b2895d;
 	margin-right: 8px;
 }
 
@@ -1111,7 +1111,7 @@ header h1.logo img {
 .secondMenu{
 	position: ABSOLUTE;
     top: 100px;
-    left: 18rem;
+    left: 25%;
 }
 .secondMenu ul li a{
  }
@@ -1385,16 +1385,7 @@ header nav > *:last-child {
   position: relative;
     z-index: 4;
     top: 140px;
-	width: 25rem;
  }
-
-  
-.artGreenImg{
-	width: 850px;
-}
-
-
-  
 
 .search-input {
 
@@ -1557,19 +1548,19 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+	#searchform{
+		width: 80%;
+		margin-left: 10%;
+	}
 	.addtoany-wrapper a{
 		margin: 0 !important;
 	}
-	#searchform
-	{
-	  margin-left: 11rem;
-	}
 	header{
-		height: 140px;
+		height: 130px;
 	}
 	.nav-desktop{
 		position: absolute;
-		top: 40px;
+		top: 50px;
 		right: 0;
 	}
 	.intro-slide .imgpart {
@@ -5201,7 +5192,7 @@ img.wider {
 
       align-items: center;
 
-  padding: 20px 20px 20px 54px;
+  padding: 10px 20px 20px 54px;
 
   background-color: #f0f0f0;}
 
@@ -8888,7 +8879,7 @@ img.wider {
 
   position: fixed;
 
-  top: 68px;
+  top: 118px;
 
   z-index: 3;
 
@@ -9821,7 +9812,7 @@ div.notfound {
 
 main.on-parle-de-nous, main.blog {
 
-  padding: 18px 20px 82px;
+  padding: 68px 20px 82px;
 
 }
 
@@ -11630,11 +11621,9 @@ footer{
 
   body {
 
-    margin-left: 300px;
-
     width: calc(100% - 300px);
 
-    overflow-x: hidden!important;
+    margin: 0 auto;
 
   }
 
@@ -11651,7 +11640,7 @@ footer{
 
 
   main {
-    margin-top: 60px;
+    margin-top: 80px;
     max-width: none;
 
   }
@@ -11957,6 +11946,8 @@ footer{
     width: 100%;
 
     max-width: 800px!important;
+	
+	margin: 0 auto;
 
   }
 
@@ -12482,11 +12473,6 @@ footer{
 
 }
 
-#topBanner img {
-
-		border-radius: 30px;
-
-	}
 
 /*chat UI*/
 
