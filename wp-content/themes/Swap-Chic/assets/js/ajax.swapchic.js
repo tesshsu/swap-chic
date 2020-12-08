@@ -595,6 +595,7 @@ function validate(id, element) {
                 }
             } else if(response == 400) {
                 alert("ERREUR 400: Paramètres invalides ou fichier non traitable");
+				console.log(response);
             } else if(response == 402) {
                 alert("ERREUR 402: Crédits insufissants, approvisionnez votre compte");
             } else if(response == 403) {

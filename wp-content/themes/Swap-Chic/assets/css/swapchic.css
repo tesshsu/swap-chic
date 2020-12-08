@@ -1548,6 +1548,9 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+	#desktopLogo{
+		margin-right: 32%!important;
+	}
 	#searchform{
 		width: 80%;
 		margin-left: 10%;
@@ -10108,7 +10111,7 @@ footer{
 	  border-radius: 20px;
     }
 	.page, .post{
-		padding: 70px 20px 82px;
+		padding: 100px 20px 82px;
 	}
 	.delete-favori{
 	  margin-left: 250px;
