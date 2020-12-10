@@ -42,7 +42,7 @@
             </div>
 			<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parler-de-nous-1/' ?>" id="blog">
 					On parle de nous&nbsp; 
-					<i class="far fa-comments"></i>
+					<i class="fas fa-bullhorn"></i>
 			</a>
 		</footer>
 	<?php } ?>

@@ -4,7 +4,9 @@ i{
 	color: #b2895d;
 	margin-right: 8px;
 }
-
+header nav i{
+	font-size: 1.25rem;
+}
 @font-face {
 
   font-family: "Montserrat Regular";
@@ -154,9 +156,7 @@ i{
 	max-height: 1em;
 
 	}
-#spButton{
 	
-}
 .likeButton img{
 	margin-left: -40px !important;
 	height: 20px !important;
@@ -1299,7 +1299,9 @@ header nav > *:last-child {
 
 }
 
-
+.asf-produits{
+   margin: 0 auto;
+}
 
 /* .loader #quote {
 
@@ -9979,6 +9981,16 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	#rightSIdeMenu{
+		display: flex !important;
+		padding-right: 30px;
+	 }
+	#rightSIdeMenu a{
+		margin-right: 20px;
+	}
+	#leftSideMenu{
+		padding-left: 20px;
+	}
 	.secondMenu{
 		display: none;
 	}
@@ -10091,7 +10103,8 @@ footer{
 		padding-right: 20px;
 	}
 	header h1.logo {
-       margin: 0 40px 0 0;
+       margin: 0 auto;
+	   padding-right: 35px;
     }
     #discussions {
 		padding-top: 150px;
@@ -10328,6 +10341,16 @@ footer{
 	#topBanner img {
 
 		width: 100%;
+		
+
+	}	
+	#middleBanner{
+		margin-top: 20px;
+	}
+	#middleBanner img {
+
+		width: 100%;
+		
 
 	}	
 

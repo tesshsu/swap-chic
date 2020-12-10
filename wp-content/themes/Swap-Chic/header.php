@@ -97,16 +97,16 @@ if(is_user_logged_in()) {
 						</li>
 					</ul>
 				</div>
-				<a class="mobile" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
+				<a class="mobile" id="leftSideMenu" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
 					<i class="fas fa-plus-circle"></i>
 				</a>
 				<h1 class="logo mobile"><img src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
-				<div class="search-toggle">
+				<div class="mobile" id="rightSIdeMenu">
 				    <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/liste-de-souhait' ?>">
 						<i class="fas fa-heart"></i>
 					</a>
 					<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>" class="chat-link">
-					   <i class="fas fa-comment"></i>
+					   <i class="far fa-envelope"></i>
 					   <?php 
 								$notifs = get_field('notifications', 'user_'.$user_id);
 								if($notifs) { ?>

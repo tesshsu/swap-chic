@@ -36,6 +36,35 @@ set_query_var('scope_string', getScopeString($_GET));
 
 ?>
 
+<form method="get"  class="desktop" id="advanced-search-form">       
+    <div class="asf-produits">                                    
+        <input class="checkbox-tools" type="radio" value="femme" name="target" id="asf-femme">
+						<label class="for-checkbox-tools" for="asf-femme">
+							<i class="fas fa-female"></i>
+							Femme
+						</label><!--
+						-->
+        <input class="checkbox-tools" type="radio" value="enfant" name="target" id="asf-enfant">
+						<label class="for-checkbox-tools" for="asf-enfant">
+							<i class="fas fa-child"></i>
+							Enfant
+						</label><!--
+						-->
+        <input class="checkbox-tools" type="radio" value="vip" name="target" id="asf-vip">
+						<label class="for-checkbox-tools" for="asf-vip">
+							<i class="fas fa-star"></i>
+							VIP
+						</label>
+        
+		
+					
+    </div>
+    <div class="asf-actions">
+        <div class="asf-submit btn">Lancer la recherche</div>
+    </div>
+</form>
+
+
 <?php get_search_form(); ?>
 
 <div id="topBanner" class="top desktop">
@@ -108,9 +137,22 @@ set_query_var('scope_string', getScopeString($_GET));
 
 <div class="membre_block">
   <h4>"be part of the change"</h4>
+  <div id="middleBanner" class="middleBanner">
+	<a href="#">
+      <img src="<?php echo get_template_directory_uri().'/assets/images/block_sentence.jpg' ?>" alt="block_sentence" class="artGreenImg">
+    </a>
+</div>
  <hr style="height: 2px;border-width:0;color:gray;background-color:gray;margin: 40px;">
  <h6> Ajoute ton dressing en un clic: Swap/Vends/rencontre <a href="https://swap-chic.com/ajouter-produit/" class="add-product-home"> par ici</a></h6>
 </div>
+
+<?php if($_GET) { ?>
+
+    <div id="search-results">
+        <?php displayAdvancedSearchPosts(getAdvancedSearchPosts(get_current_user_id(), $_GET)); ?>
+    </div>
+<?php
+} ?>
 
 
 <div class="top">
@@ -148,116 +190,9 @@ set_query_var('scope_string', getScopeString($_GET));
 
 </div>
 
-<div id="thread">
-<?php
-    $postlist = array(
-        "featured" => array(
-            "cdc" => null, // Featured product
-            "popular" => null, // Most liked product
-            "map" => null // swap places to display
-        ),
-        "scope" => array(),
-        "more" => array(),
-        "even_more" => array()
-    );
 
-    // We construct the postlist first, retrieving all of the posts and comments matching the scope and placing them in the corresponding level
 
-    $posts = array();
-    $product_nbr = 0;
-    $swapplaces = array(
-        "scope" => array(),
-        "more" => array(),
-        "even_more" => array()
-    );
-	
-	$produits = array(
-        "scope" => array(),
-        "more" => array(),
-        "even_more" => array()
-    );
-    
-	
-    $args = array (
-        'post_type' => 'produits',
-        'post_status' => 'publish',
-        'author__not_in' => array($current_user_id),
-		'posts_per_page' => 350,
-        'nopaging' => false
-		
-    );
-    $product_query = new WP_Query( $args );
-
-    if ( $product_query->have_posts() ) {
-        while ( $product_query->have_posts() ) {
-            $product_query->the_post();
-            $post_id = get_the_id();
-            $post_type = get_post_type();
-            if(get_field('is_coup_de_coeur', $post_id) && checkFeaturedPostCity($post_id, $scope)) {
-                $postlist["featured"]["cdc"] = $post_id;
-                $product_nbr ++;
-            } else {
-                $post_scope = getPostScope($post_id, $post_type, $scope);
-                if($lowest_scope_level == 'postal_code') {
-                    // Only show popular item if the scope is on a city
-                    if($post_type == 'produits' && $post_scope == "scope") {
-                        if($postlist["featured"]["popular"] == null) {
-                            $popular_likes = 0;
-                        } else {
-                            $popular_likes = getLikesNumber($postlist["featured"]["popular"]);
-                        }
-                        if(getLikesNumber($post_id) > $popular_likes) {
-                            $postlist["featured"]["popular"] = $post_id;
-                        }
-                    }
-                }
-                if($post_scope != false) {
-                    array_push($postlist[$post_scope], array($post_type, $post_id));
-                    if($post_type == 'produits' && $post_scope == 'scope') {
-                        $product_nbr ++;
-						array_push($produits[$post_scope], $post_id);
-                    }
-                }
-            }
-        }
-    }
-	
-    $args = array(
-        'role' => 'contributor',
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'nopaging' => true,
-        'exclude' => array( '-'.$current_user_id )
-    );
-    $user_query = new WP_User_Query( $args );
-    if (!empty($user_query->results)) {
-        foreach ( $user_query->results as $user ) {
-            $user_id = $user->ID;
-            if(userHasProducts($user_id)) {
-                $user_scope = getUserScope($user_id, $scope);
-                if($user_scope != false) {
-                    array_push($postlist[$user_scope], $user_id);
-                }
-            }
-        }
-    }
-
-    if(!empty($swapplaces['scope'])) {
-        $postlist["featured"]["map"] = $swapplaces['scope'];
-    }
-    if(!empty($swapplaces['more'])) {
-		array_unshift($postlist["more"], array('map', $swapplaces['more']));
-    } 
-    if(!empty($swapplaces['even_more'])) {		
-		array_unshift($postlist["even_more"], array('map', $swapplaces['even_more']));
-    }
-
-    // Then we sort and finally display the postlist
-    displayPosts(sortPosts($postlist, 'distance'));
-?>
-</div>
-
-<div class="chat-pop"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>"><img src="<?php echo get_template_directory_uri().'/assets/images/chat.svg'?>" alt=""></a></div>
+<div class="chat-pop"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie'; ?>"><i class="fas fa-comment"></i></a></div>
 
 
 
