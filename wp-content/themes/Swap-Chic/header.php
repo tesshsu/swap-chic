@@ -45,10 +45,10 @@ if(is_user_logged_in()) {
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
 			<h4 class="headerSlogan">Ton vide dressing éco-responsable et local</h4>
 			<nav>
-				<div class="profil-toggle desktop"><i class="fas fa-bars"></i>Menu</div>
+				<div class="MenuButton desktop"><i class="fas fa-bars"></i>Menu</div>
 				<div class="profil-toggle mobile"><i class="fas fa-bars"></i></div>
 				<h1 class="logo desktop"><img id="desktopLogo" src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
-                <div class="desktop nav-desktop social">
+                <!--div class="desktop nav-desktop social">
 				    <div class="social-close" onclick="closeSocial(this)"><i class="fas fa-times-circle"></i></div>
 					<div class="share">							
 
@@ -76,7 +76,7 @@ if(is_user_logged_in()) {
 
 							</div>
 
-					</div>
+					</div-->
 				</div>
 				<div class="desktop secondMenu" id="secondMenu">
 					<ul>
@@ -86,15 +86,48 @@ if(is_user_logged_in()) {
 							</a>
 						</li>
 						<li>
+							|
+						</li>
+						<li>
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">
 							   <i class="fas fa-coffee"></i>Swap-places
 							</a>
+						</li>
+						<li>
+							|
 						</li>
 						<li>
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie' ?>" class="">
 							   <i class="fas fa-bell"></i>notifications
 							</a>
 						</li>
+						<li>
+							|
+						</li>
+						<li class="social">
+							<div class="social-close" onclick="closeSocial(this)"><i class="fas fa-times-circle"></i></div>
+								<div class="share">
+										<i class="fas fa-share-alt"></i>Invites tes amies
+										<span></span>
+										<div class="addtoany-wrapper">
+											<div class="a2a_kit top a2a_kit_size_26 a2a_default_style" data-a2a-url="<?php echo get_permalink($post_id) ?>" data-a2a-title="<?php echo get_the_title($post_id) ?>">
+
+												<a class="a2a_button_facebook"></a>
+
+												<a class="a2a_button_whatsapp"></a>
+
+												<a class="a2a_button_facebook_messenger"></a>
+
+												<a class="a2a_button_email"></a>
+
+												<a class="a2a_button_twitter"></a>
+
+												<a class="a2a_button_pinterest"></a>
+										</div>
+								</div>
+							</div>
+						</li>
+						
 					</ul>
 				</div>
 				<a class="mobile" id="leftSideMenu" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/ajouter-produit' ?>">
@@ -126,8 +159,6 @@ if(is_user_logged_in()) {
 		</header>
 		<?php 
 			if(!empty($notifs_confirmation)) {
-				//set_query_var('notifs', $notifs_confirmation);
-				//get_template_part('partials/content/content', 'notifconf');
 			}
 		?>
 		
