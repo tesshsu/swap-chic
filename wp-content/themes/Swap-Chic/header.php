@@ -45,7 +45,7 @@ if(is_user_logged_in()) {
 		<header class="<?php if( !displayHeader($path) ) echo 'mobile-hidden' ?>">
 			<h4 class="headerSlogan">Ton vide dressing éco-responsable et local</h4>
 			<nav>
-				<div class="MenuButton desktop"><i class="fas fa-bars"></i>Menu</div>
+				<div class="MenuButton profil-toggle desktop"><i class="fas fa-bars"></i>Menu</div>
 				<div class="profil-toggle mobile"><i class="fas fa-bars"></i></div>
 				<h1 class="logo desktop"><img id="desktopLogo" src="<?php echo get_template_directory_uri().'/assets/images/logo.svg'?>" alt="Swap-Chic"></h1>
                 <!--div class="desktop nav-desktop social">

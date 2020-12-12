@@ -71,7 +71,7 @@ set_query_var('scope_string', getScopeString($_GET));
 
 	<a href="#">
 
-      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/pb4.jpg' ?>" alt="pub4" class="artGreenImg">
+      <img src="<?php echo get_template_directory_uri().'/assets/images/banners/1.jpg' ?>" alt="pub4" class="artGreenImg">
 
     </a>
 
@@ -142,7 +142,7 @@ set_query_var('scope_string', getScopeString($_GET));
       <img src="<?php echo get_template_directory_uri().'/assets/images/block_sentence.jpg' ?>" alt="block_sentence" class="artGreenImg">
     </a>
 </div>
- <hr style="height: 2px;border-width:0;color:gray;background-color:gray;margin: 40px;">
+ <hr style="height: 2px;border-width:0;color:gray;background-color:gray;margin: 10px auto;width: 78%;">
  <h6> Ajoute ton dressing en un clic: Swap/Vends/rencontre <a href="https://swap-chic.com/ajouter-produit/" class="add-product-home"> par ici</a></h6>
 </div>
 

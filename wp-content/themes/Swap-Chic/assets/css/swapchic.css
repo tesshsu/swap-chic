@@ -1400,7 +1400,7 @@ header nav > *:last-child {
 
 .search-input {
 
-  width: 100%;
+  width: 80%;
 
   display: -webkit-box;
 
@@ -1429,6 +1429,7 @@ header nav > *:last-child {
           align-items: center;
 
   margin-bottom: 20px;
+  margin: 0 auto;
 
 }
 
@@ -1559,6 +1560,10 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {
+	.actualites .top{
+		position: relative;
+        text-align: center;
+	}
 	#desktopLogo{
 		margin-right: 32%!important;
 	}
@@ -3535,37 +3540,6 @@ span.check-all {
 
   color: #3c3c3c; }
 
-
-
-main > .top {
-
-  width: 100%;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
-  display: flex;
-
-  -webkit-box-orient: horizontal;
-
-  -webkit-box-direction: normal;
-
-  -ms-flex-flow: row wrap;
-
-      flex-flow: row wrap;
-
-  -webkit-box-pack: justify;
-
-  -ms-flex-pack: justify;
-
-      justify-content: space-between;
-
-  -webkit-box-align: center;
-
-  -ms-flex-align: center;
-
-      align-items: center; }
 
 
 
