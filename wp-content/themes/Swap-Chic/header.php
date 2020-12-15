@@ -70,7 +70,7 @@ if(is_user_logged_in()) {
 						</li>
 						<li>
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/messagerie' ?>" class="">
-							   <i class="fas fa-bell"></i>notifications
+							   <i class="fas fa-bell"></i>notifications                                 <?php 										$notifs = get_field('notifications', 'user_'.$user_id);										if($notifs) { ?>											<span class="notifs"><?php echo count($notifs) ?></span> 									<?php 											$notifs_confirmation = array();											foreach($notifs as $notif) {												if($notif[event] == 'sell' || $notif[event] == 'swap') {													$notifs_confirmation[] = $notif;												}											}										} 									?>
 							</a>
 						</li>
 						<li>
