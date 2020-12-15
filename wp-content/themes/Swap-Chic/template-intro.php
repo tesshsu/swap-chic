@@ -24,12 +24,7 @@ Template Post Type: page
 	    <div class="videopart">
 		   <img src="<?php echo get_template_directory_uri().'/assets/images/sp_intro.jpg' ?>" class="ccm" alt="Swap-Chic-img"> 
 		</div>
-		<div class="imgpart">
-		  <video id="video" poster="<?php echo get_template_directory_uri().'/assets/images/poster.png' ?>" disablepictureinpicture controlslist="nodownload">
-            <source src="<?php echo get_template_directory_uri().'/assets/Swap_chic.mp4' ?>" type="video/mp4">
-          </video>
-		</div>
-    </div>
+    </div>		<div class="intro-slide desktop" id="intro-video">		<div class="videopart">		  <video id="video" poster="<?php echo get_template_directory_uri().'/assets/images/poster.png' ?>" disablepictureinpicture controlslist="nodownload">            <source src="<?php echo get_template_directory_uri().'/assets/Swap_chic.mp4' ?>" type="video/mp4">          </video>		</div>    </div>
 
     <div class="intro-slide intro-tutorial" id="intro-tutorial">
         <img src="<?php echo get_template_directory_uri().'/assets/images/ccm1.png' ?>" alt="" class="ccm">

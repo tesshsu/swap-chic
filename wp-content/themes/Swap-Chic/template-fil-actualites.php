@@ -134,7 +134,6 @@ set_query_var('scope_string', getScopeString($_GET));
     }
 
 ?>
-
 <div class="membre_block">
   <h4>"be part of the change"</h4>
   <div id="middleBanner" class="middleBanner">
@@ -145,22 +144,15 @@ set_query_var('scope_string', getScopeString($_GET));
  <hr style="height: 2px;border-width:0;color:gray;background-color:gray;margin: 10px auto;width: 78%;">
  <h6> Ajoute ton dressing en un clic: Swap/Vends/rencontre <a href="https://swap-chic.com/ajouter-produit/" class="add-product-home"> par ici</a></h6>
 </div>
-
 <?php if($_GET) { ?>
-
     <div id="search-results">
         <?php displayAdvancedSearchPosts(getAdvancedSearchPosts(get_current_user_id(), $_GET)); ?>
     </div>
 <?php
 } ?>
-
-
-<div class="top">
-	
-	 <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
-
-    <?php get_template_part( 'partials/form/scope', 'change'); ?>
-
+<div class="top">
+	 <h2 class="h2">Vos actualités à <span class="scope-toggle"><span class="scope"><img src="<?php echo get_template_directory_uri().'/assets/images/loader.gif' ?>" alt="" class="little-spinner"></span><img src="<?php echo get_template_directory_uri().'/assets/images/edit.svg' ?>" alt=""></span></h2>
+    <?php get_template_part( 'partials/form/scope', 'change'); ?>
 </div>
  <?php if(!empty($membres)) {
 	       echo "<p class='memberSentence'>Les membres en ligne dans ta ville</p>";

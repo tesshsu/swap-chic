@@ -1590,9 +1590,6 @@ header nav > *:last-child {
     }
     .intro-slide .videopart {
 		box-sizing: border-box;
-		width: 50%;
-		position: relative;
-		display: inline-block;
     }
 	#intro-video video{
 		padding-bottom: 0 !important;
@@ -1641,10 +1638,7 @@ header nav > *:last-child {
 	
    .actualites{
 	  margin-top: 50px;
-   }
-  .intro-presentation .slick-slide img {
-	 width: 400px !important;
-  }
+   }      #intro-video{	   height: 100%;   }
   .alert-notice-home h4{
 	  margin-left: 20%;
 	  width: 60%;
