@@ -401,9 +401,7 @@ jQuery(document).ready(function () {
             window.location.assign('https://' + window.location.host + '/?post_type=produits&p=' + jQuery(this).attr('data-id'));
         } else if(e.toElement.nodeName == 'A'){
             window.location.assign(e.toElement.href);
-        } else {
-            window.location.assign('https://' + window.location.host + '/produits/' + jQuery(this).attr('data-slug'));
-        }
+        }
     });
     jQuery('.swapplace-min').click(function(e){
         if(e.toElement.classList[0] == 'send-swapplace'){

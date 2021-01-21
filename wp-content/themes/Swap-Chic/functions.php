@@ -3450,7 +3450,7 @@ function chatSend() {
 	if(substr($message, 0, strpos($message, ' ')) == 'POST_PRODUCT') {
 		// If the message is a product, we remove the 'POST_PRODUCT' msg
 		$message = substr($message, 13, strlen($message));
-		$chatlog .= "<div class='msg-product-wrapper' data-from='" . $current_user_id . "'>". $message . "<div class='msg-time'><span class='day'>" . date('d/m') ." </span><span class='hour'>" . date('H:i') . "</span></div></div>" . "\n";
+		$chatlog .= "<div class='msg-product-wrapper' data-from='" . $current_user_id . "'>". $message . "         </div>" . "\n";
 	} elseif(substr($message, 0, strpos($message, ' ')) == 'POST_SWAPPLACE') {
 		// If the message is a swap-place, we remove the 'POST_SWAPPLACE' msg
 		$message = substr($message, 15, strlen($message));

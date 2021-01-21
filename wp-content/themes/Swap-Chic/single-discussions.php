@@ -64,7 +64,7 @@
         <div class="produits">
             <p class="h1">Produits</p>			
             <div class="partner-dressing drawer closed">
-                <p class="h2">Dressing de <?php echo ucfirst($partner->data->display_name) ?></p>
+                <p class="h2">Dressing de  tt <?php echo ucfirst($partner->data->display_name) ?></p>
                 <?php 
                     $produits = get_field('produits', get_field('dressing', 'user_'.$partner_id));
                     $partner_products = 0;
