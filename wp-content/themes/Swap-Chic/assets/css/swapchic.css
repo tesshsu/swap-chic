@@ -2497,54 +2497,35 @@ aside.profil .website-links a {
 
 aside.profil .links-switch {
 
-  width: 100%;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
-  display: flex;
-
-  -webkit-box-orient: horizontal;
-
-  -webkit-box-direction: normal;
-
-  -ms-flex-flow: row nowrap;
-
-      flex-flow: row nowrap;
-
-  -webkit-box-pack: start;
-
-  -ms-flex-pack: start;
-
-      justify-content: flex-start;
-
-  -webkit-box-align: center;
-
-  -ms-flex-align: center;
+  display: block;
 
       align-items: center;
-
-  padding: 20px;
 
   background-color: #f2f2f2;
 
   position: absolute;
 
-  bottom: 175px; }
-
-
-
-aside.profil .links-switch > * {
-
-  width: 50%;
-
-  text-align: center; 
-
-  cursor: pointer;}
-
-
-
+  bottom: 200px; }
+  
+.opinioBlock{
+	width: 90%;
+    padding: 10px;
+    border: 1px solid #060615;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+	    margin-bottom: 30px;
+}
+.bottomLinkBlock{
+	width: 100%;
+	display: flex;
+}
+.profil-links-switch{
+	width: 50%;
+}
+.website-links-switch{
+	width: 50%;
+}
 aside.profil .links-switch span {
 
   font-family: 'Montserrat Regular';
