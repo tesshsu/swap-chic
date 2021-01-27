@@ -17,6 +17,7 @@
         </label>
         <input type="file" name="profile-picture" id="signup-profile-picture" onchange="readProfilePictureURL(this);">
         <input type="text" name="username" id="signup-username" placeholder="Identifiant" required>
+		<span class="tipNotify">Votre identifiant n'accept pas formulair de votre email</span>
         <input type="mail" name="mail" id="signup-mail" placeholder="E-mail" required>
         <input type="password" name="password" id="signup-password" placeholder="Mot de passe" required>
         <input type="password" name="password-confirmation" id="signup-password-confirmation" placeholder="Confirmation mot de passe" required>

@@ -178,7 +178,7 @@ if(is_user_logged_in()) {
 				        </a>						
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
 							<i class="far fa-newspaper"></i>Notre blog
-						</a>
+						</a>												<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/le-concept' ?>" id="concept">							<i class="fas fa-recycle"></i>Le concept						</a>
 					<?php } 
 						$logout_element = wp_loginout( 'https://'.$_SERVER['HTTP_HOST'], false);
 						preg_match('/href=".*">/', $logout_element, $logout_tag);
