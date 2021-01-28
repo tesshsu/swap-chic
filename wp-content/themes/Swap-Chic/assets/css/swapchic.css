@@ -3070,8 +3070,18 @@ footer a img {
 
 }
 
+.spMenu:hover + .notifySP {  
+  display: block;
+}
 
-
+.notifySP{
+	position: absolute;
+    top: 2.5rem;
+    padding: 5px;
+    border: 1px solid #b2895d;
+    border-radius: 5px;
+	display: none;
+}
 #intro-tutorial-1 ul li:not(:last-of-type) {
 
   margin-bottom: 10px;

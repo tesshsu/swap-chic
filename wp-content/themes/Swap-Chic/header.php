@@ -60,9 +60,9 @@ if(is_user_logged_in()) {
 						<li>
 							|
 						</li>
-						<li>
+						<li class="spMenu">
 							<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places-2' ?>">   							   <i class="fas fa-coffee"></i>Swap-places							</a>
-						</li>
+						</li>                        <p class="notifySP">Suite au coronavirus l'option des swap-places est suspendue. Restez connectées pour la réouverture... </p>
 						<li>
 							|
 						</li>
