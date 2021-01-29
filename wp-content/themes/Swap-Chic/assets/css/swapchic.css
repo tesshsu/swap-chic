@@ -8,7 +8,6 @@ header nav i{
 	font-size: 1.25rem;
 }
 @font-face {
-
   font-family: "Montserrat Regular";
 
   src: url("../fonts/Montserrat-Regular.ttf") format("truetype"); }
@@ -2490,6 +2489,10 @@ aside.profil .website-links ul {
 
 
 
+.user .inside-part .fa-cog{
+	margin-left: 4rem;
+}
+
 aside.profil .website-links a {
 
   text-decoration: none;
@@ -2514,11 +2517,11 @@ aside.profil .links-switch {
 
   position: absolute;
 
-  bottom: 200px; }
+  bottom: 100px; }
   
 .opinioBlock{
 	width: 90%;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #b2895d;
     text-align: center;
     margin: 0 auto;
@@ -2528,6 +2531,7 @@ aside.profil .links-switch {
 .bottomLinkBlock{
 	width: 100%;
 	display: flex;
+	margin-left: 10px;
 }
 .profil-links-switch{
 	width: 50%;
@@ -9904,8 +9908,8 @@ footer{
 }
 @media screen and (max-width: 480px) {
 .opinioBlock{
-	font-size: 10px;
-	padding: 5px;
+	font-size: 12px;
+	padding: 10px;
 }
 .notifs {		  
 height: 20px;		  

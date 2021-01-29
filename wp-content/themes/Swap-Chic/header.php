@@ -173,9 +173,6 @@ if(is_user_logged_in()) {
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/membres-suivies' ?>">
 							<i class="fas fa-user-friends"></i>Membres suivies
 						</a>
-                        <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/on-parler-de-nous-1' ?>" id="blog">
-						   <i class="fas fa-bullhorn"></i>On parle de nous
-				        </a>						
 						<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/blog' ?>" id="blog">
 							<i class="far fa-newspaper"></i>Notre blog
 						</a>												<a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/le-concept' ?>" id="concept">							<i class="fas fa-recycle"></i>Le concept						</a>
@@ -228,8 +225,7 @@ if(is_user_logged_in()) {
 			</div>
 		</div>
 		<div class="links-switch">			<div class="opinioBlock">				<p> Votre opinion nous intéresse, vous pouvez nous contacter par email:</p>				<p><a href="mailto:contact@swap-chic.com">contact@swap-chic.com</a></p>			</div>		    <div class="bottomLinkBlock">				<div class="profil-links-switch">					<span class="active"><i class="fas fa-id-badge"></i>Mon profil</span>				</div>				<div class="website-links-switch">					<span><i class="fas fa-link"></i>Liens utiles</span>				</div>			</div>		</div>
-		<div class="rs">
-			<a href="https://www.okpal.com/swap-chic/#/" target="_blank" class="okpal"><img src="<?php echo get_template_directory_uri().'/assets/images/okpal.svg'; ?>" alt=""></a>
+		<div class="rs">
 			<a href="https://www.instagram.com/swapchic/" target="_blank" class="insta"><img src="<?php echo get_template_directory_uri().'/assets/images/insta.svg'; ?>" alt=""></a>
 			<a href="http://www.facebook.com/swaptobechic" target="_blank" class="fb"><img src="<?php echo get_template_directory_uri().'/assets/images/fb.svg'; ?>" alt=""></a>
 			<a href="http://www.pinterest.com/swapchic/" target="_blank" class="pinterest"><img src="<?php echo get_template_directory_uri().'/assets/images/pinterest.svg'; ?>" alt=""></a>
