@@ -3259,7 +3259,9 @@ main.catalogue {
 
   padding-bottom: 142px; }
 
-
+.le-concept .h1{
+	text-align: center;
+}
 
 .notif:first-of-type {
 
