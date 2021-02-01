@@ -15,15 +15,11 @@ Template Post Type: page
     </div>
 		
 	<div class="intro-slide" id="intro-video" style="overflow-y: scroll; -webkit-overflow-scrolling: touch; ">       
-		<p>Découvre le concept Swap-chic : </p>
+		<p id="intro-text-video">Découvre le concept Swap-chic : </p>
 		<video id="video" poster="<?php echo get_template_directory_uri().'/assets/images/poster.png' ?>" disablepictureinpicture controlslist="nodownload">
             <source src="<?php echo get_template_directory_uri().'/assets/Swap_chic.mp4' ?>" type="video/mp4">
         </video>  
 	</div>
-    
-    <?php // This is for a smooth transition to the sign-in page ?>
-    <div class="intro-slide" id="intro-filler">
-    </div>
 
 </div>
 <div class="intro-actions">

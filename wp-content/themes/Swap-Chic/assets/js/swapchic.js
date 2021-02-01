@@ -3153,41 +3153,18 @@ jQuery(document).ready(function () {
             jQuery('.intro-actions .prev').addClass('hidden');
 
         }
-        
-
-        if(intro_position == 3) {
-
-            jQuery('.intro-presentation .intro-tutorial').css({
-
-                'height': 'auto',
-
-                'margin-bottom': '54px'
-
-            });
-
-            jQuery('.intro-actions .next').click(function(){
+       
+		
+		if(intro_position == 1) {
+			 jQuery('.intro-actions .next').click(function(){
 
                 Cookies.set("intro_seen", 1, { expires: 36500 });
 
                 window.location.assign(window.location.origin+"/sign-in");      
 
-            });
-
-        } else {
-
-            jQuery('.intro-presentation .intro-tutorial').css('height', jQuery(window).height() - 54);
-
-        }
-
-
-
-        if(intro_position == 4) {
-
-            Cookies.set("intro_seen", 1, { expires: 36500 });
-
-            window.location.assign(window.location.origin+"/sign-in");      
-
-        }
+            });  
+			
+		}
 
     });
 
@@ -3203,39 +3180,6 @@ jQuery(document).ready(function () {
 
         }
 
-        if(intro_position == 1) {
-
-            //document.getElementById("video").controls = true;
-
-        } else {
-
-            //document.getElementById("video").pause()
-
-        }
-
-        if(intro_position == 2) {
-
-            jQuery('.intro-presentation .intro-tutorial').css({
-
-                'height': 'auto',
-
-                'margin-bottom': '54px'
-
-            });
-
-            jQuery('.intro-actions .next').click(function(){
-
-                Cookies.set("intro_seen", 1, { expires: 36500 });
-
-                window.location.assign(window.location.origin+"/sign-in");      
-
-            });
-
-        } else {
-
-            jQuery('.intro-presentation .intro-tutorial').css('height', jQuery(window).height() - 54);
-
-        }
 
     });
 
@@ -3554,7 +3498,7 @@ jQuery(document).ready(function () {
                     adaptiveHeight: false
 
                   });
-
+intro-video
             }          
 
         }

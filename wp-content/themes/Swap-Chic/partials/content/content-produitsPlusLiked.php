@@ -47,6 +47,10 @@
                 <?php } ?>
                 <span><?php echo getLikesNumber($post_id) ?></span>
             </div>
+            <div class="comments" onclick="getComments(<?php echo '\'produits\', \''.$post_id.'\'' ?>, this)">
+                <img src="<?php echo get_template_directory_uri().'/assets/images/comments.svg'?>" alt="">
+                <span><?php echo getCommentsNumber($post_id) ?></span>
+            </div>
             <div class="share">
                 <img src="<?php echo get_template_directory_uri().'/assets/images/share.svg'?>" alt="">
                 <span></span>
