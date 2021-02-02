@@ -1565,13 +1565,7 @@ header nav > *:last-child {
     .intro-slide .videopart {
 		box-sizing: border-box;
     }
-	  p#intro-text-video {
-	    font-family: "PlayfairDisplay Bold";
-	    color: #000;
-	    font-weight: bold;
-	    font-size: 25px;
-	    margin: 50px 0;
-	  }
+	 
 	#intro-video video{
 		padding-bottom: 0 !important;
 	}
