@@ -1059,6 +1059,13 @@ header {
   }
  /*for iphone SE*/ 
 @media screen and (min-width : 320px) and (max-width : 568px) { 
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
    .headerSlogan {
 	  font-size: 10px;
    }
@@ -1165,6 +1172,13 @@ header nav {
 
 
 @media screen and (min-width: 450px) {
+#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   header nav {
 
@@ -1513,6 +1527,13 @@ header nav > *:last-child {
 }
 
 @media (min-width: 1050px) {	.intro-slide .firstlogoIntro{	padding: 80px;	width: 50%;}	.intro-slide .videopart{	width: 50%;}	.notifs {	  height: 20px;	  width: 20px;	  padding: 2px;	  text-align: center;      margin-left: 5px;	  	  position: relative;	  font-size: 12px;	  color: #F0F0F0;	  line-height: 1em;	  font-family: 'Montserrat Bold';	  display: -webkit-box;	  display: -ms-flexbox;	  display: flex;	  -webkit-box-pack: center;	  -ms-flex-pack: center;		  justify-content: center;	  -webkit-box-align: center;	  -ms-flex-align: center;		  align-items: center;	  background-color: #7ebc63;	  border-radius: 100px; }
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 	.actualites .top{
 		position: relative;
         text-align: center;
@@ -1887,6 +1908,13 @@ header nav > *:last-child {
 
 
 @media all and (min-width: 600px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   .sort-open,
 
@@ -3188,6 +3216,13 @@ main.recherche-avancee{
 }
 
 @media screen and (min-width: 450px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   main.actualites,
 
@@ -3852,6 +3887,13 @@ main > .top > .h2,
 
 
 @media screen and (min-width: 375px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   #filter-save-modal,
 
@@ -8747,6 +8789,13 @@ img.wider {
 
 
 @media screen and (min-width: 375px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   #crop-modal {
 
@@ -9453,6 +9502,13 @@ div.notfound {
 /* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   .desktop {
 
@@ -9475,6 +9531,13 @@ div.notfound {
 /* RESPONSIVE */
 
 @media screen and (min-width: 769px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
   .desktop {
 
     display: block; }
@@ -9576,6 +9639,13 @@ div.notfound {
 
 
 @media screen and (max-width: 767px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   .desktop {
 
@@ -9596,6 +9666,13 @@ div.notfound {
 
 
 @media screen and (max-width: 374px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   header {
 
@@ -9873,6 +9950,13 @@ main .on-parle-de-nous {
 
 }
 @media screen and (max-width: 320px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 footer.mobile{
 	font-size: 12px;
 }
@@ -9887,6 +9971,13 @@ header nav{
 }
 }
 @media screen and (max-width: 375px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 footer.mobile{
 	font-size: 14px;
 	font-weight: 600;
@@ -9905,6 +9996,13 @@ footer{
 }
 }
 @media screen and (max-width: 480px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 .opinioBlock{
 	font-size: 10px;
 	padding: 5px;
@@ -11562,6 +11660,13 @@ border-radius: 100px;
 
 
 @media all and (max-width:768px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   .desktop {
 
@@ -11580,6 +11685,13 @@ border-radius: 100px;
 
 
 @media all and (min-width:769px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
   #help-ajoutproduit {
 
     right: 20px;
@@ -12365,6 +12477,13 @@ border-radius: 100px;
 
 
 @media all and (max-width:768px) {
+	#intro-video p {
+      font-size: 16px;
+      text-align: center;
+      width: calc(100% - 40px);
+      max-width: 420px;
+      margin-bottom: 20px;
+  }
 
   .mobile-hidden {
 
