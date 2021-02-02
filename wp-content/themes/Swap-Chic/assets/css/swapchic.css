@@ -1060,7 +1060,7 @@ header {
  /*for iphone SE*/ 
 @media screen and (min-width : 320px) and (max-width : 568px) { 
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -1173,7 +1173,7 @@ header nav {
 
 @media screen and (min-width: 450px) {
 #intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -1528,7 +1528,7 @@ header nav > *:last-child {
 
 @media (min-width: 1050px) {	.intro-slide .firstlogoIntro{	padding: 80px;	width: 50%;}	.intro-slide .videopart{	width: 50%;}	.notifs {	  height: 20px;	  width: 20px;	  padding: 2px;	  text-align: center;      margin-left: 5px;	  	  position: relative;	  font-size: 12px;	  color: #F0F0F0;	  line-height: 1em;	  font-family: 'Montserrat Bold';	  display: -webkit-box;	  display: -ms-flexbox;	  display: flex;	  -webkit-box-pack: center;	  -ms-flex-pack: center;		  justify-content: center;	  -webkit-box-align: center;	  -ms-flex-align: center;		  align-items: center;	  background-color: #7ebc63;	  border-radius: 100px; }
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -1903,7 +1903,7 @@ header nav > *:last-child {
 
 @media all and (min-width: 600px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -3016,7 +3016,7 @@ footer a img {
 
 #intro-video p {
 
-  font-size: 16px;
+  font-size: 25px;
 
   text-align: center;
 
@@ -3211,7 +3211,7 @@ main.recherche-avancee{
 
 @media screen and (min-width: 450px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -3882,7 +3882,7 @@ main > .top > .h2,
 
 @media screen and (min-width: 375px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -8784,7 +8784,7 @@ img.wider {
 
 @media screen and (min-width: 375px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -9497,7 +9497,7 @@ div.notfound {
 
 @media screen and (max-width: 768px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -9526,7 +9526,7 @@ div.notfound {
 
 @media screen and (min-width: 769px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -9634,7 +9634,7 @@ div.notfound {
 
 @media screen and (max-width: 767px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -9661,7 +9661,7 @@ div.notfound {
 
 @media screen and (max-width: 374px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -9945,7 +9945,7 @@ main .on-parle-de-nous {
 }
 @media screen and (max-width: 320px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -9966,7 +9966,7 @@ header nav{
 }
 @media screen and (max-width: 375px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -11680,7 +11680,7 @@ border-radius: 100px;
 
 @media all and (min-width:769px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
@@ -12472,7 +12472,7 @@ border-radius: 100px;
 
 @media all and (max-width:768px) {
 	#intro-video p {
-      font-size: 16px;
+      font-size: 25px;
       text-align: center;
       width: calc(100% - 40px);
       max-width: 420px;
