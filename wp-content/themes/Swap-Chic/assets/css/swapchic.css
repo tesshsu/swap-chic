@@ -5751,6 +5751,10 @@ img.wider {
 .msg-product-wrapper.mine .produit {
 
   border: 2px solid #B2895D;
+  
+  min-width: 12rem;
+  
+  padding: 20px;
 
   border-bottom-left-radius: 20px;
 

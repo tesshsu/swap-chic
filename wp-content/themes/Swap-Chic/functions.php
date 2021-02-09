@@ -1869,15 +1869,7 @@ function productToChat($post_id) {
 	$image = str_replace('"', '\'', get_the_post_thumbnail($post_id));
 	$action = get_field('action', $post_id);
 	$post_type = 'produits';
-	$message = "<div data-id='". $post_id ."' class='produit' onclick='openChatProduct(". $post_id .")'><div class='produit-carousel'>".$image."</div><div class='infos-wrapper'><h3 class='h1'>". get_the_title($post_id) ."</h3><div class='user'><img src='". get_field('photo_profil', 'user_'.$user['ID']) ."' alt=''><p><a href='". get_permalink(get_field('dressing', 'user_'.$user['ID'])) ."'>". ucfirst($user['display_name']) ."</a></p></div>";
-
-	if( $action[0] == 'À vendre' && count($action) == 1) {
-	    $message .= "<div class='infos'><p><b>". get_field('prix', $post_id)."€</b></p></div>";
-	} elseif($action[1]) {
-	    $message .= "<div class='infos'><p><b>À swaper ou ".get_field('prix', $post_id)."€</b></p></div>";
-	} else {
-		$message .= "<div class='infos'><p><b>À swaper</b></p></div>";
-	}
+	$message = "<div class='produit'>	 ";		if( $action[0] == 'À vendre' && count($action) == 1) {	    $message .= "<div class='infos'><p>". get_the_title($post_id) ."</p><p><b>". get_field('prix', $post_id)."€</b></p></div>";	} elseif($action[1]) {	    $message .= "<div class='infos'><p>". get_the_title($post_id) ."</p><p><b>À swaper ou ".get_field('prix', $post_id)."€</b></p></div>";	} else {		$message .= "<div class='infos'><p>". get_the_title($post_id) ."</p><p><b>À swaper</b></p></div>";	}
 	$message .= "</div></div>";
 
 	return $message;
