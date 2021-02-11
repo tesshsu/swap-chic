@@ -5746,6 +5746,21 @@ img.wider {
 
   border-bottom-left-radius: 0px; }
 
+input:hover + span.tipNotify {
+  display: block;
+}
+
+
+.tipNotify{
+	padding: 5px;
+    font-size: 14px;
+    color: #b2895d;
+    border: 1px solid #a6a6a6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+	display: none;
+}
+
 
 
 .msg-product-wrapper.mine .produit {
