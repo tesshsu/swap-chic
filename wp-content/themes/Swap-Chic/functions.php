@@ -3680,7 +3680,7 @@ add_action( 'init', 'swapchic_dressing_custom_post_type', 0 );
 * Parameters : none
 * Return : none
 */
-/*function swapchic_swapplace_custom_post_type() {
+function swapchic_swapplace_custom_post_type() {
 
 	$labels = array(
 		'name'                => _x( 'Swap-places', 'Post Type General Name'),
@@ -3714,7 +3714,7 @@ add_action( 'init', 'swapchic_dressing_custom_post_type', 0 );
 	register_post_type( 'swapplaces', $args );
 
 }
-add_action( 'init', 'swapchic_swapplace_custom_post_type', 0 );*/
+add_action( 'init', 'swapchic_swapplace_custom_post_type', 0 );
 
 function swapchic_discussion_custom_post_type() {
 

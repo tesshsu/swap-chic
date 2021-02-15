@@ -34,7 +34,7 @@
     $adresses = array();
     foreach($swapplaces as $post) {
         $adresses[] = array($post, get_field('adresse', $post));
-    }
+    }       $slug = get_post_field( 'post_name', $adresse[0] );
 ?>
 
 <div class="map" data-level="<?php echo $map_lvl ?>">
@@ -53,10 +53,10 @@
         </div>
         <div class="swapplaces-caroussel-infos"> 
             <?php foreach($adresses as $adresse) { ?>
-                <div data-id="<?php echo $adresse[0] ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $adresse[0] ); ?>">
-                    <p class="h1"><?php echo get_the_title($adresse[0]) ?></p>
+                <div data-id="<?php echo $adresse[0] ?>" data-slug="<?php echo $slug = get_post_field( 'post_name', $adresse[0] ); ?>">                    <?php $spName = get_post_field( 'post_name', $adresse[0] ) ?>
+                    <p class="h1"><?php echo $spName ?></p>
                     <p><?php echo $adresse[1] ?></p>
-                    <p class="href">En savoir plus...</p>
+                    <p class="href"><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/swap-places/'.$spName ?>">En savoir plus...</a></p>
                 </div> 
             <?php } ?>
         </div>

@@ -3361,100 +3361,6 @@ jQuery(document).ready(function () {
 
         }
 
-		
-
-	//add banner slider in home page
-
-	/*if (jQuery('.actualites #topBanner').hasClass('slick-initialized')) {
-
-
-
-            jQuery('.actualites #topBanner.slick-initialized.slick-slider').slick('setPostion');
-
-
-
-        } else {
-
-
-
-            if(isMobile) {
-
-
-
-                jQuery('.actualites #topBanner').slick({
-
-                    
-
-					dots: true,
-
-					infinite: false,
-
-					mobileFirst: true,
-
-					speed: 500,
-
-					slidesToShow: 1,
-
-                    slidesToScroll: 1,
-
-                    centerPadding: '30px',
-
-                    arrows: false
-
-
-
-                });
-
-
-
-            } else {
-
-
-
-                jQuery('.actualites #topBanner').slick({                  
-
-					
-
-					slidesToShow: 1,
-
-
-
-                    slidesToScroll: 1,
-
-
-
-                    infinite: false,
-
-
-
-                    centerMode: false,
-
-
-
-                    arrows: false,
-
-
-
-                    adaptiveHeight: false,
-
-					
-
-					autoplay: true,
-
-					
-
-					autoplaySpeed: 2000
-
-
-
-                });
-
-            }
-
-        }*/
-
-	//add home page member slider
-
     if (jQuery('.actualites #membresHome').hasClass('slick-initialized')) {
 
             jQuery('.actualites #membresHome').slick('setPostion');
@@ -3498,7 +3404,6 @@ jQuery(document).ready(function () {
                     adaptiveHeight: false
 
                   });
-intro-video
             }          
 
         }
