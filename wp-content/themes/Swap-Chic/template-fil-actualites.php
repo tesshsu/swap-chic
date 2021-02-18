@@ -73,7 +73,7 @@ set_query_var('scope_string', getScopeString($_GET));
 ?>
 
 
-<!---
+
 <form method="get"  class="desktop" id="advanced-search-form">       
 
     <div class="asf-produits">                                    
@@ -127,7 +127,7 @@ set_query_var('scope_string', getScopeString($_GET));
     </div>
 
 </form>
---->
+
 
 
 
