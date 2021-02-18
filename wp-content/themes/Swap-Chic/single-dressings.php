@@ -114,7 +114,7 @@ if($user['ID'] == $current_user_id) {
                         </div>
                         <div class="product-actions">
                             <a href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/editer-produit/?produit='.$produit ?>" class="edit">Modifier</a>
-                            <div class="delete">Supprimer</div>
+                            <div class="delete"><a onclick="unvalidate(<?php echo $post_id?>, this)" href="<?php echo get_delete_post_link( $post->ID ) ?>">Supprimer</a></div>
                         </div>
                     </div>
                     <?php 
