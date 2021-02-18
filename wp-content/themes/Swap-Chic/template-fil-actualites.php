@@ -73,7 +73,7 @@ set_query_var('scope_string', getScopeString($_GET));
 ?>
 
 
-
+<!---
 <form method="get"  class="desktop" id="advanced-search-form">       
 
     <div class="asf-produits">                                    
@@ -86,9 +86,9 @@ set_query_var('scope_string', getScopeString($_GET));
 
 							Femme
 
-						</label><!--
+						</label>
 
-						-->
+						
 
         <input class="checkbox-tools" type="radio" value="enfant" name="target" id="asf-enfant">
 
@@ -98,9 +98,9 @@ set_query_var('scope_string', getScopeString($_GET));
 
 							Enfant
 
-						</label><!--
+						</label>
 
-						-->
+						
 
         <input class="checkbox-tools" type="radio" value="vip" name="target" id="asf-vip">
 
@@ -127,12 +127,12 @@ set_query_var('scope_string', getScopeString($_GET));
     </div>
 
 </form>
+--->
 
 
 
 
-
-<?php get_search_form(); ?>
+<?php /*get_search_form();*/ ?>
 
 
 <!---
