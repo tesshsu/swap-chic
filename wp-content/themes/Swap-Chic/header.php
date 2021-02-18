@@ -372,13 +372,11 @@ if(is_user_logged_in()) {
 
 
 						</li>
-
-
-						<li class="search-form">
-
+						<li>							
+							|
+						</li>
+						<li>
 							<?php get_search_form(); ?>
-
-
 						</li>
 
 
@@ -413,16 +411,6 @@ if(is_user_logged_in()) {
 
 				<div class="mobile" id="rightSIdeMenu">
 
-
-
-				    <a href="#">
-
-
-
-						<i class="fas fa-search"></i>
-
-
-					</a>
 
 
 
@@ -488,9 +476,10 @@ if(is_user_logged_in()) {
 
 				    </a>
 
-					<div class="search-form-mobile">
-						<?php get_search_form(); ?>
-					</div>
+
+					<a href="#" class="searchIcon" onclick="hideShowSearchForm()">
+						<i class="fas fa-search"></i>
+					</a>
 
 				</div>
 
@@ -503,6 +492,22 @@ if(is_user_logged_in()) {
 
 
 		</header>
+
+
+		<div class="mobile" id="searchform-mobile" style="display:none;">
+			<?php get_search_form(); ?>
+		</div>
+
+		<script>
+			function hideShowSearchForm() {
+				var div = document.getElementById("searchform-mobile");
+				if (div.style.display === "none") {
+					div.style.display = "block";
+				} else {
+					div.style.display = "none";
+				}
+			}
+		</script>
 
 
 		<?php 
