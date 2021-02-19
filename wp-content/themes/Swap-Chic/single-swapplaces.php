@@ -28,7 +28,7 @@ get_header(); ?>
         print '<img src="'.$images[0].'" alt="">';
     ?>
     </div>
-    <div class="swapplace-map"></div>
+    <div class="map swapplace-map"></div>
     <div class="infos-wrapper">
         <div class="social-action">
             <div class="tags">

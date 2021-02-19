@@ -14,14 +14,10 @@
     <div class="swapplace-carousel">
         <img src="<?php echo $images[0] ?>" alt="">		
     </div>
-    <div class="swapplace-map"></div>
+    <div class="map swapplace-map"></div>
     <div class="infos-wrapper">
         <div class="title-action">
             <h3 class="h1"><?php echo get_the_title($post_id) ?></h3>
-            <div class="toggle">
-                <div class="picture-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/pics.svg'?>" alt=""></div>
-                <div class="map-toggle"><img src="<?php echo get_template_directory_uri().'/assets/images/map.svg'?>" alt=""></div>
-            </div>
         </div>
         <p class="adresse"><?php echo get_field('adresse', $post_id); ?></p>
 		<div class="social">
