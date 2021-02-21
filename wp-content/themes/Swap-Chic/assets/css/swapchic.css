@@ -1374,7 +1374,7 @@ header nav > *:last-child {
 */
   position: relative;
     z-index: 4;
-    top: 85px;
+    top: 115px;
  }
 
 
@@ -4064,7 +4064,7 @@ main > .top #scope-modal input[type=text] {
 }
 
 .membre_block {
-  margin-top: 50px;
+  margin-top: 85px;
 }
 
 .actualites .membre_block {
