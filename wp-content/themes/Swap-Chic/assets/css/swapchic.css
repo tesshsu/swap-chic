@@ -1595,6 +1595,7 @@ header nav > *:last-child {
 	  padding: 0; }
 	.a2a_kit{
 
+		  z-index: 999;
 		  display: -webkit-box !important;
 
 		  display: -ms-flexbox !important;
